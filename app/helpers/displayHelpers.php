@@ -1848,4 +1848,208 @@ $ca_relationship_lookup_parse_cache = array();
 		return $vn_can_download;
 	}
 	# ------------------------------------------------------------------------------------------------
+	function lazyLoadImg($img) {
+		if (strpos($img, 'class')) {
+			$img = str_replace('class="', 'class="lazyload ');
+			$img = str_replace('src=', 'data-original=', $img);
+		} else {
+			$img = str_replace('src=', 'class="lazyload" data-original=', $img);
+		}
+		return str_replace('<img', '<img src="'.__CA_THEMES_URL__.'/jewishmuseum/graphics/placeholder.png"', $img);
+	}
+	# ------------------------------------------------------------------------------------------------
+	function detailImg($img) {
+		$img = str_replace('lazyload', '', lazyLoadImg($img));
+		return ratioImg($img);
+	}
+	# ------------------------------------------------------------------------------------------------
+	function carouselImg($img) {
+		if (preg_match('/width=["\'](\d+)["\']/', $img, $w) > 0 && preg_match('/height=["\'](\d+)["\']/', $img, $h) > 0) {
+			$class = ($w[1] > $h[1]) ? 'horizontal' : 'vertical';
+			$img = preg_replace('/width=["\'](\d+)["\']/', '', $img);
+			$img = preg_replace('/height=["\'](\d+)["\']/', 'class="'.$class.'"', $img);
+		}
+		return $img;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function ratioImg($img) {
+		if (preg_match('/width=["\'](\d+)["\']/', $img, $w) > 0 && preg_match('/height=["\'](\d+)["\']/', $img, $h) > 0) {
+			$r = 'data-ratio="'.round($w[1]/$h[1], 4).'" ';
+			$img = str_replace('src=', $r.'src=', $img);
+		}
+		return $img;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function czechMonthToNumber($date) {
+		$months = array(
+			' leden ',
+			' únor ',
+			' březen ',
+			' duben ',
+			' květen ',
+			' červen ',
+			' červenec ',
+			' srpen ',
+			' září ',
+			' říjen ',
+			' listopad ',
+			' prosinec '
+		);
+		$ordinal = array(
+			'1.',
+			'2.',
+			'3.',
+			'4.',
+			'5.',
+			'6.',
+			'7.',
+			'8.',
+			'9.',
+			'10.',
+			'11.',
+			'12.'
+		);
+		$date = str_replace($months, $ordinal, $date);
+		return $date;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function dateYear($date) {
+		if (strlen($date) > 0) {
+			# only get first date
+			$date = explode(',', $date);
+			$date = $date[0];
+			if (preg_match_all('/(\d{4}s)/', $date, $matches) == 1) {
+				# return 1930s etc.
+				return array(
+					'text' => $matches[0][0],
+					'search' => $matches[0][0]
+				);
+			} elseif (preg_match_all('/(před|before).*(\d{4})/', $date, $matches) == 1) {
+				return array(
+					'text' => '- '.$matches[2][0],
+					'search' => '1500 - '.$matches[2][0]
+				);
+			} elseif (preg_match_all('/(po|after).*(\d{4})/', $date, $matches) == 1) {
+				return array(
+					'text' => '-> '.$matches[2][0],
+					'search' => $matches[2][0].' - '.date('Y')
+				);
+			} else {
+				preg_match_all('/(\d{4})/', $date, $matches);
+				if (sizeof($matches[0]) == 2) {
+					# date from - to
+					$date = implode(' - ', $matches[0]);
+					return array(
+						'text' => $date,
+						'search' => $date
+					);
+				} elseif (sizeof($matches[0]) > 0) {
+					return array(
+						'text' => $matches[0][0],
+						'search' => $matches[0][0]
+					);
+				}
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	# ------------------------------------------------------------------------------------------------
+	function shorten($title, $length = 60) {
+		if(strlen($title) > $length) {
+			$title = wordwrap($title, $length);
+			$title = substr($title, 0, strpos($title, "\n")).'...';
+		}		
+		return $title;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function videoWrap($id, $path, $ratio) {
+		$wrap = '<a href="'.$path.'" id="video-'.$id.'" class="video-me ratio-resize" data-ratio="'.$ratio.'"></a>';
+		return $wrap;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function paginationLink($page, $url) {
+		$link = '<li><a href="#page-'.$page.'" class="page pagination-link" data-url="'.$url.'">'.$page.'</a></li>';
+		return $link;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function activePaginationLink($page) {
+		$link = '<li><span class="page current">'.$page.'</span></li>';
+		return $link;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function createPagination($page_count, $current, $request, $range) {
+		$pagination = array();
+		if($current < 1 Or !is_numeric($current)) $current = 1;
+		if($current > $page_count) $current = $page_count;  
+
+		if ($current !== 1) {
+			$page = $current - 1;
+			$url = caNavUrl($request, '', $request->getController(), 'Index', array('page' => $page));
+			$pagination[] = '<li class="with-text prev"><a href="#page-'.$page.'" class="page text pagination-link" data-url="'.$url.'"><span class="arrow-left"></span>'._t("Previous").'</a></li>';
+		}
+
+		if ($page_count > $range + 2) {
+			$start_range = $current - floor($range/2);
+			$end_range = $current + floor($range/2);
+			if ($start_range < 1) {
+				$end_range += abs($start_range) + 1; 
+				$start_range = 1;
+			}
+			if ($end_range > $page_count) {
+				$start_range -= $end_range-$page_count;
+				$end_range = $page_count;
+			}
+
+			$rangeArray = range($start_range, $end_range);
+
+			for($i = 1; $i <= $page_count; $i++) {
+				if($rangeArray[0] > 2 && $i == $rangeArray[0]) $pagination[] = '<li><span class="page dots">...</span></li>';
+				// loop through all pages. if first, last, or in range, display
+				if($i == 1 || $i == $page_count || in_array($i, $rangeArray)) {
+					if ($i == $current) {
+						$pagination[] = activePaginationLink($i);
+					} else {
+						$url = caNavUrl($request, '', $request->getController(), 'Index', array('page' => $i));
+						$pagination[] = paginationLink($i, $url);
+					}
+				}
+				if($rangeArray[$range-1] < $page_count-1 && $i == $rangeArray[$range-1]) $pagination[] = '<li><span class="page dots">...</span></li>';
+			}
+		} else {
+			for($i = 1; $i <= $page_count; $i++) {
+				if ($i == $current) {
+					$pagination[] = activePaginationLink($i);
+				} else {
+					$url = caNavUrl($request, '', $request->getController(), 'Index', array('page' => $i));
+					$pagination[] = paginationLink($i, $url);
+				}
+			}
+		}
+		if ((int) $current !== (int) $page_count) {
+			$page = $current + 1;
+			$url = caNavUrl($request, '', $request->getController(), 'Index', array('page' => $page));
+			$pagination[] = '<li class="with-text next"><a href="#page-'.$page.'" class="page text pagination-link" data-url="'.$url.'">'._t("Next").'<span class="arrow-right"></span></a></li>';
+		}
+		$pagination = "<ul class=\"pagination\">\n".implode("\n", $pagination)."\n</ul>";
+		return $pagination;
+	}
+	# ------------------------------------------------------------------------------------------------
+	function hieararchyTree($tree, $request) {
+		$html = '<div id="hier-tree" class="togglable">';
+		$html .= '<strong>'._t('Collections hierarchy').'</strong><span class="ico-close close"></span>';
+		$html .= '<ul>';
+		$i = 0;
+		foreach ($tree as $t) {
+			$link = caNavLink($request, $t['name'], '', '', 'Browse', 'clearAndAddCriteria', array('facet' => 'collection_facet', 'id' => $t['collection_id']));
+			$class = $i + 1 == count($tree) ? 'last' : (($i == 0) ? 'first' : '');
+			$icon = ($i + 1 == count($tree)) ? 'file' : 'folder-open';
+			$x = 15*$i;
+			$html .= "<li class=\"{$class}\" style=\"margin-left: {$x}px;\">{$link}<span class=\"ico ico-{$icon}\"></span></li>";
+			$i++;
+		}
+		$html .= '</ul></div>';
+		return $html;
+	}
 ?>

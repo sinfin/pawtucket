@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><!-- TODO language -->
+<?php
+	$locale = caGetUserLocaleRules();
+	$locale = array_keys($locale['preferred']);
+	$locale = $locale[0];
+	$htmlLocale = substr($locale, 0, 2);
+?>
+<!--[if lt IE 7 ]> <html lang="<?php print $htmlLocale ?>" dir="ltr" class="ie6 ie lang-<?php print $htmlLocale ?>"> <![endif]-->
+<!--[if IE 7 ]> <html lang="<?php print $htmlLocale ?>" dir="ltr" class="ie7 ie lang-<?php print $htmlLocale ?>"> <![endif]-->
+<!--[if IE 8 ]> <html lang="<?php print $htmlLocale ?>" dir="ltr" class="ie8 ie lang-<?php print $htmlLocale ?>"> <![endif]-->
+<!--[if IE 9 ]> <html lang="<?php print $htmlLocale ?>" dir="ltr" class="ie9 lang-<?php print $htmlLocale ?>"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php print $htmlLocale ?>" class="non-ie lang-<?php print $htmlLocale ?>" dir="ltr"> <!--<![endif]-->
 <head>
 	<title><?php print $this->request->config->get('html_page_title'); ?></title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<link rel="alternate" type="application/rss+xml" title="<?php print _t("Collections' catalogue").', RSS'; ?>" href="<?php print $this->request->getBaseUrlPath(); ?>/index.php/Feed/recentlyAdded" />
 	<?php print MetaTagManager::getHTML(); ?>
 	
-	<link href="<?php print $this->request->getThemeUrlPath(true); ?>/css/global.css" rel="stylesheet" type="text/css" />
+	<link href="<?php print $this->request->getThemeUrlPath(true); ?>/css/global.css" rel="stylesheet" media="all" type="text/css" />
+	<link href="<?php print $this->request->getThemeUrlPath(true); ?>/css/print.css" rel="stylesheet" media="print" type="text/css" />
 	<link href="<?php print $this->request->getThemeUrlPath(true); ?>/css/sets.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="<?php print $this->request->getBaseUrlPath(); ?>/js/videojs/video-js.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php print $this->request->getBaseUrlPath(); ?>/js/jquery/jquery-jplayer/jplayer.blue.monday.css" type="text/css" media="screen" />
@@ -26,11 +37,11 @@
 		<div class="inner">
 			<div class="cs" id="logo">
 				<?php
-					$locale = caGetUserLocaleRules();
-					$locale = array_keys($locale['preferred']);
-					$locale = $locale[0];
 					// logo link
-					print caNavLink($this->request, _t("Collections' catalogue"), $locale, "", "", "");
+					$filename = 'logo-JMP-en';
+					if ($htmlLocale == 'cs') $filename = 'logo-ZMP';
+					$img = '<img src="'.$img = $this->request->getThemeUrlPath(true).'/graphics/'.$filename.'.png" alt="'._t("Collections' catalogue").'" />';
+					print caNavLink($this->request, $img, $locale, "", "", "");
 				?>
 			</div>
 			<div class="cm">

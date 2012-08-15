@@ -1,0 +1,43 @@
+#gallerySetDetail #setItemsGrid ul li {
+  position: static !important;
+}
+body.displaySet {
+  background: white;
+  color: black;
+}
+body.displaySet h1,
+body.displaySet p,
+body.displaySet div {
+  color: black;
+}
+#main .sidebar,
+#main-home .sidebar {
+  display: none !important;
+}
+#main .content,
+#main-home .content {
+  margin-left: 0 !important;
+}
+#home-dark {
+  border: 1px solid black;
+  border-width: 1px 0;
+  margin-bottom: 50px;
+}
+#home-dark ul li .text .description,
+#home-dark ul li .text a,
+#home-dark p,
+#home-dark a {
+  color: black;
+}
+#home-dark .home-dark-more-link {
+  display: none !important;
+}
+#header #header-box,
+#main-menu,
+#footer .footer-left {
+  display: none;
+}
+.sidebar,
+.content {
+  border-top: 0;
+}

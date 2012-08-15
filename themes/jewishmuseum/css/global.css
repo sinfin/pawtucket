@@ -912,6 +912,7 @@ textarea {
 }
 .ribbon-link:hover {
   color: white;
+  background: black;
 }
 .ribbon-link.white {
   background: white;
@@ -1493,11 +1494,16 @@ b.headline {
   display: block;
   width: 172px;
   height: 134px;
-  background: url(../graphics/logo-JMP-en.png) 0 0 no-repeat;
-  text-indent: -9999px;
+  /*background: url(../graphics/logo-JMP-en.png) 0 0 no-repeat;
+			text-indent: -9999px;
+			&.cs_CZ {
+				background-image: url(../graphics/logo-ZMP.png);
+			}*/
+
+  border: 0;
 }
-#header #logo a.cs_CZ {
-  background-image: url(../graphics/logo-ZMP.png);
+#header #logo a img {
+  border: 0;
 }
 #header #header-box {
   position: absolute;
@@ -2038,25 +2044,6 @@ b.headline {
   display: block;
   margin-bottom: 10px;
   margin-left: 34px;
-}
-#footer .footer-left li a {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  padding: 3px 7px;
-  background-color: #009bd9;
-  font-size: 13px;
-  line-height: 18px;
-  color: #333333;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
-#footer .footer-left li a a {
-  color: #333333;
-}
-#footer .footer-left li a a:hover {
-  color: #009bd9;
 }
 #footer .footer-links {
   width: 300px;
@@ -3483,58 +3470,32 @@ body.displaySet div {
   -moz-opacity: 0;
   opacity: 0;
 }
+.form {
+  width: 620px;
+}
 .form > div {
   margin-bottom: 10px;
 }
-.form .button {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  padding: 3px 7px;
-  background-color: #009bd9;
-  font-size: 13px;
-  line-height: 18px;
-  color: #333333;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  margin-top: 18px;
-}
-.form .button a {
-  color: #333333;
-}
-.form .button a:hover {
-  color: #009bd9;
-}
 .form b {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-}
-.form b a {
-  color: #666666;
-}
-.form b a:hover {
-  color: #009bd9;
+  display: block;
+  margin-bottom: 10px;
 }
 .form input[type="text"],
 .form input[type="password"],
 .form textarea {
   display: block;
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
+  margin-bottom: 18px;
   padding: 5px 10px;
+  width: 600px;
+  border: 1px solid #ccc;
 }
-.form input[type="text"] a,
-.form input[type="password"] a,
-.form textarea a {
-  color: #666666;
+.form .info {
+  padding-top: 10px;
 }
-.form input[type="text"] a:hover,
-.form input[type="password"] a:hover,
-.form textarea a:hover {
-  color: #009bd9;
+.form .captcha,
+.form p,
+.form .info {
+  margin-bottom: 18px;
 }
 #caMediaPanel {
   display: none;

@@ -4,6 +4,7 @@
 		<div id="home-featured">
 			<ul>
 				<?php
+					$ribbon = _t("Collections' catalogue");
 					foreach ($this->getVar("featured_content") as $id => $t_item) {
 						$description = $t_item->get('description') ? '<p>'.shorten($t_item->get('description'), 400).'</p>' : '<p></p>';
 						$img = $t_item->getPrimaryRepresentation(array('large'), array('large'), array('checkAccess' => $va_access_values));
@@ -20,7 +21,7 @@
 							<li>
 								<div class=\"img\">{$linkImage}</div>
 								<div class=\"text\">
-									<b class=\"ribbon\">Archiv sbírek ŽMP</b>
+									<b class=\"ribbon\">{$ribbon}</b>
 									<h2>{$linkTitle}</h2>
 									<div class=\"year-type\">{$year}{$type}</div>
 									{$description}

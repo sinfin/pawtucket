@@ -92,14 +92,11 @@
  		}
  		# -------------------------------------------------------
  		function Index() {
- 			// Remove any browse criteria previously set
+			// Remove any browse criteria previously set
 			$this->opo_browse->removeAllCriteria();
 			
  			parent::Index(true);
- 			JavascriptLoadManager::register('imageScroller');
- 			JavascriptLoadManager::register('browsable');
- 			JavascriptLoadManager::register('tabUI');
- 			JavascriptLoadManager::register('cycle');
+ 			JavascriptLoadManager::register('home');
  			
  			$t_object = new ca_objects();
  			$t_featured = new ca_sets();
@@ -114,150 +111,44 @@
 			$t_featured->load(array('set_code' => $this->request->config->get('featured_set_name')));
 			 # Enforce access control on set
  			if((sizeof($va_access_values) == 0) || (sizeof($va_access_values) && in_array($t_featured->get("access"), $va_access_values))){
-  				$this->view->setVar('featured_set_id', $t_featured->get("set_id"));
- 				$va_featured_ids = array_keys(is_array($va_tmp = $t_featured->getItemRowIDs(array('checkAccess' => $va_access_values, 'shuffle' => 1))) ? $va_tmp : array());	// These are the object ids in the set
+	  			$this->view->setVar('featured_set_id', $t_featured->get("set_id"));
+  				$va_tmp = $t_featured->getItemRowIDs(array('checkAccess' => $va_access_values, 'shuffle' => 1));
+ 				$va_featured_ids = array_keys(is_array($va_tmp) ? $va_tmp : array());	// These are the object ids in the set
  			}
  			if(!is_array($va_featured_ids) || (sizeof($va_featured_ids) == 0)){
 				# put a random object in the features variable
  				$va_featured_ids = array_keys($t_object->getRandomItems(10, array('checkAccess' => $va_access_values, 'hasRepresentations' => 1)));
 			}
 			
-			$t_object = new ca_objects($va_featured_ids[0]);
-			$va_rep = $t_object->getPrimaryRepresentation(array('thumbnail', 'small', 'medium', 'mediumlarge', 'preview', 'widepreview'), null, array('return_with_access' => $va_access_values));
-			$this->view->setVar('featured_content_id', $va_featured_ids[0]);
-			$this->view->setVar('featured_content_thumb', $va_rep["tags"]["thumbnail"]);
-			$this->view->setVar('featured_content_small', $va_rep["tags"]["small"]);
-			$this->view->setVar('featured_content_mediumlarge', $va_rep["tags"]["mediumlarge"]);
-			$this->view->setVar('featured_content_medium', $va_rep["tags"]["medium"]);
-			$this->view->setVar('featured_content_preview', $va_rep["tags"]["preview"]);
-			$this->view->setVar('featured_content_widepreview', $va_rep["tags"]["widepreview"]);
-			$this->view->setVar('featured_content_label', $t_object->getLabelForDisplay());
-			
-			$this->view->setVar('featured_content_slideshow_id_list', $va_featured_ids);
- 			
- 			# --- user favorites get the highest ranked objects to display
-			$va_user_favorites_items = $t_object->getHighestRated(true, 12, $va_access_values);
-			if(sizeof($va_user_favorites_items) > 0){
-				if(is_array($va_user_favorites_items) && (sizeof($va_user_favorites_items) > 0)){
-					$t_object = new ca_objects($va_user_favorites_items[0]);
- 					$va_rep = $t_object->getPrimaryRepresentation(array('thumbnail', 'small', 'preview', 'widepreview'), null, array('return_with_access' => $va_access_values));
-					$this->view->setVar('user_favorites_id', $va_user_favorites_items[0]);
-					$this->view->setVar('user_favorites_thumb', $va_rep["tags"]["thumbnail"]);
-					$this->view->setVar('user_favorites_small', $va_rep["tags"]["small"]);
-					$this->view->setVar('user_favorites_preview', $va_rep["tags"]["preview"]);
-					$this->view->setVar('user_favorites_widepreview', $va_rep["tags"]["widepreview"]);
-				}
-			}else{
-				$this->view->setVar('user_favorites_is_random', 1);
-				# if no ranks set, choose a random object
-				$va_random_items = $t_object->getRandomItems(1, array('checkAccess' => $va_access_values, 'hasRepresentations' => 1));
-				$va_labels = $t_object->getPreferredDisplayLabelsForIDs(array_keys($va_random_items));
-				$va_media = $t_object->getPrimaryMediaForIDs(array_keys($va_random_items), array('small', 'thumbnail', 'preview','medium', 'widepreview'), array("checkAccess" => $va_access_values));
-
-				foreach($va_random_items as $vn_object_id => $va_object_info) {
-					$va_object_info['title'] = $va_labels[$vn_object_id];
-					$va_object_info['media'] = $va_media[$vn_object_id];
-					$va_random_items[$vn_object_id] = $va_object_info;
-				}
-				$this->view->setVar('random_objects', $va_random_items);
-				if(is_array($va_random_items) && (sizeof($va_random_items) > 0)){
-					$va_object_info = array_shift($va_random_items);
-					$this->view->setVar('user_favorites_id', $va_object_info['object_id']);
-					$this->view->setVar('user_favorites_thumb', $va_media[$va_object_info['object_id']]["tags"]["thumbnail"]);
-					$this->view->setVar('user_favorites_small', $va_media[$va_object_info['object_id']]["tags"]["small"]);
-					$this->view->setVar('user_favorites_preview', $va_media[$va_object_info['object_id']]["tags"]["preview"]);
-					$this->view->setVar('user_favorites_widepreview', $va_media[$va_object_info['object_id']]["tags"]["widepreview"]);
-					$this->view->setVar('user_favorites_medium', $va_media[$va_object_info['object_id']]["tags"]["medium"]);
-				} 	
+			$featured_content = array();
+			foreach ($va_featured_ids as $key => $value) {
+				$t_object = new ca_objects($value);
+				$featured_content[$value] = $t_object;
 			}
+			$this->view->setVar("featured_content", $featured_content);
+
+			# --- online exhibitions
+			$t_list = new ca_lists();
+			$vn_public_set_type_id = $t_list->getItemIDFromList('set_types', $t_list->getAppConfig()->get('simpleGallery_set_type'));
+			$va_sets = caExtractValuesByUserLocale($t_featured->getSets(array('table' => 'ca_objects', 'checkAccess' => $va_access_values, 'setType' => $vn_public_set_type_id)));
+			$va_set_descriptions = $t_featured->getAttributeFromSets('description', array_keys($va_sets), array("checkAccess" => $va_access_values));
+			$images = $t_featured->getAttributeFromSets('exhibition_cover_small', array_keys($va_sets), array("checkAccess" => $va_access_values, "version" => "thumbnail"));
+			$this->view->setVar('online_exhibitions', array(
+				'sets' => $va_sets,
+				'descriptions' => $va_set_descriptions,
+				'images' => $images
+			));
+			
 			
  			# --- get the 12 most recently added objects to display
+			$t_items = array();
 			$va_recently_added_items = $t_object->getRecentlyAddedItems(12, array('checkAccess' => $va_access_values, 'hasRepresentations' => 1));
- 			$va_labels = $t_object->getPreferredDisplayLabelsForIDs(array_keys($va_recently_added_items));
- 			$va_media = $t_object->getPrimaryMediaForIDs(array_keys($va_recently_added_items), array('small', 'icon','thumbnail', 'preview', 'widepreview', 'medium'), array("checkAccess" => $va_access_values));
-			foreach($va_recently_added_items as $vn_object_id => $va_object_info){
-				$va_object_info['title'] = $va_labels[$vn_object_id];
-				$va_object_info['media'] = $va_media[$vn_object_id];
- 				$va_recently_added_objects[$vn_object_id] = $va_object_info;
+			foreach(array_keys($va_recently_added_items) as $vn_object_id){
+				$t_items[$vn_object_id] = new ca_objects($vn_object_id);
 			}
-			$this->view->setVar('recently_added_objects', $va_recently_added_objects);
-			
-			if(is_array($va_recently_added_objects) && (sizeof($va_recently_added_objects) > 0)){
-				$va_object_info = array_shift($va_recently_added_objects); 
-				$this->view->setVar('recently_added_id', $va_object_info['object_id']);
-				$this->view->setVar('recently_added_thumb', $va_media[$va_object_info['object_id']]["tags"]["thumbnail"]);
-				$this->view->setVar('recently_added_icon', $va_media[$va_object_info['object_id']]["tags"]["icon"]);
-				$this->view->setVar('recently_added_small', $va_media[$va_object_info['object_id']]["tags"]["small"]);
-				$this->view->setVar('recently_added_preview', $va_media[$va_object_info['object_id']]["tags"]["preview"]);
-				$this->view->setVar('recently_added_widepreview', $va_media[$va_object_info['object_id']]["tags"]["widepreview"]);
-				$this->view->setVar('recently_added_medium', $va_media[$va_object_info['object_id']]["tags"]["medium"]);
-			} 	
+			$this->view->setVar('recently_added_objects', $t_items);
  			
-			# --- get the 12 most viewed objects
-			$va_most_viewed_objects = $t_object->getMostViewedItems(12, array('checkAccess' => $va_access_values, 'hasRepresentations' => 1));
- 			$va_labels = $t_object->getPreferredDisplayLabelsForIDs(array_keys($va_most_viewed_objects));
- 			$va_media = $t_object->getPrimaryMediaForIDs(array_keys($va_most_viewed_objects), array('small', 'thumbnail', 'preview', 'widepreview', 'medium'), array("checkAccess" => $va_access_values));
-			foreach($va_most_viewed_objects as $vn_object_id => $va_object_info){
-				$va_object_info['title'] = $va_labels[$vn_object_id];
-				$va_object_info['media'] = $va_media[$vn_object_id];
- 				$va_most_viewed_objects[$vn_object_id] = $va_object_info;
-			}
-			$this->view->setVar('most_viewed_objects', $va_most_viewed_objects);
-			
-			if(is_array($va_most_viewed_objects) && (sizeof($va_most_viewed_objects) > 0)){
-				$va_object_info = array_shift($va_most_viewed_objects);
-				$this->view->setVar('most_viewed_id', $va_object_info['object_id']);
-				$this->view->setVar('most_viewed_thumb', $va_media[$va_object_info['object_id']]["tags"]["thumbnail"]);
-				$this->view->setVar('most_viewed_preview', $va_media[$va_object_info['object_id']]["tags"]["preview"]);
-				$this->view->setVar('most_viewed_widepreview', $va_media[$va_object_info['object_id']]["tags"]["widepreview"]);
-				$this->view->setVar('most_viewed_small', $va_media[$va_object_info['object_id']]["tags"]["small"]);
-				$this->view->setVar('most_viewed_medium', $va_media[$va_object_info['object_id']]["tags"]["medium"]);
-			} 	
-			# --- get the 12 recently viewed objects
-			$va_recently_viewed_objects = $t_object->getRecentlyViewedItems(12, array('checkAccess' => $va_access_values, 'hasRepresentations' => 1));
- 			$va_labels = $t_object->getPreferredDisplayLabelsForIDs($va_recently_viewed_objects);
- 			$va_media = $t_object->getPrimaryMediaForIDs($va_recently_viewed_objects, array('small', 'thumbnail', 'preview', 'widepreview', 'medium'), array("checkAccess" => $va_access_values));
-			$va_recently_viewed_objects_for_display = array();
-			foreach($va_recently_viewed_objects as $vn_object_id){
-				$va_recently_viewed_objects_for_display[$vn_object_id] = array(
-					'object_id' => $vn_object_id,
-					'title' => $va_labels[$vn_object_id],
-					'media' => $va_media[$vn_object_id]
-				);
-			}
-			$this->view->setVar('recently_viewed_objects', $va_recently_viewed_objects_for_display);
-			
-			if(is_array($va_recently_viewed_objects) && (sizeof($va_recently_viewed_objects) > 0)){
-				$va_object_info = array_shift($va_recently_viewed_objects_for_display);
-				$this->view->setVar('recently_viewed_id', $va_object_info['object_id']);
-				$this->view->setVar('recently_viewed_thumb', $va_media[$va_object_info['object_id']]["tags"]["thumbnail"]);
-				$this->view->setVar('recently_viewed_preview', $va_media[$va_object_info['object_id']]["tags"]["preview"]);
-				$this->view->setVar('recently_viewed_widepreview', $va_media[$va_object_info['object_id']]["tags"]["widepreview"]);
-				$this->view->setVar('recently_viewed_small', $va_media[$va_object_info['object_id']]["tags"]["small"]);
-				$this->view->setVar('recently_viewed_medium', $va_media[$va_object_info['object_id']]["tags"]["medium"]);
-			} 
-			
-			# --- get random objects
-			$va_random_items = $t_object->getRandomItems(12, array('checkAccess' => $va_access_values, 'hasRepresentations' => 1));
-			$va_labels = $t_object->getPreferredDisplayLabelsForIDs(array_keys($va_random_items));
-			$va_media = $t_object->getPrimaryMediaForIDs(array_keys($va_random_items), array('small', 'thumbnail', 'preview','medium', 'widepreview'), array("checkAccess" => $va_access_values));
 
-			foreach($va_random_items as $vn_object_id => $va_object_info) {
-				$va_object_info['title'] = $va_labels[$vn_object_id];
-				$va_object_info['media'] = $va_media[$vn_object_id];
-				$va_random_items[$vn_object_id] = $va_object_info;
-			}
-			$this->view->setVar('random_objects', $va_random_items);
-			if(is_array($va_random_items) && (sizeof($va_random_items) > 0)){
-				$va_object_info = array_shift($va_random_items);
-				$this->view->setVar('random_object_id', $va_object_info['object_id']);
-				$this->view->setVar('random_object_thumb', $va_media[$va_object_info['object_id']]["tags"]["thumbnail"]);
-				$this->view->setVar('random_object_small', $va_media[$va_object_info['object_id']]["tags"]["small"]);
-				$this->view->setVar('random_object_preview', $va_media[$va_object_info['object_id']]["tags"]["preview"]);
-				$this->view->setVar('random_object_widepreview', $va_media[$va_object_info['object_id']]["tags"]["widepreview"]);
-				$this->view->setVar('random_object_medium', $va_media[$va_object_info['object_id']]["tags"]["medium"]);
-			} 	
- 			
  			$this->render('Splash/splash_html.php');
  		}
  		# -------------------------------------------------------
@@ -265,5 +156,89 @@
  			return ($ps_mode == 'singular') ? _t('browse') : _t('browses');
  		}
  		# ------------------------------------------------------
+ 		function About() {
+ 			$this->render('About/Index.php');
+		}
+ 		# ------------------------------------------------------
+ 		function Contribute() {
+ 			require_once(__CA_LIB_DIR__.'/vendor/recaptchalib.php');
+ 			$public_key = '6LeyQ9USAAAAAAZwGLypI3cOgXnVtk9JWbQr8t2e';
+ 			$this->render('Contribute/Index.php');
+		}
+ 		# -------------------------------------------------------
+ 		function Submit() {
+ 			require_once(__CA_LIB_DIR__.'/vendor/recaptchalib.php');
+ 			$private_key = '6LeyQ9USAAAAADnDBtEsxwgjuTQ9JHSVubG0Z4xM';
+ 			$what = strip_tags($this->request->getParameter("what", pString));
+ 			$contact = strip_tags($this->request->getParameter("contact", pString));
+ 			$file = (!empty($_FILES['images']['name'])) ? $_FILES['images'] : false;
+ 			$recaptcha_challenge_field = strip_tags($this->request->getParameter("recaptcha_challenge_field", pString));
+ 			$recaptcha_response_field = strip_tags($this->request->getParameter("recaptcha_response_field", pString));
+ 			$resp = recaptcha_check_answer ($private_key,
+ 			                                $_SERVER["REMOTE_ADDR"],
+ 			                                $recaptcha_challenge_field,
+ 			                                $recaptcha_response_field);
+ 			$error = 0;
+ 			if (empty($what)) { $error++; $this->notification->addNotification(_t("You didn't fill the description field right.")); }
+ 			if (empty($contact)) { $error++; $this->notification->addNotification(_t("You didn't fill the contact field right.")); }
+ 			if (!$resp->is_valid) { $error++; $this->notification->addNotification(_t("You didn't answer the captcha right.")); }
+ 			if ($error == 0) {
+ 				$attachment = false;
+
+				$strTo = 'jmp.testing@gmail.com';
+				$strSubject = 'Doplňte naše sbírky';
+				$strMessage = "Odeslán formulář.\n\n";
+				$strMessage .= "Kontakt:\n";
+				$strMessage .= $contact;
+				$strMessage .= "\n\nPředmět:\n";
+				$strMessage .= $what;
+				$strMessage = nl2br($strMessage);
+
+				//*** Uniqid Session ***//
+				$strSid = md5(uniqid(time()));
+
+				$strHeader = "";
+				$strHeader .= "From: Jewish Museum <noreply@jewishmuseum.cz>\n";
+
+				$strHeader .= "MIME-Version: 1.0\n";
+				$strHeader .= "Content-Type: multipart/mixed; boundary=\"".$strSid."\"\n\n";
+				$strHeader .= "This is a multi-part message in MIME format.\n";
+
+				$strHeader .= "--".$strSid."\n";
+				$strHeader .= "Content-type: text/html; charset=utf-8\n";
+				$strHeader .= "Content-Transfer-Encoding: 7bit\n\n";
+				$strHeader .= $strMessage."\n\n";
+
+				//*** Attachment ***//
+				if($file) {
+					$strFilesName = $file["name"];
+					$allowed_extensions = array('zip','rar','7z','gz');
+					$ext = explode('.', $strFilesName);
+					$ext = strtolower(end($ext));
+					if (!in_array($ext, $allowed_extensions)) { $error++; $this->notification->addNotification(_t("Only %1 allowed.", ".zip, .rar, .gz and .7z")); }
+					$strContent = chunk_split(base64_encode(file_get_contents($file["tmp_name"])));
+					$strHeader .= "--".$strSid."\n";
+					$strHeader .= "Content-Type: application/octet-stream; name=\"".$strFilesName."\"\n";
+					$strHeader .= "Content-Transfer-Encoding: base64\n";
+					$strHeader .= "Content-Disposition: attachment; filename=\"".$strFilesName."\"\n\n";
+					$strHeader .= $strContent."\n\n";
+				}
+				if ($error == 0) {
+					$flgSend = mail($strTo,$strSubject,null,$strHeader);
+				} else {
+					$flgSend = true;
+				}
+				if (!$flgSend) { $error++; $this->notification->addNotification(_t("There was an error trying to submit. Please try again later.")); }
+
+				if ($error > 0) {
+ 					$this::Contribute();
+				} else {
+	 				$this->render('Contribute/Submit.php');
+				}
+ 			} else {
+ 				$this::Contribute();
+ 			}
+		}
+ 		# -------------------------------------------------------
  	}
  ?>

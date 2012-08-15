@@ -388,6 +388,7 @@
 	color: white;
 	&:hover {
 		color: white;
+		background: black;
 	}
 	&.white {
 		background: white;
@@ -730,10 +731,14 @@ b.headline {
 		a {
 			display: block;
 			.size(172px, 134px);
-			background: url(../graphics/logo-JMP-en.png) 0 0 no-repeat;
+			/*background: url(../graphics/logo-JMP-en.png) 0 0 no-repeat;
 			text-indent: -9999px;
 			&.cs_CZ {
 				background-image: url(../graphics/logo-ZMP.png);
+			}*/
+			border: 0;
+			img {
+				border: 0;
 			}
 		}
 	}
@@ -1034,9 +1039,6 @@ b.headline {
 			display: block;
 			margin-bottom: 10px;
 			margin-left: 34px;
-			a {
-				#s .ribbon-text;
-			}
 		}
 	}
 	.footer-links {
@@ -1968,20 +1970,29 @@ body.displaySet {
 }
 
 .form {
+	@width: 620px;
+	width: @width;
 	> div {
 		margin-bottom: 10px;
 	}
-	.button {
-		#s .ribbon-text;
-		margin-top: @baseline;
-	}
 	b {
-		#f .small;
+		display: block;
+		margin-bottom: 10px;
 	}
 	input[type="text"], input[type="password"], textarea {
 		display: block;
-		#s .input;
+		margin-bottom: @baseline;
+		padding: 5px 10px;
+		width: @width - 20;
+		border: 1px solid #ccc;
 	}
+	.info {
+		padding-top: 10px;
+	}
+	.captcha, p, .info {
+		margin-bottom: @baseline;
+	}
+
 }
 #caMediaPanel {
 	display: none;

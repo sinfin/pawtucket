@@ -8,8 +8,8 @@
 </div>
 <div id="footer"><div class="inner">
 	<ul class="footer-left">
-		<li><?php print caNavLink($this->request, _t("Contribute to the collections"), "", "", "Splash", "Contribute"); ?></li>
-		<li><a href="fotoarchiv/jewishmuseum.cz" class="em custom-text" data-em="fotoarchiv/jewishmuseum.cz"><?php print _t('If you wish to obtain digital copies of JMP images, contact us at').' fotoarchiv@jewishmuseum.cz'; ?></a></li>
+		<li><?php print caNavLink($this->request, _t("Contribute to the collections"), "ribbon-link", "", "Splash", "Contribute"); ?></li>
+		<li><a href="fotoarchiv/jewishmuseum.cz" class="em custom-text ribbon-link" data-em="fotoarchiv/jewishmuseum.cz"><?php print _t('If you wish to obtain digital copies of JMP images, contact us at').' fotoarchiv@jewishmuseum.cz'; ?></a></li>
 	</ul>
 	<ul class="footer-links">
 		<!-- <li><a href="#">Lorem ipsum dolor</a></li>
