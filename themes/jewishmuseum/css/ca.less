@@ -1,0 +1,77 @@
+/* -------------------------------------------------*/
+/* tooltips / Rollovers */
+/* -------------------------------------------------*/
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 3px solid #323232;
+	background-color: #FFFFFF;
+	padding: 10px 10px 10px 10px;
+	/*opacity: 0.9;*/
+	text-align: center;
+}
+.tooltipImage { /* used in image rollovers in results and on detail pages */
+	padding: 10px;
+	text-align: center;
+}
+
+.tooltipCaption { /* used in image rollovers in results and on detail pages */
+	margin-top: 10px;
+	width: 360px;
+	text-align: left;
+}
+.tooltipText{ /* used in gallery */
+	text-align:center;
+	padding:10px;
+	font-size:12px;
+	width:400px;
+}
+/* overlay (for object representations) */
+#caMediaPanel {
+	position: fixed; 
+	top: 25px; 
+	left: 50%; 
+	border: 4px solid #ccc; 
+	background-color: #FFFFFF; 
+	width: 840px; 
+	height: 600px; 
+	display: none;
+	margin-left: -430px;
+	padding: 7px;
+}
+#caMediaPanel #close{
+	float: right;
+	width:15px;
+	height:15px;
+	margin:0px;
+	background-image:url("../graphics/x.gif");
+}
+#caMediaPanel #close a{
+	text-decoration:none;
+	font-size:15px;
+}
+#caMediaPanelContentArea {
+
+}
+/* --- browse pop up panels --- */
+.browseSelectPanel, #browse .browseSelectPanel {  /* used in browse and details with browse */
+	position: absolute; 
+	top: 100px; 
+	left: 50%; 
+	border: 3px solid #000000; 
+	background-color: #FFFFFF; 
+	width: 900px; 
+	height: 400px; 
+	display: none;
+	margin-left: -450px;
+	padding: 10px;
+	background-image: url("../graphics/bgStripeBW.gif");
+}
+.browseSelectPanelList { /*  used in browse and details with browse */
+	margin: 0px;
+	width: 878px;
+	height: 310px;
+	overflow: auto;
+	padding: 0 10px 10px;
+	color:#333333;
+}

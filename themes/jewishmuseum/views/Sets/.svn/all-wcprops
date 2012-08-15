@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets
+END
+ajax_delete_item_json.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets/ajax_delete_item_json.php
+END
+xml_set_items.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets/xml_set_items.php
+END
+ajax_reorder_items_json.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets/ajax_reorder_items_json.php
+END
+ajax_add_item_json.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets/ajax_add_item_json.php
+END
+sets_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets/sets_html.php
+END
+sets_slideshow_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Sets/sets_slideshow_html.php
+END

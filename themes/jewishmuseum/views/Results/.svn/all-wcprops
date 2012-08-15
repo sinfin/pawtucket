@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results
+END
+ca_objects_result_caption_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_result_caption_html.php
+END
+ca_objects_results_map_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_results_map_html.php
+END
+ca_places_search_no_results_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/!svn/ver/4178/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_places_search_no_results_html.php
+END
+ca_places_results_full_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_places_results_full_html.php
+END
+ca_occurrences_search_no_results_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/!svn/ver/4178/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_occurrences_search_no_results_html.php
+END
+ca_objects_results_thumbnail_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_results_thumbnail_html.php
+END
+ca_objects_results_map_balloon_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_results_map_balloon_html.php
+END
+ca_occurrences_results_full_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_occurrences_results_full_html.php
+END
+ca_collections_search_no_results_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/!svn/ver/4178/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_collections_search_no_results_html.php
+END
+ca_collections_results_full_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_collections_results_full_html.php
+END
+ca_objects_search_secondary_results.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/!svn/ver/3963/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_search_secondary_results.php
+END
+paging_controls_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/paging_controls_html.php
+END
+ca_entities_search_no_results_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/!svn/ver/4178/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_entities_search_no_results_html.php
+END
+ca_entities_results_full_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_entities_results_full_html.php
+END
+ca_objects_search_no_results_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_search_no_results_html.php
+END
+ca_objects_results_full_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/!svn/ver/6422/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_results_full_html.php
+END
+ca_objects_result_tooltip_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Results/ca_objects_result_tooltip_html.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/conf
+END
+app.conf
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/conf/app.conf
+END
+media_display.conf
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/conf/media_display.conf
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/conf/.htaccess
+END

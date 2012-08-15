@@ -1,0 +1,347 @@
+/////////////////////////////////////
+// RESET
+/////////////////////////////////////
+html, body { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; }
+table { border-collapse: collapse; border-spacing: 0; }
+ol, ul { list-style: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; }
+
+html {
+  overflow-y: scroll;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+    display: none;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
+  *overflow: visible; // Inner spacing ie IE6/7
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer; // Cursors on all buttons applied consistently
+  -webkit-appearance: button; // Style clicable inputs in iOS
+}
+input[type="search"] { // Appearance in Safari/Chrome
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
+}
+textarea {
+  overflow: auto; // Remove vertical scrollbar in IE6-9
+  vertical-align: top; // Readability and alignment cross-browser
+}
+/////////////////////////////////////
+// Mixins
+/////////////////////////////////////
+.behavior() {
+	// behavior: url(@piePath);
+	// position: relative;
+	// z-index: 0;
+}
+.clearfix() {
+  zoom: 1;
+	&:before,
+  &:after {
+    display: table;
+    content: "";
+    zoom: 1;
+    *display: inline;
+	}
+	&:after {
+    clear: both;
+	}
+}
+.centered() {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.size(@width: 5px, @height: 5px) {
+  display: block;
+	width: @width;
+	height: @height;
+}
+.square(@size: 5px) {
+	.size(@size, @size);
+}
+.sq(@size) {
+	.square(@size);
+}
+#font {
+  .shorthand(@weight: normal, @size: @basefont, @lineHeight: @baseline) {
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+  .sans-serif(@weight: normal, @size: @basefont, @lineHeight: @baseline) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+  .serif(@weight: normal, @size: @basefont, @lineHeight: @baseline) {
+    font-family: "Georgia", Times New Roman, Times, serif;
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+  .monospace(@weight: normal, @size: @basefont - 1, @lineHeight: @baseline) {
+    font-family: "Monaco", Courier New, monospace;
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+}
+#gradient {
+  .horizontal (@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor)); // Konqueror
+    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(left, @startColor, @endColor); // Le standard
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE9 and down
+  }
+  .vertical (@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); // Konqueror
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(top, @startColor, @endColor); // The standard
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+  }
+  .directional (@startColor: #555, @endColor: #333, @deg: 45deg) {
+    background-color: @endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(@deg, @startColor, @endColor); // IE10
+    background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(@deg, @startColor, @endColor); // The standard
+  }
+}
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+.opacity(@opacity: 0) {
+	filter: e(%("alpha(opacity=%d)", @opacity));
+	-khtml-opacity: @opacity / 100;
+	  -moz-opacity: @opacity / 100;
+	       opacity: @opacity / 100;
+}
+.hide() {
+  display: none;
+}
+.show() {
+  display: block;
+}
+.ib() {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.rounded(@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+	.behavior;
+}
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+.bold {
+	font-weight: bold;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.sprite(@x: 0, @y: 0, @width, @height) {
+  display: block;
+  .size(@width, @height);
+	background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) @x @y no-repeat;
+}
+.topleft(@top: 0, @left: 0) {
+  position: absolute;
+  top: @top;
+  left: @left;
+  right: auto;
+  bottom: auto;
+}
+.topright(@top: 0, @right: 0) {
+  position: absolute;
+  top: @top;
+  left: auto;
+  right: @right;
+  bottom: auto;
+}
+.bottomleft(@bottom: 0, @left: 0) {
+  position: absolute;
+  top: auto;
+  left: @left;
+  right: auto;
+  bottom: @bottom;
+}
+.bottomright(@bottom: 0, @right: 0) {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: @right;
+  bottom: @bottom;
+}
+.ic(@icoHeight: 16px) {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5 * @icoHeight;
+}
+.fsize(@fontSize: @basefont, @lineHeight: @baseline) {
+	font-size: @fontSize;
+	line-height: @lineHeight;
+}
+.box-sizing(@bs: border-box) {
+  box-sizing: @bs;
+  -moz-box-sizing: @bs;
+  -webkit-box-sizing: @bs;
+  -ms-box-sizing: @bs;
+  -o-box-sizing: @bs;
+}
+.transition(@transition: all 0.3s ease-in-out) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-o-transition: @transition;
+	-ms-transition: @transition;
+	transition: @transition;
+}
+.no-transition() {
+	.transition(none 0s);
+}
+/////////////////////////////////////
+// Fonts
+/////////////////////////////////////
+// body, p, a, div, span, li, strong, small, b, i, h1, h2, h3, h4, h5, label, input, textarea, button {
+  // #font > .sans-serif(normal,@basefont,@baseline);
+// }
+p {
+  margin-bottom: @baseline / 2;
+  small {
+    font-size: @basefont - 2;
+  }
+}
+b, strong { .bold }
+em, i { font-style: italic }
+/////////////////////////////////////
+// Lists
+/////////////////////////////////////
+ul, ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/////////////////////////////////////
+// Tables
+/////////////////////////////////////
+table {
+  border-collapse: separate; // Done so we can round those corners!
+  *border-collapse: collapse; /* IE7, collapse table to remove spacing */
+  font-size: @basefont;
+}
+/////////////////////////////////////
+// Forms
+/////////////////////////////////////
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+textarea {
+	resize: none;
+}

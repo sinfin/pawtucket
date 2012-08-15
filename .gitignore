@@ -1,0 +1,10 @@
+themes/default
+themes/iphone
+themes/queensmemory
+app/tmp
+app/tmp/*
+media
+media/
+public/*
+public
+setup.php

@@ -1,0 +1,3616 @@
+@font-face {
+  font-family: 'TitilliumText22LThin';
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L001-webfont.eot');
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L001-webfont.eot?#iefix') format('embedded-opentype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L001-webfont.woff') format('woff'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L001-webfont.ttf') format('truetype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L001-webfont.svg#TitilliumText22LThin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitilliumText22LLight';
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L002-webfont.eot');
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L002-webfont.eot?#iefix') format('embedded-opentype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L002-webfont.woff') format('woff'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L002-webfont.ttf') format('truetype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L002-webfont.svg#TitilliumText22LLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitilliumText22LRegular';
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L003-webfont.eot');
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L003-webfont.eot?#iefix') format('embedded-opentype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L003-webfont.woff') format('woff'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L003-webfont.ttf') format('truetype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L003-webfont.svg#TitilliumText22LRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitilliumText22LMedium';
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L004-webfont.eot');
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L004-webfont.eot?#iefix') format('embedded-opentype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L004-webfont.woff') format('woff'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L004-webfont.ttf') format('truetype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L004-webfont.svg#TitilliumText22LMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitilliumText22LBold';
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L005-webfont.eot');
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L005-webfont.eot?#iefix') format('embedded-opentype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L005-webfont.woff') format('woff'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L005-webfont.ttf') format('truetype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L005-webfont.svg#TitilliumText22LBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitilliumText22LXBold';
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L006-webfont.eot');
+  src: url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L006-webfont.eot?#iefix') format('embedded-opentype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L006-webfont.woff') format('woff'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L006-webfont.ttf') format('truetype'), url('http://localhost/pt_test/themes/jewishmuseum/fonts/TitilliumText/TitilliumText22L006-webfont.svg#TitilliumText22LXBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  line-height: 1;
+  font-family: inherit;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+html {
+  overflow-y: scroll;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+.bold {
+  font-weight: bold;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+p {
+  margin-bottom: 9px;
+}
+p small {
+  font-size: 11px;
+}
+b,
+strong {
+  font-weight: bold;
+  font-weight: bold;
+}
+em,
+i {
+  font-style: italic;
+}
+ul,
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  *border-collapse: collapse;
+  /* IE7, collapse table to remove spacing */
+
+  font-size: 13px;
+}
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+textarea {
+  resize: none;
+}
+/*
+ * jQuery UI CSS Framework 1.8.18
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden {
+  display: none;
+}
+.ui-helper-hidden-accessible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+}
+.ui-helper-clearfix:after {
+  clear: both;
+}
+.ui-helper-clearfix {
+  zoom: 1;
+}
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+  cursor: default !important;
+}
+/* Icons
+----------------------------------*/
+/* states and images */
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+.ui-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
+ * jQuery UI CSS Framework 1.8.18
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ctl=themeroller
+ */
+/* Component containers
+----------------------------------*/
+.ui-widget {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.1em;
+}
+.ui-widget .ui-widget {
+  font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1em;
+}
+.ui-widget-content {
+  border: 1px solid #aaaaaa;
+  background: #ffffff url(images/ui-bg_glass_75_ffffff_1x400.png) 50% 50% repeat-x;
+  color: #222222;
+}
+.ui-widget-content a {
+  color: #222222;
+}
+.ui-widget-header {
+  border: 1px solid #aaaaaa;
+  background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+  color: #222222;
+  font-weight: bold;
+}
+.ui-widget-header a {
+  color: #222222;
+}
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+  font-weight: normal;
+  color: #555555;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+  color: #555555;
+  text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  border: 1px solid #999999;
+  background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
+  font-weight: normal;
+  color: #212121;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover {
+  color: #212121;
+  text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: 1px solid #aaaaaa;
+  background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+  font-weight: normal;
+  color: #212121;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+  color: #212121;
+  text-decoration: none;
+}
+.ui-widget :active {
+  outline: none;
+}
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  border: 1px solid #fcefa1;
+  background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+  color: #363636;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+  color: #363636;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+  border: 1px solid #cd0a0a;
+  background: #fef1ec url(images/ui-bg_inset-soft_95_fef1ec_1x100.png) 50% bottom repeat-x;
+  color: #cd0a0a;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+  color: #cd0a0a;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+  color: #cd0a0a;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+  font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+  opacity: .7;
+  filter: alpha(opacity=70);
+  font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+  opacity: .35;
+  filter: alpha(opacity=35);
+  background-image: none;
+}
+/* Icons
+----------------------------------*/
+/* states and images */
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+.ui-widget-content .ui-icon {
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+.ui-widget-header .ui-icon {
+  background-image: url(images/ui-icons_222222_256x240.png);
+}
+.ui-state-default .ui-icon {
+  background-image: url(images/ui-icons_888888_256x240.png);
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+  background-image: url(images/ui-icons_454545_256x240.png);
+}
+.ui-state-active .ui-icon {
+  background-image: url(images/ui-icons_454545_256x240.png);
+}
+.ui-state-highlight .ui-icon {
+  background-image: url(images/ui-icons_2e83ff_256x240.png);
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+  background-image: url(images/ui-icons_cd0a0a_256x240.png);
+}
+/* positioning */
+/* Misc visuals
+----------------------------------*/
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -khtml-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -khtml-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -khtml-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -khtml-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.ui-widget-overlay {
+  background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+  opacity: .30;
+  filter: alpha(opacity=30);
+}
+.ui-widget-shadow {
+  margin: -8px 0 0 -8px;
+  padding: 8px;
+  background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+  opacity: .30;
+  filter: alpha(opacity=30);
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.ui-slider {
+  position: relative;
+  text-align: left;
+}
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: default;
+}
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  background-position: 0 0;
+}
+.ui-slider-horizontal {
+  height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  top: -0.3em;
+  margin-left: -0.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
+}
+.ui-slider-vertical {
+  width: .8em;
+  height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+  left: -0.3em;
+  margin-left: 0;
+  margin-bottom: -0.6em;
+}
+.ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+  bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+  top: 0;
+}
+/* Overlays */
+.ui-widget-overlay {
+  background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+  opacity: .30;
+  filter: alpha(opacity=30);
+}
+.ui-widget-shadow {
+  margin: -8px 0 0 -8px;
+  padding: 8px;
+  background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+  opacity: .30;
+  filter: alpha(opacity=30);
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+/*!
+ * jQuery UI Dialog 1.8.20
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Dialog#theming
+ */
+.ui-dialog {
+  position: absolute;
+  padding: .2em;
+  width: 300px;
+  overflow: hidden;
+}
+.ui-dialog .ui-dialog-titlebar {
+  padding: .4em 1em;
+  position: relative;
+}
+.ui-dialog .ui-dialog-title {
+  float: left;
+  margin: .1em 16px .1em 0;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: .3em;
+  top: 50%;
+  width: 19px;
+  margin: -10px 0 0 0;
+  padding: 1px;
+  height: 18px;
+}
+.ui-dialog .ui-dialog-titlebar-close span {
+  display: block;
+  margin: 1px;
+}
+.ui-dialog .ui-dialog-titlebar-close:hover,
+.ui-dialog .ui-dialog-titlebar-close:focus {
+  padding: 0;
+}
+.ui-dialog .ui-dialog-content {
+  position: relative;
+  border: 0;
+  padding: .5em 1em;
+  background: none;
+  overflow: auto;
+  zoom: 1;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  text-align: left;
+  border-width: 1px 0 0 0;
+  background-image: none;
+  margin: .5em 0 0 0;
+  padding: .3em 1em .5em .4em;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+  margin: .5em .4em .5em 0;
+  cursor: pointer;
+}
+.ui-dialog .ui-resizable-se {
+  width: 14px;
+  height: 14px;
+  right: 3px;
+  bottom: 3px;
+}
+.ui-draggable .ui-dialog-titlebar {
+  cursor: move;
+}
+.clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.bold {
+  font-weight: bold;
+}
+.cs,
+.sidebar {
+  float: left;
+  width: 310px;
+}
+.cm,
+.content {
+  margin-left: 330px;
+}
+.row {
+  zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.row:after {
+  clear: both;
+}
+#s .grid-item .img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  float: left;
+}
+#s .grid-item .text {
+  margin-left: 160px;
+}
+#s .grid-item .text h2 a,
+#s .grid-item .text h3 a,
+#s .grid-item .text h4 a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#s .grid-item .text h2 a a,
+#s .grid-item .text h3 a a,
+#s .grid-item .text h4 a a {
+  color: #333333;
+}
+#s .grid-item .text h2 a a:hover,
+#s .grid-item .text h3 a a:hover,
+#s .grid-item .text h4 a a:hover {
+  color: #009bd9;
+}
+#s .grid-item .text h2 a:hover,
+#s .grid-item .text h3 a:hover,
+#s .grid-item .text h4 a:hover {
+  color: #009bd9;
+}
+#s .grid-item .text .more {
+  padding-top: 18px;
+}
+#s .grid-item .text .more a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+#s .grid-item .text .more a a {
+  color: #333333;
+}
+#s .grid-item .text .more a a:hover {
+  color: #009bd9;
+}
+#s .grid-item .text .more a:hover {
+  color: #009bd9;
+}
+#z .hier-tree {
+  z-index: 999;
+}
+.border-top {
+  border-top: 1px solid #e6e6e6;
+}
+.clearfix-me {
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  visibility: hidden;
+}
+.logo-small {
+  background: url(../graphics/logo-JMP-small-en.png) center center no-repeat;
+  text-indent: -9999px;
+  display: block;
+  width: 85px;
+  height: 60px;
+}
+.logo-small.cs_CZ {
+  background-image: url(../graphics/logo-ZMP-small.png);
+}
+.arrow {
+  display: block;
+  display: block;
+  width: 7px;
+  height: 9px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -47px no-repeat;
+}
+.arrow.next {
+  background-position: -10px -47px;
+}
+.arrow-left {
+  display: block;
+  display: block;
+  width: 7px;
+  height: 9px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -47px no-repeat;
+}
+.arrow-right {
+  display: block;
+  display: block;
+  width: 7px;
+  height: 9px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -10px -47px no-repeat;
+}
+.arrow-down {
+  display: block;
+  display: block;
+  width: 9px;
+  height: 7px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -43px -59px no-repeat;
+}
+.arrow-down.active,
+.arrow-down:hover {
+  background-position: -21px -59px;
+}
+.arrow-up {
+  display: block;
+  display: block;
+  width: 9px;
+  height: 7px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -54px -59px no-repeat;
+}
+.arrow-up.active,
+.arrow-up:hover {
+  background-position: -32px -59px;
+}
+.img {
+  text-align: right;
+}
+.img img {
+  display: inline;
+}
+.img a {
+  display: block;
+  text-align: right;
+}
+.ribbon {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  line-height: 22px;
+  padding-left: 40px;
+  padding-right: 13px;
+  color: white;
+  background-color: #009bd9;
+  position: relative;
+  left: -40px;
+}
+.ribbon a {
+  color: #333333;
+}
+.ribbon a:hover {
+  color: #009bd9;
+}
+.ribbon-link {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 3px 7px;
+  background-color: #009bd9;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-decoration: none;
+  color: white;
+}
+.ribbon-link a {
+  color: #333333;
+}
+.ribbon-link a:hover {
+  color: #009bd9;
+}
+.ribbon-link:hover {
+  color: white;
+}
+.ribbon-link.white {
+  background: white;
+  color: black;
+}
+.ribbon-link.white:hover {
+  color: black;
+}
+.ribbon-link.with-arrow {
+  padding-right: 25px;
+  position: relative;
+}
+.ribbon-link.with-arrow span {
+  position: absolute;
+  top: 50%;
+  margin-top: -4.5px;
+  right: 10px;
+}
+.ico-file {
+  display: block;
+  display: block;
+  width: 16px;
+  height: 14px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -77px no-repeat;
+}
+.ico-folder {
+  display: block;
+  display: block;
+  width: 16px;
+  height: 14px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -20px -77px no-repeat;
+}
+.ico-folder-open {
+  display: block;
+  display: block;
+  width: 16px;
+  height: 14px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -40px -77px no-repeat;
+}
+.ico-minus {
+  display: block;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -37px -47px no-repeat;
+}
+.ico-plus {
+  display: block;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -24px -47px no-repeat;
+}
+.ico-close {
+  display: block;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -50px -47px no-repeat;
+}
+.ico-left {
+  display: block;
+  display: block;
+  width: 7px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -47px no-repeat;
+}
+.ico-right {
+  display: block;
+  display: block;
+  width: 7px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -10px -47px no-repeat;
+}
+.ico-triangle {
+  display: block;
+  display: block;
+  width: 8px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -95px no-repeat;
+}
+.ico-fullscreen {
+  display: block;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -30px -95px no-repeat;
+}
+.in .ico-fullscreen {
+  background-position: -50px -95px;
+}
+::selection {
+  background: #009bd9;
+  color: white;
+}
+::-moz-selection {
+  background: #009bd9;
+  color: white;
+}
+::-webkit-selection {
+  background: #009bd9;
+  color: white;
+}
+html,
+body {
+  height: 100%;
+}
+#page-wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px;
+  min-width: 1000px;
+}
+body {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  width: 100%;
+  min-width: 960px;
+  position: relative;
+  float: left;
+  zoom: 1;
+}
+body a {
+  color: #333333;
+}
+body a:hover {
+  color: #009bd9;
+}
+body:before,
+body:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+body:after {
+  clear: both;
+}
+body,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+}
+p,
+div {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+}
+p a,
+div a {
+  color: #333333;
+}
+p a:hover,
+div a:hover {
+  color: #009bd9;
+}
+a {
+  color: black;
+}
+h1 {
+  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  line-height: 39px;
+}
+strong.type {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+strong.type a {
+  color: #333333;
+}
+strong.type a:hover {
+  color: #009bd9;
+}
+.current a,
+a:hover {
+  color: #009bd9;
+}
+b.headline {
+  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  line-height: 39px;
+  font-weight: normal;
+}
+.notificationMessage {
+  margin-bottom: 18px;
+}
+.collections-list {
+  margin-right: 20px;
+}
+.collections-list li {
+  margin-bottom: 54px;
+}
+.collections-list li .more {
+  padding-top: 18px;
+}
+.collections-list li .more a {
+  font-weight: bold;
+}
+.collections-list li .img {
+  float: left;
+  width: 140px;
+}
+.collections-list li .text {
+  margin-left: 160px;
+}
+.collections-list li .text h2 {
+  display: block;
+  margin-bottom: 18px;
+}
+.collections-list li .text h2 a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+.collections-list li .text h2 a a {
+  color: #333333;
+}
+.collections-list li .text h2 a a:hover {
+  color: #009bd9;
+}
+.collections-list li .text h2 a:hover {
+  color: #009bd9;
+}
+.to-sidebar {
+  position: absolute;
+  top: 0;
+  left: -286px;
+}
+.to-sidebar .headline {
+  display: block;
+  margin-bottom: 40px;
+}
+.to-sidebar a {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+.to-sidebar a a {
+  color: #666666;
+}
+.to-sidebar a a:hover {
+  color: #009bd9;
+}
+.sidebar,
+.content {
+  border-top: 1px solid #e6e6e6;
+}
+.sidebar {
+  padding-top: 20px;
+}
+.content .notificationMessage {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  padding-top: 20px;
+  color: #009bd9;
+}
+.content .notificationMessage a {
+  color: #333333;
+}
+.content .notificationMessage a:hover {
+  color: #009bd9;
+}
+.content h1 {
+  display: block;
+  margin: 0;
+  padding: 20px 0;
+}
+.tabs {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  zoom: 1;
+}
+.tabs:before,
+.tabs:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.tabs:after {
+  clear: both;
+}
+.tabs > li {
+  float: left;
+}
+.tabs > li > a {
+  display: block;
+}
+.tabs {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+}
+.tabs > li {
+  position: relative;
+  top: 1px;
+}
+.tabs > li > a {
+  padding: 0 15px;
+  margin-right: 9px;
+  line-height: 36px;
+  border: 1px solid #e6e6e6;
+  outline: 0;
+  color: black;
+  text-decoration: none;
+  background-color: #f2f2f2;
+}
+.tabs > li > a:hover {
+  background-color: white;
+}
+.tabs > li.active > a {
+  background-color: white;
+  border-bottom-color: white;
+}
+.tab-content {
+  zoom: 1;
+}
+.tab-content:before,
+.tab-content:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.tab-content:after {
+  clear: both;
+}
+.tab-content > div {
+  display: none;
+}
+.tab-content > div.active {
+  display: block;
+}
+.item-nav {
+  position: relative;
+  height: 21px;
+  padding: 5px 0;
+  zoom: 1;
+}
+.item-nav:before,
+.item-nav:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.item-nav:after {
+  clear: both;
+}
+.item-nav .item-nav-left {
+  float: left;
+}
+.item-nav .item-nav-left a {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  float: left;
+  margin-right: 2px;
+}
+.item-nav .item-nav-left a a {
+  color: #666666;
+}
+.item-nav .item-nav-left a a:hover {
+  color: #009bd9;
+}
+.item-nav .item-nav-left a:hover {
+  color: #333333;
+}
+.item-nav .item-nav-idno {
+  float: right;
+}
+.item-nav .item-nav-idno .idno-wrap {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: left;
+}
+.item-nav .item-nav-idno .idno-wrap small {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  position: relative;
+  padding-left: 26px;
+}
+.item-nav .item-nav-idno .idno-wrap small .icon-item-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  display: block;
+  width: 20px;
+  height: 100%;
+  border-right: 1px solid #e6e6e6;
+}
+.item-nav .item-nav-idno .idno-wrap small .icon-item-nav span {
+  display: block;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -115px no-repeat;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  left: 50%;
+  margin-left: -4px;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  background: white;
+  border: 1px solid #999;
+  -webkit-box-shadow: 0 0 5px #888888;
+  -moz-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+  z-index: 999;
+  padding: 10px 0 18px 0;
+  display: none;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree.in {
+  display: block;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree strong {
+  font-weight: bold;
+  display: block;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree .close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree li {
+  padding: 0 18px 0 38px;
+  position: relative;
+  padding-bottom: 15px;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree li.last {
+  padding-bottom: 0;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree li .ico {
+  position: absolute;
+  top: 2px;
+  left: 18px;
+  right: auto;
+  bottom: auto;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree li,
+.item-nav .item-nav-idno .idno-wrap #hier-tree a {
+  font-size: 13px;
+  line-height: 18px;
+}
+.item-nav .item-nav-idno .idno-wrap #hier-tree a {
+  font-weight: normal;
+  background: transparent;
+  text-decoration: underline;
+}
+.item-nav a {
+  font-weight: bold;
+  text-decoration: none;
+}
+.item-nav small,
+.item-nav a {
+  padding: 3px 5px;
+  background-color: #f4f4f4;
+}
+.item-nav .arrow,
+.item-nav small {
+  float: left;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  margin-right: 5px;
+}
+.item-nav .arrow a,
+.item-nav small a {
+  color: #666666;
+}
+.item-nav .arrow a:hover,
+.item-nav small a:hover {
+  color: #009bd9;
+}
+.item-nav .arrow.next,
+.item-nav small.next {
+  margin-right: 0;
+}
+.item-nav .arrow {
+  position: relative;
+  top: 5px;
+  padding: 0;
+}
+#header {
+  width: 100%;
+  min-width: 960px;
+  position: relative;
+  float: left;
+  zoom: 1;
+  height: 134px;
+}
+#header:before,
+#header:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#header:after {
+  clear: both;
+}
+#header #online-exhibition-search {
+  display: none;
+}
+#header #main-menu {
+  zoom: 1;
+  padding-top: 81px;
+}
+#header #main-menu:before,
+#header #main-menu:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#header #main-menu:after {
+  clear: both;
+}
+#header #main-menu li {
+  float: left;
+  display: block;
+  margin-right: 20px;
+}
+#header #main-menu li a {
+  font-size: 15px;
+  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#header #main-menu li a a {
+  color: #333333;
+}
+#header #main-menu li a a:hover {
+  color: #009bd9;
+}
+#header #main-menu li a:hover {
+  color: #009bd9;
+}
+#header #logo a {
+  display: block;
+  display: block;
+  width: 172px;
+  height: 134px;
+  background: url(../graphics/logo-JMP-en.png) 0 0 no-repeat;
+  text-indent: -9999px;
+}
+#header #logo a.cs_CZ {
+  background-image: url(../graphics/logo-ZMP.png);
+}
+#header #header-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+#header #header-box a {
+  color: #666666;
+}
+#header #header-box a:hover {
+  color: #009bd9;
+}
+#header #header-box form {
+  display: inline;
+}
+#header #header-box ul {
+  display: inline;
+}
+#header #header-box ul li {
+  list-style: none;
+  display: inline;
+  margin-left: 5px;
+}
+#main {
+  width: 100%;
+  min-width: 960px;
+  position: relative;
+  float: left;
+  zoom: 1;
+  margin-bottom: 40px;
+}
+#main:before,
+#main:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#main:after {
+  clear: both;
+}
+#navigation .menu li {
+  margin-left: 34px;
+  display: block;
+  margin-bottom: 12px;
+}
+#navigation .menu li a,
+#navigation .menu li .facetLink {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#navigation .menu li a a,
+#navigation .menu li .facetLink a {
+  color: #333333;
+}
+#navigation .menu li a a:hover,
+#navigation .menu li .facetLink a:hover {
+  color: #009bd9;
+}
+#navigation .menu li.current a,
+#navigation .menu li a:hover {
+  color: #009bd9;
+}
+#navigation .browse {
+  border: 1px solid #e6e6e6;
+  border-width: 1px 0;
+  top: -7px;
+  padding-top: 5px;
+  padding-left: 34px;
+  padding-bottom: 12px;
+  position: relative;
+}
+#navigation .browse a,
+#navigation .browse .facetLink {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#navigation .browse a a,
+#navigation .browse .facetLink a {
+  color: #333333;
+}
+#navigation .browse a a:hover,
+#navigation .browse .facetLink a:hover {
+  color: #009bd9;
+}
+#navigation .browse.current a,
+#navigation .browse a:hover {
+  color: #009bd9;
+}
+#navigation .browse .browse-link {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  margin-bottom: 12px;
+}
+#navigation .browse .browse-link span {
+  background-position: -10px -47px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4.5px;
+  left: -15px;
+}
+#navigation .browse.active .browse-link {
+  color: #009bd9;
+}
+#navigation .browse.active .browse-link span {
+  display: block;
+  width: 10px;
+  height: 7px;
+  background-position: -20px -59px;
+  margin-top: -3.5px;
+}
+#navigation .browse #search {
+  width: 263px;
+  border: 1px solid #e6e6e6;
+  position: relative;
+  left: -6px;
+  top: -7px;
+  margin-bottom: 15px;
+}
+#navigation .browse #search input {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  width: 228px;
+  padding: 7px 30px 7px 5px;
+  border: 0;
+}
+#navigation .browse #search input a {
+  color: #333333;
+}
+#navigation .browse #search input a:hover {
+  color: #009bd9;
+}
+#navigation .browse #search .submit {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 5px;
+  display: block;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -59px no-repeat;
+}
+#navigation .browse #search .submit input {
+  display: block;
+  width: 16px;
+  height: 16px;
+  filter: alpha(opacity=0);
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  padding: 0;
+  cursor: pointer;
+}
+#navigation #detail-online-exhibitions {
+  margin-left: 34px;
+  padding-top: 27px;
+}
+#navigation #detail-online-exhibitions ul {
+  width: 259px;
+}
+#navigation #detail-online-exhibitions ul li {
+  margin-bottom: 27px;
+}
+#main-home .sidebar,
+#main-home .content {
+  border-top: 0;
+  padding-top: 0;
+}
+#main-home .sidebar b.headline {
+  display: block;
+  margin-bottom: 40px;
+}
+#main-home .sidebar b.headline,
+#main-home .sidebar a {
+  margin-left: 34px;
+}
+#home-dark {
+  zoom: 1;
+  position: relative;
+  clear: both;
+}
+#home-dark:before,
+#home-dark:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#home-dark:after {
+  clear: both;
+}
+#home-dark #home-dark-inner {
+  zoom: 1;
+  clear: both;
+  background-color: #232124;
+  color: white;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+#home-dark #home-dark-inner:before,
+#home-dark #home-dark-inner:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#home-dark #home-dark-inner:after {
+  clear: both;
+}
+#home-dark a {
+  color: white;
+}
+#home-dark a:hover {
+  color: #009bd9;
+}
+#home-dark .home-dark-more-link {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 10px;
+  bottom: 100%;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  padding: 4px 10px 2px;
+  background: #4d4d4d;
+  color: white;
+}
+#home-dark .home-dark-more-link a {
+  color: #666666;
+}
+#home-dark .home-dark-more-link a:hover {
+  color: #009bd9;
+}
+#home-dark .home-dark-more-link:hover {
+  color: white;
+}
+#home-dark #home-dark-left,
+#home-dark #home-dark-right {
+  display: block;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  overflow: hidden;
+}
+#home-dark #home-dark-left .ico,
+#home-dark #home-dark-right .ico {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+}
+#home-dark #home-dark-left {
+  left: 10px;
+}
+#home-dark #home-dark-left .ico {
+  border-left: 0;
+  border-right: 8px solid #009bd9;
+}
+#home-dark #home-dark-right {
+  right: 10px;
+}
+#home-dark #home-dark-right .ico {
+  border-left: 8px solid #009bd9;
+  border-right: 0;
+}
+#home-dark ul {
+  zoom: 1;
+  padding: 0 10px;
+}
+#home-dark ul:before,
+#home-dark ul:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#home-dark ul:after {
+  clear: both;
+}
+#home-dark ul li {
+  float: left;
+  width: 380px;
+  margin-right: 20px;
+}
+#home-dark ul li .img {
+  float: left;
+  display: block;
+  width: 140px;
+  height: 93px;
+  overflow: hidden;
+}
+#home-dark ul li .text {
+  margin-left: 160px;
+}
+#home-dark ul li .text h3 {
+  font-weight: normal;
+}
+#home-dark ul li .text h3 a {
+  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  color: #ed7c0e;
+  text-decoration: none;
+}
+#home-dark ul li .text .description {
+  margin: 9px 0;
+}
+#home-dark ul li .text a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+#home-dark ul li .text a a {
+  color: #333333;
+}
+#home-dark ul li .text a a:hover {
+  color: #009bd9;
+}
+#home-dark ul li .text .description,
+#home-dark ul li .text a {
+  color: white;
+}
+#home-dark ul.count-1,
+#home-dark ul.count-2 {
+  padding-left: 320px;
+}
+#home-featured {
+  overflow: hidden;
+  padding-right: 20px;
+}
+#home-featured ul li {
+  display: block;
+  background-color: white;
+  float: left;
+}
+#home-featured ul li .img {
+  float: left;
+  margin-right: 20px;
+}
+#home-featured ul li .img a {
+  display: block;
+}
+#home-featured ul li .img a .horizontal {
+  width: auto;
+  height: 100%;
+}
+#home-featured ul li .img a .vertical {
+  height: auto;
+  width: 100%;
+}
+#home-featured ul li .text .ribbon {
+  margin-bottom: 20px;
+}
+#home-featured ul li .text h2 {
+  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  line-height: 39px;
+  margin-bottom: 18px;
+}
+#home-featured ul li .text h2 a {
+  color: black;
+  text-decoration: none;
+}
+#home-featured ul li .text p {
+  margin: 18px 0;
+}
+#home-featured ul li .text .year-type a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 10px;
+}
+#home-featured ul li .text .more a {
+  font-weight: bold;
+}
+#home-featured #home-featured-pagination {
+  zoom: 1;
+  display: none;
+  height: 40px;
+}
+#home-featured #home-featured-pagination:before,
+#home-featured #home-featured-pagination:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#home-featured #home-featured-pagination:after {
+  clear: both;
+}
+#home-featured #home-featured-pagination a {
+  display: block;
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -13px 0 no-repeat;
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  bottom: -14.5px;
+}
+#home-featured #home-featured-pagination a.selected,
+#home-featured #home-featured-pagination a:hover {
+  background-position: 0 0;
+}
+#home-featured #home-featured-pagination a span {
+  display: none;
+  font-size: 0;
+  line-height: 0;
+}
+.grid {
+  position: relative;
+}
+.grid ul {
+  zoom: 1;
+}
+.grid ul:before,
+.grid ul:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.grid ul:after {
+  clear: both;
+}
+.grid ul li {
+  float: left;
+  width: 300px;
+  margin: 0 20px 20px 0;
+}
+.grid ul li .img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  float: left;
+}
+.grid ul li .text {
+  margin-left: 160px;
+}
+.grid ul li .text h2 a,
+.grid ul li .text h3 a,
+.grid ul li .text h4 a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+.grid ul li .text h2 a a,
+.grid ul li .text h3 a a,
+.grid ul li .text h4 a a {
+  color: #333333;
+}
+.grid ul li .text h2 a a:hover,
+.grid ul li .text h3 a a:hover,
+.grid ul li .text h4 a a:hover {
+  color: #009bd9;
+}
+.grid ul li .text h2 a:hover,
+.grid ul li .text h3 a:hover,
+.grid ul li .text h4 a:hover {
+  color: #009bd9;
+}
+.grid ul li .text .more {
+  padding-top: 18px;
+}
+.grid ul li .text .more a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+.grid ul li .text .more a a {
+  color: #333333;
+}
+.grid ul li .text .more a a:hover {
+  color: #009bd9;
+}
+.grid ul li .text .more a:hover {
+  color: #009bd9;
+}
+#push {
+  clear: both;
+  height: 200px;
+}
+#footer {
+  width: 100%;
+  min-width: 960px;
+  position: relative;
+  float: left;
+  zoom: 1;
+  height: 200px;
+  background-color: #f4f4f4;
+}
+#footer:before,
+#footer:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#footer:after {
+  clear: both;
+}
+#footer > .inner {
+  padding: 40px 0;
+}
+#footer .footer-left {
+  width: 310px;
+  margin-right: 20px;
+  float: left;
+}
+#footer .footer-left li {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 34px;
+}
+#footer .footer-left li a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 3px 7px;
+  background-color: #009bd9;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+#footer .footer-left li a a {
+  color: #333333;
+}
+#footer .footer-left li a a:hover {
+  color: #009bd9;
+}
+#footer .footer-links {
+  width: 300px;
+  margin-right: 20px;
+  float: left;
+}
+#footer .footer-links li {
+  display: block;
+}
+#footer .footer-links li.copyright {
+  /*padding-top: 30px;*/
+
+  padding-top: 5px;
+}
+#footer .footer-links li,
+#footer .footer-links li a {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+#footer .footer-links li a,
+#footer .footer-links li a a {
+  color: #666666;
+}
+#footer .footer-links li a:hover,
+#footer .footer-links li a a:hover {
+  color: #009bd9;
+}
+#footer .footer-newsletter {
+  float: left;
+}
+#footer .footer-newsletter label {
+  display: block;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  font-weight: bold;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#footer .footer-newsletter label a {
+  color: #666666;
+}
+#footer .footer-newsletter label a:hover {
+  color: #009bd9;
+}
+#footer .footer-newsletter .input input {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  padding: 5px 10px;
+}
+#footer .footer-newsletter .input input a {
+  color: #666666;
+}
+#footer .footer-newsletter .input input a:hover {
+  color: #009bd9;
+}
+#footer .footer-share {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+#footer .footer-share .ico {
+  display: block;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -14px no-repeat;
+  margin-bottom: 10px;
+}
+#footer .footer-share .ico.rss {
+  background-position: -34px -14px;
+}
+#detail {
+  position: relative;
+}
+#detail #detail-left,
+#detail > .item-nav {
+  margin-right: 260px;
+}
+#detail > .item-nav .item-nav-left a {
+  height: 15px;
+}
+#detail #detail-online-exhibitions {
+  display: none;
+}
+#detail .title {
+  position: relative;
+}
+#detail .title .logo-small {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  right: 0;
+  display: none;
+}
+#detail h1 {
+  display: block;
+  padding: 15px 0 40px;
+}
+#detail #detail-left {
+  zoom: 1;
+  margin-bottom: 35px;
+}
+#detail #detail-left:before,
+#detail #detail-left:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#detail #detail-left:after {
+  clear: both;
+}
+#detail #detail-right {
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  width: 240px;
+  background-color: #f4f4f4;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+#detail #detail-right a {
+  color: #666666;
+}
+#detail #detail-right a:hover {
+  color: #009bd9;
+}
+#detail #detail-right a,
+#detail #detail-right b.header,
+#detail #detail-right div,
+#detail #detail-right li,
+#detail #detail-right p {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+#detail #detail-right a a,
+#detail #detail-right b.header a,
+#detail #detail-right div a,
+#detail #detail-right li a,
+#detail #detail-right p a {
+  color: #666666;
+}
+#detail #detail-right a a:hover,
+#detail #detail-right b.header a:hover,
+#detail #detail-right div a:hover,
+#detail #detail-right li a:hover,
+#detail #detail-right p a:hover {
+  color: #009bd9;
+}
+#detail #detail-right b.heading {
+  display: block;
+  font-weight: bold;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 15px;
+}
+#detail #detail-right > .inner {
+  padding: 20px;
+}
+#detail #detail-right > .inner > div {
+  margin-bottom: 15px;
+}
+#detail #detail-right > .inner > div.item-share {
+  margin-bottom: 0;
+}
+#detail #detail-right .item-collections .description {
+  display: none;
+}
+#detail #detail-right .item-type,
+#detail #detail-right .item-type a {
+  font-weight: bold;
+  font-weight: bold;
+  color: black;
+}
+#detail #detail-right .item-places ul li {
+  display: inline;
+}
+#detail #detail-full {
+  clear: both;
+  border-top: 1px solid #e6e6e6;
+}
+#detail #detail-full b.heading {
+  display: block;
+  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  line-height: 39px;
+  font-weight: normal;
+  padding: 20px 0;
+}
+#detail #tab-video .video .name {
+  display: none;
+}
+#detail #tab-images {
+  position: relative;
+}
+#detail #tab-images #detail-left-pagination {
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+  z-index: 3;
+}
+#detail #tab-images #detail-left-pagination.fixed {
+  position: fixed;
+  left: 330px;
+  top: 0;
+}
+#detail #tab-images #detail-left-pagination select {
+  float: left;
+  margin-right: 8px;
+  width: 100px;
+}
+#detail #tab-images #detail-left-pagination select option {
+  text-align: right;
+}
+#detail #tab-images #detail-left-pagination .arrow-wrap {
+  float: left;
+  cursor: pointer;
+  padding: 5px;
+}
+#detail #tab-images #detail-left-pagination #fullscreen-toggle {
+  display: block;
+  float: right;
+  position: relative;
+  padding-right: 26px;
+  font-weight: bold;
+  color: #009bd9;
+  cursor: pointer;
+}
+#detail #tab-images #detail-left-pagination #fullscreen-toggle span {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 0;
+}
+#detail #tab-images > ul {
+  clear: left;
+  display: block;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+#detail #tab-images > ul li {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#detail #tab-images > ul li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+#detail #tab-images > ul li .big,
+#detail #tab-images > ul li .small {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin: 0 auto;
+  position: relative;
+}
+#detail #tab-images > ul li .big img,
+#detail #tab-images > ul li .small img {
+  z-index: 1;
+}
+#detail #tab-images > ul li .big .watermark,
+#detail #tab-images > ul li .small .watermark {
+  z-index: 2;
+  display: block;
+  width: 72px;
+  height: 45px;
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 30px;
+  bottom: 20px;
+  background: url(../graphics/vodoznak-en.png) 0 0 no-repeat;
+}
+#detail #tab-images > ul li .big .watermark.cs_CZ,
+#detail #tab-images > ul li .small .watermark.cs_CZ {
+  background-image: url(../graphics/vodoznak-cz.png);
+}
+#detail #tab-images > ul li .big {
+  display: none;
+}
+#detail #tab-comments h2 {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#detail #tab-comments h2 a {
+  color: #666666;
+}
+#detail #tab-comments h2 a:hover {
+  color: #009bd9;
+}
+#detail #tab-comments #ranking {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  display: block;
+  margin-bottom: 18px;
+}
+#detail #tab-comments #ranking a {
+  color: #666666;
+}
+#detail #tab-comments #ranking a:hover {
+  color: #009bd9;
+}
+#detail #tab-comments #ranking img {
+  padding-top: 5px;
+  margin: 0;
+  display: block;
+}
+#detail #tab-comments .tags {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  display: block;
+  margin-bottom: 5px;
+}
+#detail #tab-comments .tags a {
+  color: #666666;
+}
+#detail #tab-comments .tags a:hover {
+  color: #009bd9;
+}
+#detail #tab-comments #tags {
+  margin-bottom: 18px;
+}
+#detail #tab-comments input[type="text"],
+#detail #tab-comments textarea {
+  width: 550px;
+}
+#detail #tab-comments .comment {
+  margin-bottom: 18px;
+}
+#detail #tab-comments .comment .text {
+  margin-bottom: 5px;
+}
+#detail #tab-comments .comment .byLine {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  font-weight: normal;
+}
+#detail #tab-comments .comment .byLine a {
+  color: #666666;
+}
+#detail #tab-comments .comment .byLine a:hover {
+  color: #009bd9;
+}
+#detail #tab-audio .name {
+  display: block;
+  margin-bottom: 18px;
+}
+#galleryLanding .textContent {
+  margin-bottom: 30px;
+}
+#gallerySetDetail #top {
+  border: 1px solid #009bd9;
+  border-width: 1px 0;
+  margin-bottom: 50px;
+  zoom: 1;
+}
+#gallerySetDetail #top:before,
+#gallerySetDetail #top:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#gallerySetDetail #top:after {
+  clear: both;
+}
+#gallerySetDetail #top .img {
+  float: left;
+  position: relative;
+  width: 500px;
+}
+#gallerySetDetail #top .img img {
+  width: 500px;
+  height: auto;
+  display: block;
+}
+#gallerySetDetail #top .img .ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  padding-left: 13px;
+  right: auto;
+  margin: 0;
+}
+#gallerySetDetail #top .text {
+  margin-left: 550px;
+  padding: 30px 0;
+}
+#gallerySetDetail #top .text h1,
+#gallerySetDetail #top .text h2 {
+  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  padding: 0 0 20px;
+}
+#gallerySetDetail #top .text h1 a,
+#gallerySetDetail #top .text h2 a {
+  text-decoration: none;
+}
+#gallerySetDetail #top .text p:last-child {
+  margin-bottom: 0;
+}
+#gallerySetDetail #top .text .related-collections {
+  padding-top: 18px;
+}
+#gallerySetDetail #top .text .related-collections li {
+  margin-bottom: 18px;
+}
+#gallerySetDetail #setItemsGrid ul {
+  width: 1180px;
+  position: relative;
+}
+#gallerySetDetail #setItemsGrid ul.working {
+  filter: alpha(opacity=0.4);
+  -khtml-opacity: 0.004;
+  -moz-opacity: 0.004;
+  opacity: 0.004;
+}
+#gallerySetDetail #setItemsGrid ul li {
+  display: none;
+  float: left;
+  width: 250px;
+  padding: 0 40px 40px 0;
+}
+#gallerySetDetail #setItemsGrid ul li.visible {
+  display: block;
+}
+#gallerySetDetail #setItemsGrid ul li.mediumlarge {
+  width: 400px;
+}
+#gallerySetDetail #setItemsGrid ul li.large {
+  width: 600px;
+}
+#gallerySetDetail #setItemsGrid ul li .img {
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+#gallerySetDetail #setItemsGrid ul li .img img {
+  width: 100%;
+  height: auto;
+}
+#gallerySetDetail #setItemsGrid ul li .img a,
+#gallerySetDetail #setItemsGrid ul li .img img {
+  display: block;
+}
+#gallerySetDetail #setItemsGrid ul li .text .h2,
+#gallerySetDetail #setItemsGrid ul li .text a {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  font-weight: bold;
+  color: white !important;
+  display: inline;
+}
+#gallerySetDetail #setItemsGrid ul li .text .h2 a,
+#gallerySetDetail #setItemsGrid ul li .text a a {
+  color: #666666;
+}
+#gallerySetDetail #setItemsGrid ul li .text .h2 a:hover,
+#gallerySetDetail #setItemsGrid ul li .text a a:hover {
+  color: #009bd9;
+}
+#gallerySetDetail #setItemsGrid ul li .text .h2:hover,
+#gallerySetDetail #setItemsGrid ul li .text a:hover {
+  color: white;
+  text-decoration: none;
+}
+#gallerySetDetail #setItemsGrid ul li .text p {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  color: #acacac;
+}
+#gallerySetDetail #setItemsGrid ul li .text p a {
+  color: #666666;
+}
+#gallerySetDetail #setItemsGrid ul li .text p a:hover {
+  color: #009bd9;
+}
+#gallerySetDetail #setItemsGrid ul li h2,
+#gallerySetDetail #setItemsGrid ul li p {
+  margin-bottom: 0;
+}
+#gallerySetDetail #setItemsGrid ul li.textItem div,
+#gallerySetDetail #setItemsGrid ul li.textItem a {
+  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  line-height: 39px;
+  font-size: 24px;
+  line-height: 30px;
+}
+#gallerySetDetail #setItemsGrid ul li.textItem a {
+  color: white;
+  text-decoration: underline;
+}
+#gallerySetDetail #setItemsGrid ul li.textItem a:hover {
+  text-decoration: none;
+}
+#hierarchy-full ul {
+  background: url(../graphics/hierarchy/left.png) 0 0 repeat-y;
+}
+#hierarchy-full ul li {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 15px;
+}
+#hierarchy-full ul li a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  margin-right: 20px;
+}
+#hierarchy-full ul li a .ico-loading {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../graphics/ajax-loader.gif) 0 0 no-repeat;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  display: none;
+}
+#hierarchy-full ul li.loading > a .ico-loading {
+  display: block;
+}
+#hierarchy-full ul li.loaded > a .ico-loading {
+  display: none;
+}
+#hierarchy-full ul li .icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  display: block;
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+}
+#hierarchy-full ul li .ico-folder,
+#hierarchy-full ul li .ico-sign,
+#hierarchy-full ul li .ico-file {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  right: auto;
+  bottom: auto;
+}
+#hierarchy-full ul li .ico-sign {
+  left: -4px;
+  top: 2px;
+  display: block;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -24px -47px no-repeat;
+}
+#hierarchy-full ul li.open > .icons > .ico-sign {
+  display: block;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -37px -47px no-repeat;
+}
+#hierarchy-full ul li.open > .icons > .ico-folder {
+  display: block;
+  display: block;
+  width: 16px;
+  height: 14px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -40px -77px no-repeat;
+}
+#hierarchy-full ul li.open .sub {
+  padding-top: 15px;
+}
+#hierarchy-full ul li.open.closed > .icons > .ico-sign {
+  display: block;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -24px -47px no-repeat;
+}
+#hierarchy-full ul li.open.closed > .icons > .ico-folder {
+  background-position: -20px -77px;
+}
+#hierarchy-full ul li.open.closed > .sub {
+  display: none;
+}
+#hierarchy-full ul li.last {
+  padding-bottom: 0;
+}
+#hierarchy-full ul li.last.open {
+  background-color: white;
+}
+#hierarchy-full ul .sub {
+  margin-left: -16px;
+}
+#hierarchy-full ul li {
+  background: url(../graphics/hierarchy/knot.png) 0 4px no-repeat;
+}
+#hierarchy-full ul li.first {
+  background: url(../graphics/hierarchy/top.png) 0 6px no-repeat;
+}
+#hierarchy-full ul li.last {
+  background: url(../graphics/hierarchy/bottom.png) 0 4px no-repeat;
+}
+#detail-collection h1 {
+  padding-bottom: 5px;
+}
+#detail-collection strong.type {
+  padding-bottom: 20px;
+}
+#splashBrowsePanel {
+  top: 0;
+  left: 0;
+  position: absolute !important;
+  width: 800px;
+  display: none;
+  padding: 0;
+  background: white;
+  border: 1px solid #999;
+  -webkit-box-shadow: 0 0 5px #888888;
+  -moz-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+  left: 310px;
+  margin: 0;
+}
+#splashBrowsePanel .browseSelectPanelListGroupHeading {
+  float: left;
+  width: 15%;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+#splashBrowsePanel .browseSelectPanelListGroupHeading a {
+  color: #333333;
+}
+#splashBrowsePanel .browseSelectPanelListGroupHeading a:hover {
+  color: #009bd9;
+}
+#splashBrowsePanel .letter-wrap {
+  zoom: 1;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+#splashBrowsePanel .letter-wrap:before,
+#splashBrowsePanel .letter-wrap:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#splashBrowsePanel .letter-wrap:after {
+  clear: both;
+}
+#splashBrowsePanel .table-wrap {
+  margin-left: 15%;
+  margin-bottom: 20px;
+}
+#splashBrowsePanel .table-wrap ul {
+  width: 33%;
+  float: left;
+}
+#splashBrowsePanel .table-wrap ul li {
+  padding-right: 15px;
+}
+#splashBrowsePanel .table-wrap ul li a,
+#splashBrowsePanel .table-wrap ul li span {
+  font-size: 13px;
+  line-height: 18px;
+}
+#splashBrowsePanel .table-wrap ul li a {
+  color: #333333;
+}
+#splashBrowsePanel .table-wrap ul li a:hover {
+  color: #009bd9;
+}
+#splashBrowsePanel .table-wrap ul li .hierarchyBrowserItemTerm.hidden,
+#splashBrowsePanel .table-wrap ul li .browseSelectPanelLink.hidden {
+  display: none;
+}
+#splashBrowsePanel #splashBrowsePanelContent {
+  padding: 10px 0 0 0;
+  min-height: 150px;
+  max-height: 500px;
+}
+#splashBrowsePanel #splashBrowsePanelContent.working {
+  filter: alpha(opacity=50);
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+#splashBrowsePanel #splashBrowsePanelContent .browseSelectPanelContentArea {
+  max-height: 350px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+#splashBrowsePanel .browseSelectPanelButton {
+  display: none;
+}
+#splashBrowsePanel #browsePanelSearch {
+  margin: 0 auto 20px auto;
+  position: relative;
+  width: 263px;
+  border: 1px solid #e6e6e6;
+  position: relative;
+}
+#splashBrowsePanel #browsePanelSearch #itemsNumber {
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  left: 105%;
+  color: #666666;
+  width: 200px;
+}
+#splashBrowsePanel #browsePanelSearch input {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  padding: 7px 30px 7px 5px;
+  border: 0;
+  width: 228px;
+}
+#splashBrowsePanel #browsePanelSearch input a {
+  color: #333333;
+}
+#splashBrowsePanel #browsePanelSearch input a:hover {
+  color: #009bd9;
+}
+#splashBrowsePanel #browsePanelSearch .ico-glass {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 5px;
+  display: block;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -59px no-repeat;
+}
+#resultBox {
+  padding-top: 20px;
+}
+#resultBox.loading {
+  filter: alpha(opacity=50);
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+#resultBox #browse-map {
+  margin-bottom: 18px;
+}
+#resultBox .mapBaloon {
+  zoom: 1;
+}
+#resultBox .mapBaloon:before,
+#resultBox .mapBaloon:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#resultBox .mapBaloon:after {
+  clear: both;
+}
+#resultBox .mapBaloon .img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  float: left;
+}
+#resultBox .mapBaloon .text {
+  margin-left: 160px;
+}
+#resultBox .mapBaloon .text h2 a,
+#resultBox .mapBaloon .text h3 a,
+#resultBox .mapBaloon .text h4 a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#resultBox .mapBaloon .text h2 a a,
+#resultBox .mapBaloon .text h3 a a,
+#resultBox .mapBaloon .text h4 a a {
+  color: #333333;
+}
+#resultBox .mapBaloon .text h2 a a:hover,
+#resultBox .mapBaloon .text h3 a a:hover,
+#resultBox .mapBaloon .text h4 a a:hover {
+  color: #009bd9;
+}
+#resultBox .mapBaloon .text h2 a:hover,
+#resultBox .mapBaloon .text h3 a:hover,
+#resultBox .mapBaloon .text h4 a:hover {
+  color: #009bd9;
+}
+#resultBox .mapBaloon .text .more {
+  padding-top: 18px;
+}
+#resultBox .mapBaloon .text .more a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+#resultBox .mapBaloon .text .more a a {
+  color: #333333;
+}
+#resultBox .mapBaloon .text .more a a:hover {
+  color: #009bd9;
+}
+#resultBox .mapBaloon .text .more a:hover {
+  color: #009bd9;
+}
+#browseControls ul li {
+  display: block;
+  margin-bottom: 12px;
+  position: relative;
+}
+#browseControls ul li a,
+#browseControls ul li .facetLink {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#browseControls ul li a a,
+#browseControls ul li .facetLink a {
+  color: #333333;
+}
+#browseControls ul li a a:hover,
+#browseControls ul li .facetLink a:hover {
+  color: #009bd9;
+}
+#browseControls ul li.current a,
+#browseControls ul li a:hover {
+  color: #009bd9;
+}
+#browseControls ul li a {
+  position: relative;
+  display: block;
+}
+#browseControls ul li a .ico-triangle {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  right: 20px;
+}
+#browseControls .start-over a,
+#browseControls .item {
+  display: block;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+#browseControls .start-over a .ico-close,
+#browseControls .item .ico-close {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  left: 8px;
+}
+#browseControls span.facetLink {
+  display: block;
+  margin-bottom: 12px;
+}
+#browseControls .start-over {
+  padding-top: 12px;
+}
+#browseControls .start-over a,
+#browseControls .start-over .facetLink {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#browseControls .start-over a a,
+#browseControls .start-over .facetLink a {
+  color: #333333;
+}
+#browseControls .start-over a a:hover,
+#browseControls .start-over .facetLink a:hover {
+  color: #009bd9;
+}
+#browseControls .start-over.current a,
+#browseControls .start-over a:hover {
+  color: #009bd9;
+}
+#display-options li input {
+  display: none;
+}
+#main .content #browseControls {
+  display: none;
+}
+#searchOptionsBox .spacer {
+  height: 18px;
+}
+#searchOptionsBox select {
+  margin-right: 5px;
+}
+#searchOptionsBox #direction-select {
+  display: none;
+}
+#searchOptionsBox .order {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 5px;
+}
+.sectionBox {
+  float: left;
+  width: 100%;
+}
+.browse-result {
+  border-collapse: collapse;
+  margin-right: 50px;
+  margin-left: -2px;
+  margin-top: -2px;
+  margin-bottom: 50px;
+}
+.browse-result tr td,
+.browse-result tr h2,
+.browse-result tr a {
+  font-size: 13px;
+  line-height: 18px;
+}
+.browse-result tr td {
+  border: 2px solid white;
+  background: #f4f4f4;
+  padding: 7px 15px;
+}
+.browse-result tr .title h2,
+.browse-result tr .link h2,
+.browse-result tr .title a,
+.browse-result tr .link a {
+  font-weight: bold;
+  color: black;
+}
+.browse-result tr .type,
+.browse-result tr .idno {
+  white-space: nowrap;
+}
+#date-facet-slider {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 7px;
+  background: #666666;
+  position: relative;
+  margin: 40px 15px 20px;
+}
+#date-facet-slider .ui-slider-handle {
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 1px solid #333333;
+  outline: 0 !important;
+  margin-left: -8px;
+}
+#date-facet-slider .ui-slider-handle .handle-text {
+  display: block;
+  width: 40px;
+  height: 13px;
+  position: absolute;
+  top: auto;
+  left: 50%;
+  right: auto;
+  bottom: 100%;
+  margin-left: -25px;
+  margin-bottom: 10px;
+  background: #f4f4f4;
+  padding: 5px;
+  color: #333333;
+  text-decoration: none;
+  text-align: center;
+  line-height: 13px;
+}
+#date-facet-slider .ui-slider-handle .handle-text span {
+  line-height: 13px;
+}
+#date-facet-slider .ui-slider-handle .handle-text:hover {
+  color: #333333;
+}
+#date-facet-src {
+  zoom: 1;
+  padding: 5px 0;
+  background: #f4f4f4;
+  margin: 0 15px;
+}
+#date-facet-src:before,
+#date-facet-src:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#date-facet-src:after {
+  clear: both;
+}
+#date-facet-src li {
+  display: block;
+  float: left;
+  width: 9.09%;
+  text-align: center;
+}
+.searchNavBg {
+  /*	.page {
+		#s .ribbon-text;
+		padding-left: 0;
+		padding-right: 0;
+		width: 28px;
+		text-align: center;
+		&.current {
+			margin-left: 20px;
+		}
+		&.count {
+			margin-right: 20px;
+			background: @graySoft;
+			color: @gray;
+		}
+	}*/
+
+}
+.searchNavBg a .arrow-left,
+.searchNavBg a .arrow-right {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.searchNavBg a .arrow-left {
+  margin-right: 5px;
+}
+.searchNavBg a .arrow-right {
+  margin-left: 5px;
+}
+.searchNavBg .linkOff .arrow-left,
+.searchNavBg .linkOff .arrow-right {
+  display: none;
+}
+.searchNavBg .of {
+  margin: 0 5px;
+}
+.searchNavBg #jumpToPageNum {
+  margin-right: 10px;
+}
+.searchNavBg .searchNav {
+  float: left;
+  width: 100%;
+  margin-bottom: 18px;
+}
+.searchNavBg .searchNav form {
+  margin-right: 100px;
+}
+.searchNavBg .result-count {
+  margin-top: 2px;
+  float: left;
+  margin-right: 100px;
+}
+.searchNavBg .nav {
+  float: left;
+  margin-right: 100px;
+}
+.pagination li {
+  float: left;
+  width: 22px;
+  margin-right: 3px;
+}
+.pagination li .page {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 3px 7px;
+  background-color: #009bd9;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: block !important;
+  color: #333333;
+  background: #f4f4f4;
+  padding: 1px 0;
+  text-align: center;
+}
+.pagination li .page a {
+  color: #333333;
+}
+.pagination li .page a:hover {
+  color: #009bd9;
+}
+.pagination li .page.current {
+  background: #009bd9;
+  color: #ffffff;
+}
+.pagination li .page.dots,
+.pagination li .page.text {
+  background: transparent;
+}
+.pagination li .page.text {
+  white-space: nowrap;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.pagination li .page.text:hover {
+  color: #009bd9;
+}
+.pagination li.with-text {
+  width: auto;
+}
+.pagination li.with-text.prev {
+  padding-right: 10px;
+}
+.pagination li.with-text.next {
+  padding-left: 10px;
+}
+.lazyload {
+  background-color: #f4f4f4;
+}
+.fullscreen-arrow {
+  display: none;
+}
+html.fullscreen,
+html.fullscreen body {
+  height: auto;
+}
+body.fullscreen {
+  overflow-x: hidden;
+}
+body.fullscreen .fullscreen-arrow {
+  display: block;
+}
+body.fullscreen .in .fullscreen-arrow {
+  display: none;
+}
+body.fullscreen #detail-right .fullscreen-arrow {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: auto;
+  bottom: auto;
+}
+body.fullscreen #main .sidebar .fullscreen-arrow {
+  position: absolute;
+  top: 7px;
+  left: auto;
+  right: 7px;
+  bottom: auto;
+}
+body.fullscreen #header {
+  display: none;
+}
+body.fullscreen #main .sidebar {
+  position: absolute;
+  top: 0;
+  left: -290px;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  background: white;
+}
+body.fullscreen #main .sidebar.in {
+  z-index: 2;
+}
+body.fullscreen #main .content {
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+}
+body.fullscreen #main .content #detail {
+  margin: 0 40px;
+}
+body.fullscreen #main .content #detail #detail-left,
+body.fullscreen #main .content #detail #detail-full,
+body.fullscreen #main .content #detail > .item-nav {
+  margin: 0 auto;
+  min-width: 380px;
+  max-width: 1100px;
+  position: relative;
+  z-index: 1;
+}
+body.fullscreen #main .content #detail .item-nav {
+  z-index: 99;
+}
+body.fullscreen #main .content #detail #detail-full .item-4 {
+  display: none;
+}
+body.fullscreen #main .content #detail #detail-left .title {
+  padding-right: 100px;
+  min-height: 60px;
+}
+body.fullscreen #main .content #detail #detail-left .title .logo-small {
+  display: block;
+}
+body.fullscreen #main .content #detail #detail-right {
+  right: -260px;
+  z-index: 2;
+}
+body.fullscreen #main .content #detail .tabs {
+  display: none;
+}
+body.fullscreen #main .content #detail #tab-images ul li .small {
+  display: none;
+}
+body.fullscreen #main .content #detail #tab-images ul li .big {
+  display: block;
+}
+body.displaySet {
+  background: #1c1c1c;
+  color: #b3b3b3;
+}
+body.displaySet .lazyload {
+  background-color: #666666;
+}
+body.displaySet #header,
+body.displaySet #main {
+  width: 1140px;
+  margin: 0 auto;
+  float: none;
+}
+body.displaySet #header .cs {
+  width: 150px;
+}
+body.displaySet #header .cm {
+  margin-left: 150px;
+}
+body.displaySet #header .cm #main-menu {
+  padding-top: 60px;
+}
+body.displaySet #header .cm #main-menu li a {
+  color: #b3b3b3;
+}
+body.displaySet #header .cm #main-menu li a:hover {
+  color: white;
+}
+body.displaySet #header #online-exhibition-search {
+  display: block;
+  width: 263px;
+  border: 1px solid #e6e6e6;
+  position: relative;
+  left: -6px;
+  top: -7px;
+  margin-bottom: 15px;
+  border-color: #666666;
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  background-color: #333;
+}
+body.displaySet #header #online-exhibition-search input {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  width: 228px;
+  padding: 7px 30px 7px 5px;
+  border: 0;
+}
+body.displaySet #header #online-exhibition-search input a {
+  color: #333333;
+}
+body.displaySet #header #online-exhibition-search input a:hover {
+  color: #009bd9;
+}
+body.displaySet #header #online-exhibition-search .submit {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 5px;
+  display: block;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -59px no-repeat;
+}
+body.displaySet #header #online-exhibition-search .submit input {
+  display: block;
+  width: 16px;
+  height: 16px;
+  filter: alpha(opacity=0);
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  padding: 0;
+  cursor: pointer;
+}
+body.displaySet #header #online-exhibition-search input {
+  background-color: #333;
+  border: 0;
+  color: white;
+}
+body.displaySet #header #online-exhibition-search .submit {
+  background-position: -11px -95px;
+  cursor: pointer;
+}
+body.displaySet #header #online-exhibition-search .results-count {
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  right: 275px;
+  white-space: nowrap;
+  display: none;
+}
+body.displaySet #header #online-exhibition-search .results-count.in {
+  display: block;
+}
+body.displaySet #header #logo a {
+  background: url(../graphics/logo_white_small.png) 0 center no-repeat;
+  width: 100px;
+}
+body.displaySet #header #header-box a {
+  color: #b3b3b3;
+}
+body.displaySet #header #header-box a:hover {
+  color: white;
+}
+body.displaySet #main .sidebar {
+  display: none;
+}
+body.displaySet #main .content {
+  border: 0;
+  margin-left: 0;
+}
+body.displaySet h1 {
+  color: white;
+}
+body.displaySet p,
+body.displaySet div {
+  color: #b3b3b3;
+}
+#tooltip {
+  background: white;
+  border: 1px solid #999;
+  -webkit-box-shadow: 0 0 5px #888888;
+  -moz-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+  position: absolute;
+  z-index: 3000;
+  max-width: 550px;
+  padding: 18px;
+}
+#tooltip .h {
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+#tooltip .h a {
+  color: #333333;
+}
+#tooltip .h a:hover {
+  color: #009bd9;
+}
+#tooltip p {
+  margin: 0;
+}
+#tooltip h3,
+#tooltip div {
+  margin: 0;
+}
+.ui-dialog {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: white;
+  border: 1px solid #999;
+  -webkit-box-shadow: 0 0 5px #888888;
+  -moz-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+}
+.ui-dialog .ui-dialog-titlebar,
+.ui-dialog .ui-resizable-handle {
+  display: none;
+}
+.ui-dialog #notification-src {
+  padding: 50px 15px;
+  font-weight: bold;
+  min-height: auto !important;
+}
+.ui-widget-overlay {
+  filter: alpha(opacity=0);
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+.form > div {
+  margin-bottom: 10px;
+}
+.form .button {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 3px 7px;
+  background-color: #009bd9;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-top: 18px;
+}
+.form .button a {
+  color: #333333;
+}
+.form .button a:hover {
+  color: #009bd9;
+}
+.form b {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+.form b a {
+  color: #666666;
+}
+.form b a:hover {
+  color: #009bd9;
+}
+.form input[type="text"],
+.form input[type="password"],
+.form textarea {
+  display: block;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  padding: 5px 10px;
+}
+.form input[type="text"] a,
+.form input[type="password"] a,
+.form textarea a {
+  color: #666666;
+}
+.form input[type="text"] a:hover,
+.form input[type="password"] a:hover,
+.form textarea a:hover {
+  color: #009bd9;
+}
+#caMediaPanel {
+  display: none;
+}
+#debug {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #999;
+}
+#detail-full .grid li {
+  display: none;
+}
+#detail-full .grid li.item-1 {
+  display: block;
+}
+@media screen and (min-width: 975px) {
+  #detail-full .grid li {
+    display: none;
+  }
+  #detail-full .grid li.item-1 {
+    display: block;
+  }
+}
+@media screen and (min-width: 1300px) {
+  #detail-full .grid li {
+    display: none;
+  }
+  #detail-full .grid li.item-1,
+  #detail-full .grid li.item-2 {
+    display: block;
+  }
+}
+@media screen and (min-width: 1500px) {
+  #detail-full .grid li {
+    display: none;
+  }
+  #detail-full .grid li.item-1,
+  #detail-full .grid li.item-2,
+  #detail-full .grid li.item-3 {
+    display: block;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #detail-full .grid li {
+    display: none;
+  }
+  #detail-full .grid li.item-1,
+  #detail-full .grid li.item-2,
+  #detail-full .grid li.item-3,
+  #detail-full .grid li.item-4 {
+    display: block;
+  }
+}
+#home-featured ul li .img img {
+  max-width: 100%;
+  height: auto !important;
+}
+#home-featured ul li .img {
+  width: 300px;
+}
+#home-featured ul li .text {
+  margin-left: 320px;
+}
+@media screen and (min-width: 1240px) {
+  #home-featured ul li .img {
+    width: 380px;
+  }
+  #home-featured ul li .text {
+    margin-left: 400px;
+  }
+}
+@media screen and (min-width: 1390px) {
+  #home-featured ul li .img {
+    width: 460px;
+  }
+  #home-featured ul li .text {
+    margin-left: 480px;
+  }
+}

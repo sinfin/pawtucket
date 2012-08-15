@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail
+END
+paging_controls_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/!svn/ver/5313/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/paging_controls_html.php
+END
+ca_entities_detail_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/!svn/ver/6422/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/ca_entities_detail_html.php
+END
+related_objects_grid.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/related_objects_grid.php
+END
+ca_places_detail_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/!svn/ver/6422/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/ca_places_detail_html.php
+END
+export_xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/!svn/ver/6422/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/export_xml.php
+END
+ca_objects_detail_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/!svn/ver/7181/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/ca_objects_detail_html.php
+END
+ajax_ca_objects_media_overlay_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/!svn/ver/5928/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/ajax_ca_objects_media_overlay_html.php
+END
+object_representation_download_binary.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/!svn/ver/3362/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/object_representation_download_binary.php
+END
+ca_occurrences_detail_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/!svn/ver/6422/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/ca_occurrences_detail_html.php
+END
+ca_collections_detail_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/!svn/ver/6422/CollectiveAccess/frontends/Pawtucket2/trunk/themes/default/views/Detail/ca_collections_detail_html.php
+END
