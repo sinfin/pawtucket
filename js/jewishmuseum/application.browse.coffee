@@ -49,8 +49,17 @@ initPagination = ->
 			rb.find('#resultBox').unwrap()
 			window.equalHeight($('.grid > ul', '#resultBox'))
 		return false
+
+bindFacetLinks = ->
+	$('body').on 'click', '.facetLink', (e) ->
+		e.preventDefault()
+		e.stopPropagation()
+		facet = $(this).data('facet')
+		unless typeof facet is 'undefined'
+			caUIBrowsePanel.showBrowsePanel facet
 	
 $ ->
 	moveControls()
 	displayOptions()
 	initPagination()
+	bindFacetLinks()
