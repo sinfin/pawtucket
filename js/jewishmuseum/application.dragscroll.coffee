@@ -15,10 +15,18 @@ toggleHash = (el) ->
 			t.addClass('fullscreen-target-hashed')
 			t.attr 'href', "#{ t.attr('href') }#fullscreen"
 
+loadImgDirect = (img) ->
+		img.not('.loaded').addClass('loaded').attr 'src', img.data 'original'
+
 loadImg = (els) ->
+	fullscreen = $('body').hasClass('fullscreen')
 	els.each ->
-		t = $(this).find('img').filter(':visible')
-		t.not('.loaded').addClass('loaded').attr 'src', t.data 'original'
+		t = $(this)
+		if fullscreen
+			t = t.find('.big img')
+		else
+			t = t.find('.small img')
+		loadImgDirect t
 
 window.loadImg = loadImg
 
@@ -125,12 +133,15 @@ createPagination = ->
 		si.add(dr).removeAttr('style') # reset all js css
 		if ft.hasClass('in')
 			window.location.hash = '#fullscreen'
-			# bo.find('.lazyload-delayed').lazyload()
+			window.images = items.find('.big img')
 		else
 			window.location.hash = ''
-		window.images = items.find('img').filter(':visible')
+			window.images = items.find('.small img')
 		$(window).trigger 'resize scroll' # lazyload, window offsets
 		window.readerSelect.trigger('change')
+		loadImg window.images.slice(0, 1)
+		loadImgDirect window.images.eq(0)
+		loadImgDirect window.images.eq(1)
 
 	ft.on 'click', toggleFullscreen
 	# hash
@@ -142,7 +153,8 @@ createPagination = ->
 	$(window).on 'load', ->
 		$(window).trigger('scroll')
 	# doc.ready
-	loadImg items.first()
+	loadImgDirect window.images.eq(0)
+	loadImgDirect window.images.eq(1)
 
 fixSelect = ->
 	if $(window).scrollTop() > window.imageWrapTop

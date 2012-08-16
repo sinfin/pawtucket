@@ -1307,9 +1307,9 @@ b.headline {
 .item-nav .item-nav-idno .idno-wrap #hier-tree .close {
   cursor: pointer;
   position: absolute;
-  top: 0;
+  top: 2px;
   left: auto;
-  right: 0;
+  right: 2px;
   bottom: auto;
 }
 .item-nav .item-nav-idno .idno-wrap #hier-tree li {
@@ -3236,7 +3236,9 @@ body.fullscreen #main .content #detail #tab-images ul li .small {
   display: none;
 }
 body.fullscreen #main .content #detail #tab-images ul li .big {
-  display: block;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 body.displaySet {
   background: #1c1c1c;
