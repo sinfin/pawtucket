@@ -131,8 +131,7 @@
   cancelLazyload = function() {
     $('.lazyload').trigger('appear');
     if (typeof window.loadImg !== 'undefined') {
-      window.loadImg($('ul li', '#tab-images'));
-      return console.log($('ul li', '#tab-images'));
+      return window.loadImg($('ul li', '#tab-images'));
     }
   };
 

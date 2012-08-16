@@ -22,7 +22,10 @@ if (isset($t_object)) {
 		if ($idno_siblings['prev_id']) {
 			print caNavLink($this->request, '', 'fullscreen-target arrow', 'Detail', 'Object', 'Show', array('object_id' => $idno_siblings['prev_id']), array('class' => 'arrow previous'));
 		}
-		print '<div class="idno-wrap"><small class="toggle"><span class="icon-item-nav"><span></span></span>' . $t_object->get('idno') . '</small>' . hieararchyTree($collection_tree, $this->request) . '</div>';
+		$class = 'with-tree';
+		$tree = hieararchyTree($collection_tree, $this->request);
+		if (empty($tree)) $class = 'without-tree';
+		print '<div class="idno-wrap '.$class.'"><small class="toggle"><span class="icon-item-nav"><span></span></span>' . $t_object->get('idno') . '</small>' . $tree . '</div>';
 		if ($idno_siblings['next_id']) {
 			print caNavLink($this->request, '', 'fullscreen-target arrow next', 'Detail', 'Object', 'Show', array('object_id' => $idno_siblings['next_id']), array('class' => 'arrow next'));
 		}

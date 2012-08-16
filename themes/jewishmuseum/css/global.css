@@ -1247,9 +1247,14 @@ b.headline {
   *zoom: 1;
   cursor: pointer;
   position: relative;
-  padding-left: 26px;
 }
 .item-nav .item-nav-idno .idno-wrap small .icon-item-nav {
+  display: none;
+}
+.item-nav .item-nav-idno .idno-wrap.with-tree small {
+  padding-left: 26px;
+}
+.item-nav .item-nav-idno .idno-wrap.with-tree small .icon-item-nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -1260,7 +1265,7 @@ b.headline {
   height: 100%;
   border-right: 1px solid #e6e6e6;
 }
-.item-nav .item-nav-idno .idno-wrap small .icon-item-nav span {
+.item-nav .item-nav-idno .idno-wrap.with-tree small .icon-item-nav span {
   display: block;
   display: block;
   width: 8px;

@@ -2037,6 +2037,7 @@ $ca_relationship_lookup_parse_cache = array();
 	}
 	# ------------------------------------------------------------------------------------------------
 	function hieararchyTree($tree, $request) {
+		if (sizeof($tree) == 0) return '';
 		$html = '<div id="hier-tree" class="togglable">';
 		$html .= '<strong>'._t('Collections hierarchy').'</strong><span class="ico-close close"></span>';
 		$html .= '<ul>';

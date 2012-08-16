@@ -41,3 +41,6 @@ body.displaySet div {
 .content {
   border-top: 0;
 }
+.ui-dialog {
+  display: none !important;
+}

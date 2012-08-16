@@ -105,7 +105,6 @@ cancelLazyload = ->
 	$('.lazyload').trigger('appear')
 	unless typeof window.loadImg is 'undefined'
 		window.loadImg $('ul li', '#tab-images')
-		console.log $('ul li', '#tab-images')
 
 printPage = (notification) ->
 	element = $('<div class="notification"></div>').html(notification).append('<span class="close ico-close"></span>')
