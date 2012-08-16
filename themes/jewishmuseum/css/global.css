@@ -2766,6 +2766,9 @@ b.headline {
 #resultBox {
   padding-top: 20px;
 }
+#resultBox .browse-intro {
+  margin-top: -20px;
+}
 #resultBox.loading {
   filter: alpha(opacity=50);
   -khtml-opacity: 0.5;
