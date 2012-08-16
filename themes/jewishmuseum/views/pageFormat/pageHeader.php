@@ -40,6 +40,10 @@
 					// logo link
 					$filename = 'logo-JMP-en';
 					if ($htmlLocale == 'cs') $filename = 'logo-ZMP';
+					if ($this->request->getAction() == 'displaySet') {
+						$filename = 'logo-JMP-small-white-en';
+						if ($htmlLocale == 'cs') $filename = 'logo-ZMP-small-white';
+					}
 					$img = '<img src="'.$img = $this->request->getThemeUrlPath(true).'/graphics/'.$filename.'.png" alt="'._t("Collections' catalogue").'" />';
 					print caNavLink($this->request, $img, $locale, "", "", "");
 				?>

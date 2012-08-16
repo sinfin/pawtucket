@@ -3390,8 +3390,16 @@ body.displaySet #header #online-exhibition-search .results-count.in {
   display: block;
 }
 body.displaySet #header #logo a {
-  background: url(../graphics/logo_white_small.png) 0 center no-repeat;
+  /*background: url(../graphics/logo_white_small.png) 0 center no-repeat;*/
+
   width: 100px;
+  position: relative;
+}
+body.displaySet #header #logo a img {
+  position: absolute;
+  top: 50%;
+  margin-top: -23px;
+  left: 0;
 }
 body.displaySet #header #header-box a {
   color: #b3b3b3;

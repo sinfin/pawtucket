@@ -30,27 +30,30 @@
 $qr_data 						= $this->getVar('data');		// this is a search result row
 $va_access_values 		= $this->getVar('access_values');
 
-// $this->setVar('object', $qr_data);
-// $this->setVar('noLi', true);
-// $this->setVar('ajax', true);
-
-// print '<div class="mapBaloon">';
-	// print 'test';
-	// print $this->render('Results/_ca_objects_result_item.php');
-// print '</div>';
-
+$object_id = $qr_data->get("ca_objects.object_id");
 
 $year = dateYear($qr_data->get('ca_objects.periodization'));
+$vs_media_tag = $qr_data->getMediaTag('ca_object_representations.media', 'thumbnail', array('checkAccess' => $va_access_values));
 ?>
 <div class="mapBalloon">
-<?php
-	if($vs_media_tag = $qr_data->getMediaTag('ca_object_representations.media', 'thumbnail', array('checkAccess' => $va_access_values))){
-		print caNavLink($this->request, $vs_media_tag, '', 'Detail', 'Object', 'Show', array('object_id' => $qr_data->get("ca_objects.object_id")));
-	}
-?>
-	<div class="mapBalloonText">
-	<?php print caNavLink($this->request, '<b>'.$qr_data->get("ca_objects.idno").'</b>: '.$qr_data->get("ca_objects.preferred_labels"), '', 'Detail', 'Object', 'Show', array('object_id' => $qr_data->get("ca_objects.object_id"))); ?>
-	</div><!-- end mapBalloonText -->
+	<div class="img">
+		<?php
+			if ($vs_media_tag) {
+				print caNavLink($this->request, $vs_media_tag, '', 'Detail', 'Object', 'Show', array('object_id' => $object_id));
+			}
+		?>
+	</div>
+	<div class="text">
+		<?php
+			$title = caNavLink($this->request, $qr_data->get("ca_objects.preferred_labels"), 'fullscreen-target', 'Detail', 'Object', 'Show', array('object_id' => $id));
+			if ($year) {
+				$year = caNavLink($this->request, $year['text'], '', '', 'Browse', 'clearAndAddCriteria', array('facet' => 'periodization_facet', 'id' => $year['search']));
+			}
+			print '<h2>'.$title.'</h2>';
+			print '<div class="date">'.$year.'</div>';
+			print '<div class="more">';
+				print caNavLink($this->request, _t('detail'), 'fullscreen-target', 'Detail', 'Object', 'Show', array('object_id' => $object_id));
+			print '</div>';
+		?>
+	</div>
 </div><!-- end mapBallon -->
-
-?>
