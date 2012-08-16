@@ -211,9 +211,10 @@
 					$vs_val = "<div id='caMediaAttribute".$this->opn_value_id."' class='attributeMediaInfoContainer'><div class='attributeMediaThumbnail'>{$vs_tag}</div></div>";
 				}
 				
-				if ($pa_options['showMediaInfo']) {
-					TooltipManager::add('#caMediaAttribute'.$this->opn_value_id, "<h2>"._t('Media details')."</h2> <p>{$vs_filename}</p><p>{$vs_dimensions}</p>");
-				}	
+				// mreq: don't display
+				// if ($pa_options['showMediaInfo']) {
+				// 	TooltipManager::add('#caMediaAttribute'.$this->opn_value_id, "<h2>"._t('Media details')."</h2> <p>{$vs_filename}</p><p>{$vs_dimensions}</p>");
+				// }	
 			}
 			return $vs_val;
 		}

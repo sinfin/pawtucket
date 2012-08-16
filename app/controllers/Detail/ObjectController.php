@@ -56,6 +56,7 @@
  		 */ 
  		public function Show() {
  			JavascriptLoadManager::register('panel');
+ 			JavascriptLoadManager::register('docReader');
  			parent::Show();
  			
  			// redirect user if not logged in

@@ -25,33 +25,35 @@
  *
  * ----------------------------------------------------------------------
  */
-
+ 
 	$va_set_list = $this->getVar('sets');
 	$va_first_items_from_sets = $this->getVar('first_items_from_sets');
+	$va_set_descriptions = $this->getVar('set_descriptions');
+	$images = $this->getVar('images');
 ?>
-<h1><?php print _t("Gallery"); ?></H1>
+<h1><?php print _t("On-line collections"); ?></h1>
 <div id="galleryLanding">
-	<div class="textContent" id="introText">
-<?php
-	print $this->render('iphone/intro_text_html.php');
-?>
-	</div>
-	<script type="text/javascript">
-		jQuery(document).ready(function() {
-			jQuery('#introText').expander({
-				slicePoint: 250,
-				expandText: '<?php print _t('more &rsaquo;'); ?>',
-				userCollapse: false
-			});
-		});
-	</script>
-<?php
-	foreach($va_set_list as $vn_set_id => $va_set_info){
-		print "<div class='setInfo'>";
-		$va_item = $va_first_items_from_sets[$vn_set_id][array_shift(array_keys($va_first_items_from_sets[$vn_set_id]))];
-		print "<div class='setImage'>".caNavLink($this->request, $va_item["representation_tag"], '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id))."</div><!-- end setImage -->";
-		print "<div class='setTitle'>".caNavLink($this->request, (strlen($va_set_info["name"]) > 80 ? substr($va_set_info["name"], 0, 80)."..." : $va_set_info["name"]), '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id))."</div>";
-		print "<div style='clear:left; height:1px;'><!-- empty --></div><!-- end clear --></div><!-- end setInfo -->";
-	}
-?>
+<!-- 	<div class="textContent">
+		<?php
+			print $this->render('jewishmuseum/intro_text_html.php');
+		?>
+	</div> -->
+	<ul class="collections-list">
+	<?php
+		foreach($va_set_list as $vn_set_id => $va_set_info) {
+			$img = (isset($images[$vn_set_id])) ? $images[$vn_set_id][0] : '';
+			$img = caNavLink($this->request, $img, '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id));
+			print '<li>';
+				print '<div class="img">'.$img.'</div>';
+				print '<div class="text">';
+					print '<h2>'.caNavLink($this->request, $va_set_info["name"], '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id)).'</h2>';
+					print '<div class="description">';
+						print nl2br($va_set_descriptions[$vn_set_id][0]);
+					print '</div>';
+					print '<div class="more">'.caNavLink($this->request, _t('detail'), '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id)).'</div>';
+				print '</div>';
+			print '</li>';
+		}
+	?>
+	</ul>
 </div>

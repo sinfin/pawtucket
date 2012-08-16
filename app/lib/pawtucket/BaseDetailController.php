@@ -34,6 +34,9 @@
 	require_once(__CA_MODELS_DIR__."/ca_bundle_mappings.php");
 	require_once(__CA_MODELS_DIR__."/ca_relationship_types.php");
 	require_once(__CA_MODELS_DIR__."/ca_lists.php");
+	require_once(__CA_MODELS_DIR__."/ca_collections.php");
+	require_once(__CA_MODELS_DIR__."/ca_objects.php");
+	require_once(__CA_MODELS_DIR__."/ca_sets.php");
  	
 	class BaseDetailController extends ActionController {
 		# -------------------------------------------------------
@@ -57,7 +60,7 @@
 			parent::__construct($po_request, $po_response, $pa_view_paths);
  			
  			JavascriptLoadManager::register('maps');
- 			JavascriptLoadManager::register('jcarousel');
+ 			JavascriptLoadManager::register('tabs');
  		}
  		# -------------------------------------------------------
  		/**
@@ -106,12 +109,8 @@
  		 * application on an as-needed basis.
  		 */
  		public function Show() {
- 			JavascriptLoadManager::register('viz');
- 			JavascriptLoadManager::register("ca", "panel");
- 			JavascriptLoadManager::register("jit");
  			JavascriptLoadManager::register('browsable');
- 			JavascriptLoadManager::register('imageScroller');
- 			JavascriptLoadManager::register('jquery', 'expander');
+ 			JavascriptLoadManager::register('docReader');
  			
  			$va_access_values = caGetUserAccessValues($this->request);
  			$this->view->setVar('access_values', $va_access_values);
@@ -339,6 +338,40 @@
  			
  			// Record view
  			$t_item->registerItemView($this->request->getUserID());
+ 			
+ 			# Media representations to display (objects only)
+ 			if (method_exists($t_item, 'getRepresentations')) {
+				// Get all representations
+				$size = array('large', 'original', 'fullscreen');
+				$representations = $t_item->getRepresentations($size, null, array('checkAccess' => $va_access_values));
+
+				$images = false;
+				$audio = false;
+				$video = false;
+				$rewrite = $t_item->get('object_text');
+				if (strlen($rewrite) == 0) $rewrite = false;
+				foreach ($representations as $id => $repre) {
+					$type = explode('/', $repre['info']['original']['MIMETYPE']);
+					switch ($type[0]) {
+						case 'audio':
+							if (!$audio) $audio = array();
+							$audio[$id] = $repre;
+							break;
+						case 'video':
+							if (!$video) $video = array();
+							$video[$id] = $repre;
+							break;
+						default: // image
+							if (!$images) $images = array();
+							$images[$id] = $repre;
+							break;
+					}
+				}
+				$this->view->setVar("representations_images", $images);
+				$this->view->setVar("representations_audio", $audio);
+				$this->view->setVar("representations_video", $video);
+				$this->view->setVar("representations_rewrite", $rewrite);
+			}
  			
  			//
  			// Render view

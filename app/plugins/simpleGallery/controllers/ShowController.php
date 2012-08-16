@@ -29,7 +29,9 @@
  	require_once(__CA_MODELS_DIR__.'/ca_sets.php');
  	require_once(__CA_MODELS_DIR__.'/ca_objects.php');
  	require_once(__CA_MODELS_DIR__.'/ca_set_items.php');
+ 	require_once(__CA_MODELS_DIR__.'/ca_collections.php');
  	require_once(__CA_MODELS_DIR__.'/ca_lists.php');
+ 	// require_once(__CA_HELPERS_DIR__.'/displayHelpers.php');
  	require_once(__CA_APP_DIR__.'/helpers/accessHelpers.php');
  	require_once(__CA_LIB_DIR__.'/ca/ResultContext.php');
  
@@ -41,7 +43,8 @@
  		
  		# -------------------------------------------------------
  		public function __construct(&$po_request, &$po_response, $pa_view_paths=null) {
- 			JavascriptLoadManager::register('panel');
+ 			// JavascriptLoadManager::register('panel');
+ 			JavascriptLoadManager::register('onlineExhibition');
  			JavascriptLoadManager::register('jquery', 'expander');
  			JavascriptLoadManager::register('jquery', 'swipe');
  			
@@ -64,11 +67,11 @@
  			// get sets for public display
  			$t_list = new ca_lists();
  			$vn_public_set_type_id = $t_list->getItemIDFromList('set_types', $t_list->getAppConfig()->get('simpleGallery_set_type'));
- 			
  			$t_set = new ca_sets();
  			$va_sets = caExtractValuesByUserLocale($t_set->getSets(array('table' => 'ca_objects', 'checkAccess' => $va_access_values, 'setType' => $vn_public_set_type_id)));
- 			$va_set_first_items = $t_set->getFirstItemsFromSets(array_keys($va_sets), array("version" => "widepreview", "checkAccess" => $va_access_values));
  			$va_set_descriptions = $t_set->getAttributeFromSets($this->opo_plugin_config->get('set_description_element_code'), array_keys($va_sets), array("checkAccess" => $va_access_values));
+ 			$images = $t_set->getAttributeFromSets('exhibition_cover_small', array_keys($va_sets), array("checkAccess" => $va_access_values, "version" => "thumbnail"));
+ 			$this->view->setVar('images', $images);
  			$this->view->setVar('sets', $va_sets);
  			$this->view->setVar('first_items_from_sets', $va_set_first_items);
  			$this->view->setVar('set_descriptions', $va_set_descriptions);
@@ -91,8 +94,10 @@
  			}
  			
  			$this->view->setVar('t_set', $t_set);
- 			$va_items = caExtractValuesByUserLocale($t_set->getItems(array('thumbnailVersions' => array('widepreview', 'medium'), "checkAccess" => $va_access_values)));
- 			$this->view->setVar('items', $va_items);
+ 			$va_items = caExtractValuesByUserLocale($t_set->getItems(array('thumbnailVersions' => array('large', 'mediumlarge', 'small'), "checkAccess" => $va_access_values, 'returnItemAttributes' => array('exhibition_size'))));
+ 			
+			$this->view->setVar('main_item', array_slice($va_items, 0, 1));
+			$this->view->setVar('items', $va_items);
  			
  			$va_row_ids = array();
  			foreach($va_items as $vn_item_id => $va_item_info) {
@@ -106,7 +111,6 @@
  			$t_list = new ca_lists();
  			$vn_public_set_type_id = $t_list->getItemIDFromList('set_types', $t_list->getAppConfig()->get('simpleGallery_set_type'));
  			
- 			$t_set = new ca_sets($pn_set_id);
  			$va_sets = caExtractValuesByUserLocale($t_set->getSets(array('table' => 'ca_objects', 'checkAccess' => $va_access_values, 'setType' => $vn_public_set_type_id)));
  		
  			$va_set_first_items = array();
@@ -117,8 +121,24 @@
  			
  			$this->view->setVar('set_title', $t_set->getLabelForDisplay());
  			$this->view->setVar('set_description', $t_set->get($this->opo_plugin_config->get('set_description_element_code'), array('convertLinkBreaks' => true)));
- 			
- 			
+
+ 			$obj = new ca_objects();
+ 			$periodizations = $obj->getAttributeForIDs('periodization', $va_row_ids);
+ 			$ids = $va_row_ids;
+ 			$object_texts = $obj->getAttributeForIDs('object_text', $va_row_ids);
+ 			$this->view->setVar('periodizations', $periodizations);
+ 			$this->view->setVar('object_texts', $object_texts);
+
+ 			$col = new ca_collections();
+ 			$idnos = $t_set->get('exhibition_collection_idno', array('returnAsArray' => true, 'checkAccess' => $va_access_values));
+ 			$arr = array();
+ 			foreach ($idnos as $idno) {
+ 				$arr[] = $idno['exhibition_collection_idno'];
+ 			}
+ 			$collections = $col->getCollectionIDsByIdnos($arr);
+ 			$labels = $col->getPreferredDisplayLabelsForIDs($collections);
+ 			$this->view->setVar('collections', $labels);
+
  			// Needed to figure out what result context to use on details
 			$this->opo_result_context->setParameter('set_id', $pn_set_id);
 			$this->opo_result_context->setResultList($va_row_ids);

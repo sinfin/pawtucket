@@ -323,6 +323,23 @@ class ca_collections extends BundlableLabelableBaseModelWithAttributes implement
 		$this->BUNDLES['hierarchy_location'] = array('type' => 'special', 'repeating' => false, 'label' => _t('Location in hierarchy'));
 	}
 	# ------------------------------------------------------
+	public function getCollectionIDsByIdnos($ps_idno) {
+		if (!sizeof($ps_idno)) return false;
+		$o_db = $this->getDb();
+		$qr_res = $o_db->query("
+			SELECT DISTINCT cae.collection_id
+			FROM ca_collections cae
+			WHERE
+				cae.idno IN (?)
+		", $ps_idno);
+		
+		$va_collection_ids = array();
+		while($qr_res->nextRow()) {
+			$va_collection_ids[] = $qr_res->get('collection_id');
+		}
+		return $va_collection_ids;
+	}
+	# ------------------------------------------------------
 	public function getCollectionIDsByName($ps_name) {
 		$o_db = $this->getDb();
 		$qr_res = $o_db->query("

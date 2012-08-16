@@ -30,15 +30,16 @@
 $qr_data 						= $this->getVar('data');		// this is a search result row
 $va_access_values 		= $this->getVar('access_values');
 
-$this->setVar('object', $qr_data);
-$this->setVar('noLi', true);
-$this->setVar('ajax', true);
+// $this->setVar('object', $qr_data);
+// $this->setVar('noLi', true);
+// $this->setVar('ajax', true);
 
-print '<div class="mapBaloon">';
-	print $this->render('Results/_ca_objects_result_item.php');
-print '</div>';
+// print '<div class="mapBaloon">';
+	// print 'test';
+	// print $this->render('Results/_ca_objects_result_item.php');
+// print '</div>';
 
-/*
+
 $year = dateYear($qr_data->get('ca_objects.periodization'));
 ?>
 <div class="mapBalloon">
@@ -51,5 +52,5 @@ $year = dateYear($qr_data->get('ca_objects.periodization'));
 	<?php print caNavLink($this->request, '<b>'.$qr_data->get("ca_objects.idno").'</b>: '.$qr_data->get("ca_objects.preferred_labels"), '', 'Detail', 'Object', 'Show', array('object_id' => $qr_data->get("ca_objects.object_id"))); ?>
 	</div><!-- end mapBalloonText -->
 </div><!-- end mapBallon -->
-*/
+
 ?>

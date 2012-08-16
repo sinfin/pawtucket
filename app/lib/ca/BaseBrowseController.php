@@ -85,7 +85,7 @@
  		function Index($pb_dont_render_view=false, $pa_options=null) {
  			parent::Index($po_search, $pa_options);
  			JavascriptLoadManager::register('browsable');
-			JavascriptLoadManager::register('hierBrowser');
+			JavascriptLoadManager::register('browse');
  			
  			$va_access_values = caGetUserAccessValues($this->request);
  			

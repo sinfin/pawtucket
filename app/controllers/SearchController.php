@@ -87,7 +87,9 @@
  		# -------------------------------------------------------
  		public function __construct(&$po_request, &$po_response, $pa_view_paths=null) {
  			parent::__construct($po_request, $po_response, $pa_view_paths);
- 			JavascriptLoadManager::register('tabUI');
+ 			// JavascriptLoadManager::register('tabUI');
+ 			JavascriptLoadManager::register('browse');
+ 			JavascriptLoadManager::register('browsable');
  			
  			// redirect user if not logged in
 			if (($this->request->config->get('pawtucket_requires_login')&&!($this->request->isLoggedIn()))||($this->request->config->get('show_bristol_only')&&!($this->request->isLoggedIn()))) {
@@ -345,6 +347,25 @@
  			
  			return parent::Index($this->opo_browse, $pa_options);
  		}
+ 		# -------------------------------------------------------
+		public function RecentlyAdded() {
+			// 	$va_access_values = caGetUserAccessValues($this->request);
+			// if (!($vs_view = $this->opo_result_context->getCurrentView())) { 
+			// 	$vs_view = $this->ops_view_default ? $this->ops_view_default : array_shift(array_keys($this->opa_views)); 
+			// 	$this->opo_result_context->setCurrentView($vs_view);
+			// }
+			// $t_object = new ca_objects();
+			// $va_items = $t_object->getRecentlyAddedItems(1000);
+			// $vo_result = $t_object->makeSearchResult("ca_objects", array_keys($va_items));
+			// $this->ops_tablename = 'ca_objects';
+			// $this->opo_result_context = new ResultContext($po_request, $this->ops_tablename, $this->ops_find_type);
+			// $this->opo_browse = new ObjectBrowse($this->opo_result_context->getParameter('browse_id'), 'pawtucket2');	
+			// print '<pre>'; var_dump($this->ops_find_type); print '</pre>';
+			$this::Index();
+			// $this->view->setVar('result', $va_result);
+			// $this->view->setVar('access', $va_access_values);
+			// $this->view->setVar('view', $vs_view);
+		}
  		# -------------------------------------------------------
  		/**
  		 *

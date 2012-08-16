@@ -1294,5 +1294,161 @@ class ca_objects extends BundlableLabelableBaseModelWithAttributes implements IB
 		return $va_object_ids;
 	}
  	# ------------------------------------------------------
+	/**
+	 * Returns associative array of type names
+	 */
+	public function getTypeNamesForIDs($pa_ids) {
+		if (!is_array($pa_ids) || !sizeof($pa_ids)) { return array(); }
+		$o_db = $this->getDb();
+		$ids = join(',', $pa_ids);
+		$qr_res = $o_db->query("
+			SELECT objects.object_id id, labels.name_singular name, labels.locale_id locale
+				FROM ca_list_item_labels labels
+				INNER JOIN ca_objects objects ON objects.type_id = labels.item_id
+				WHERE (objects.object_id IN ({$ids}))
+		");
+		
+		$va_typeNames = array();
+		while($qr_res->nextRow()) {
+			$va_typeNames[$qr_res->get('id')] = $qr_res->get('name');
+		}
+		return $va_typeNames;
+	}
+ 	# ------------------------------------------------------	
+	public function getCollectionSiblings($count = 5, $type_ids = false, $pa_options = null) {
+		if (!is_array($pa_options)) { $pa_options = array(); }
+		if ($pa_options['checkAccess']) { $pa_options['return_with_access'] = $pa_options['checkAccess']; }
+		$access = $pa_options['return_with_access'];
+		$id = $this->get('ca_objects_x_collections.collection_id', array('returnAsArray' => true));
+		$siblings = array();
+		foreach ($id as $i) {
+			$t_collection = new ca_collections($i);
+			$siblings = array_merge($siblings, $t_collection->get('ca_objects_x_collections.object_id', array('returnAsArray' => true, 'checkAccess' => $access)));
+		}
+		foreach ($siblings as $n => $id) {
+			// unset own id
+			if ($id == $this->get('object_id')) {
+				unset($siblings[$n]);
+			}
+		}
+		if (count($siblings) == 0) {
+			// return random items
+			$ids = array_keys($this->getRandomItems(5, array('hasRepresentations' => 1, 'checkAccess' => $access)));
+			$siblings = array();
+			foreach ($ids as $id) {
+				$siblings[$id] = new ca_objects($id);
+			}
+			$return = $siblings;
+		} else {
+			// return siblings
+			if ($count > count($siblings)) { $count = count($siblings); }
+			$rk = array_rand($siblings, $count);
+			$t_siblings = array();
+			foreach ($rk as $v) {
+				$obj = new ca_objects($siblings[$v]);
+				$t_siblings[$obj->get('object_id')] = $obj;
+			}
+			if ($type_ids) {
+				$return = array('siblings' => $t_siblings, 'type_ids' => array());
+				foreach (array_keys($t_siblings) as $id) {
+					$return['type_ids'][$id] = $t_siblings[$id]->get('type_id');
+				}
+			} else {
+				$return = $t_siblings;
+			}
+		}
+		return $return;	
+	}
+ 	# ------------------------------------------------------	
+	public function getIdnoSiblings($pa_options = null) {
+		if (!is_array($pa_options)) { $pa_options = array(); }
+		if ($pa_options['checkAccess']) { $pa_options['return_with_access'] = $pa_options['checkAccess']; }
+		$idno = $this->get('idno');
+		$position = strpos($idno, '/');
+		// can we parse the idno?
+		if ($position) {
+			$idno = substr($idno, 0, -$position);
+			$access = $pa_options['return_with_access'];
+			if (sizeof($access)) {
+				$access = implode(', ', $access);
+			} else {
+				$access = $this->get('access');
+			}
+			$o_db = $this->getDb();
+			$qr_res = $o_db->query("
+				SELECT o.object_id id, o.idno idno
+					FROM ca_objects o
+					WHERE o.idno LIKE '{$idno}%'
+						AND o.access IN ({$access})
+					ORDER BY o.idno
+			");
+			$siblings = array();
+			while($qr_res->nextRow()) {
+				$siblings[] = $qr_res->getRow();
+			}
+			$n = 0;
+			while (isset($siblings[$n]) && intval($siblings[$n]['id']) != $this->get('object_id')) {
+				$n++;
+			}
+			$next = false; $prev = false;
+			if (isset($siblings[$n+1])) $next = $siblings[$n+1]['id']; 
+			if (isset($siblings[$n-1])) $prev = $siblings[$n-1]['id'];
+			// return 10 siblings
+			$objects = false;
+			if (sizeof($siblings) > 1) {
+				$objects = array();
+				if ($prev) $objects[] = new ca_objects($prev);
+				if ($next) {
+					$arr = array_slice($siblings, $n+1);
+					foreach ($arr as $key => $val) {
+						$arr[$key] = new ca_objects($val['id']);
+					}
+					$objects = array_slice(array_merge($objects, $arr), 0, 5);
+				}
+			}
+			$return = array(
+				'next_id' => $next,
+				'prev_id' => $prev,
+				'siblings' => $objects
+			);
+		} else {
+			$return = false;
+		}
+		return $return;
+	}	
+ 	# ------------------------------------------------------	
+	public function getCollectionHierarchy($locale, $pa_options = null) {
+		if (!is_array($pa_options)) { $pa_options = array(); }
+		if ($pa_options['checkAccess']) { $pa_options['return_with_access'] = $pa_options['checkAccess']; }
+		$access = $pa_options['return_with_access'];
+		$id = $this->get('ca_objects_x_collections.collection_id', array('returnAsArray' => true, 'checkAccess' => $access));
+		if (sizeof($id) == 0) return false;
+		if (sizeof($access) == 0) return false;
+		$access = implode(', ', $access);
+		$id = $id[0];
+		$t_collection = new ca_collections($id);
+		$left = $t_collection->get('hier_left');
+		$hier_id = $t_collection->get('hier_collection_id');
+		$lang_code = $locale;
+		$o_db = $this->getDb();
+		$qr_res = $o_db->query("
+			SELECT cl.name AS name, parent.collection_id
+			FROM ca_collections AS node JOIN ca_collections AS parent
+				JOIN ca_collection_labels AS cl ON parent.collection_id = cl.collection_id
+				JOIN ca_locales AS lo ON cl.locale_id = lo.locale_id				
+			WHERE node.hier_left BETWEEN parent.hier_left AND parent.hier_right
+				AND (parent.hier_collection_id = {$hier_id} AND node.hier_collection_id = {$hier_id})
+				AND parent.access IN ({$access})
+				AND lo.language = '{$lang_code}'
+				AND node.collection_id = {$id}
+			ORDER BY node.hier_left;
+		");
+		$tree = array();
+		while($qr_res->nextRow()) {
+			$tree[] = $qr_res->getRow();
+		}
+
+		return $tree;
+	}	
 }
 ?>

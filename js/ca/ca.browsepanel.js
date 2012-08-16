@@ -47,8 +47,8 @@ var caUI = caUI || {};
 			
 			singleFacetValues: {},
 			
-			exposeBackgroundColor: '#000000',						/* color (in hex notation) of background masking out page content; include the leading '#' in the color spec */
-			exposeBackgroundOpacity: 0.5,							/* opacity of background color masking out page content; 1.0 is opaque */
+			exposeBackgroundColor: 'transparent',						/* color (in hex notation) of background masking out page content; include the leading '#' in the color spec */
+			exposeBackgroundOpacity: 0,							/* opacity of background color masking out page content; 1.0 is opaque */
 			panelTransitionSpeed: 200
 		}, options);
 		
