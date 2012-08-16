@@ -36,6 +36,8 @@
     });
   };
 
+  window.loadImg = loadImg;
+
   createPagination = function() {
     var arr, bo, count, dr, ft, fullscreenLinks, generateOffsets, h, ht, items, num, options, showHide, si, toggleFullscreen, _i, _j, _len, _results;
     items = window.imageWrap.find('li');

@@ -128,6 +128,9 @@
 						}
 					} // endif			
 				?>
+					<li class="print">
+						<span class="print-page ico-print" data-notification="<?php print _t('Preparing document, loading images. This may take a while...'); ?>"></span>
+					</li>
 				</ul>
 			</div>
 		</div>

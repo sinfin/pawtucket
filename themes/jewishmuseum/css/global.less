@@ -416,6 +416,7 @@
 .ico-left { .sprite(0, -47px, 7px, 10px); }
 .ico-right { .sprite(-10px, -47px, 7px, 10px); }
 .ico-triangle { .sprite(0, -95px, 8px, 10px); }
+.ico-print { .sprite(-13px, -115px, 16px, 14px); }
 .ico-fullscreen { .sprite(-30px, -95px, 16px, 16px); }
 .in .ico-fullscreen { background-position: -50px -95px; }
 
@@ -757,6 +758,15 @@ b.headline {
 				list-style: none;
 				display: inline;
 				margin-left: 5px;
+			}
+			.print {
+				.ib;
+				width: 16px;
+				.print-page {
+					position: relative;
+					bottom: -3px;
+					cursor: pointer;
+				}
 			}
 		}
 	}
@@ -1964,14 +1974,20 @@ body.displaySet {
 	.ui-dialog-titlebar, .ui-resizable-handle {
 		display: none;
 	}
+	.close {
+		.topright(0, 0);
+		cursor: pointer;
+	}
 	#notification-src {
-		padding: 50px 15px;
 		font-weight: bold;
+	}
+	#notification-src, .notification {
+		padding: 50px 15px;
 		min-height: auto !important;
 	}
 }
 .ui-widget-overlay {
-	.opacity;
+	.opacity(30);
 }
 
 .form {

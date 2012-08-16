@@ -56,22 +56,27 @@ protectImgs = ->
 		e.preventDefault()
 		return false
 
+createDialog = (el) ->
+	el.dialog
+		modal: true
+		width: 335
+		draggable: false
+		resizable: false
+		minHeight: 0
+		open: ->
+			$(this).parents('.ui-dialog').css
+				left: '50%'
+				marginLeft: -335/2
+		close: ->
+			$(this).remove()
+
 notifications = ->
 	n = $('#notification-src')
+	$('body').on 'click', '.ui-widget-overlay, .ui-dialog .close.ico-close', ->
+		 $('.ui-dialog-titlebar-close').trigger('click')
 	if n.length is 1
-		$('body').on 'click', '.ui-widget-overlay', ->
-			 $('.ui-dialog-titlebar-close').trigger('click')
-		n.dialog
-			modal: true
-			width: 335
-			draggable: false
-			resizable: false
-			minHeight: 0
-			open: (event, ui) ->
-				console.log $(this).parents('.ui-dialog')
-				$(this).parents('.ui-dialog').css
-					left: '50%'
-					marginLeft: -335/2
+		n.append('<span class="close ico-close"></span>')
+		createDialog n
 
 videos = ->
 	swfLocation = "#{ window.baseUrl }/viewers/apps/flowplayer-3.2.7.swf"
@@ -92,13 +97,25 @@ videos = ->
 		$('.ratio-resize').filter('[data-ratio]').each ->
 			resizeRatio $(this), wrap
 
-printHandler = ->
-	window.onbeforeprint = ->
-		alert('print!')
-
 cstypo = ->
 	if $('html').hasClass('lang-cs')
 		$('p, li, div').add('.footer-left a').cstypo()
+
+cancelLazyload = ->
+	$('.lazyload').trigger('appear')
+	unless typeof window.loadImg is 'undefined'
+		window.loadImg $('ul li', '#tab-images')
+		console.log $('ul li', '#tab-images')
+
+printPage = (notification) ->
+	element = $('<div class="notification"></div>').html(notification).append('<span class="close ico-close"></span>')
+	createDialog element
+	cancelLazyload()
+	window.print()
+
+bindPrint = ->
+	$('body').on 'click', '.print-page', ->
+		printPage $(this).data('notification')
 
 $ ->
 	window.equalHeight($('.equal-height, .grid > ul'))
@@ -109,5 +126,5 @@ $ ->
 	togglable()
 	videos()
 	protectEmails()
-	printHandler()
+	bindPrint()
 	# initMasonry()

@@ -20,6 +20,8 @@ loadImg = (els) ->
 		t = $(this).find('img').filter(':visible')
 		t.not('.loaded').addClass('loaded').attr 'src', t.data 'original'
 
+window.loadImg = loadImg
+
 createPagination = ->
 	items = window.imageWrap.find('li')
 	count = items.length

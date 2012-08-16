@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-17 07:20-0800\n"
-"PO-Revision-Date: 2012-08-15 16:09+0100\n"
+"PO-Revision-Date: 2012-08-16 14:14+0100\n"
 "Last-Translator: Petr Marek <contact@petrmarek.eu>\n"
 "Language-Team:  <info@collectiveaccess.org>\n"
 "MIME-Version: 1.0\n"
@@ -7814,6 +7814,9 @@ msgstr "Nenalezeny žádné výsledky."
 
 msgid "On-line collections"
 msgstr "On-line sbírky"
+
+msgid "Preparing document, loading images. This may take a while..."
+msgstr "Dokument se připravuje pro tisk, načítají se obrázky. Může to chvíli trvat..."
 
 msgid "Thank you for your contribution."
 msgstr "Děkujeme za doplnění sbírek."
