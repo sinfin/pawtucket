@@ -117,7 +117,7 @@
  			}
  			if (!isset($this->opa_views[$vs_view])) { $vs_view = array_shift(array_keys($this->opa_views)); }
  			
- 			if (!($vs_sort 	= $this->opo_result_context->getCurrentSort())) { $vs_sort = array_shift(array_keys($this->opa_sorts)); }
+			if (!($vs_sort 	= $this->opo_result_context->getCurrentSort())) { $vs_sort = array_shift(array_keys($this->opa_sorts)); }
  			$vs_sort_direction = $this->opo_result_context->getCurrentSortDirection();
 			$vn_display_id 	= $this->opo_result_context->getCurrentBundleDisplay();
  			
@@ -127,17 +127,18 @@
  			MetaTagManager::setWindowTitle(_t('%1 search', $this->searchName('plural')));
  			
  			// Get attribute sorts
- 			$va_sortable_elements = ca_metadata_elements::getSortableElements($this->ops_tablename, $this->opn_type_restriction_id);
+ 			// mreq: we don't want that
+ 			// $va_sortable_elements = ca_metadata_elements::getSortableElements($this->ops_tablename, $this->opn_type_restriction_id);
  			
- 			if (!is_array($this->opa_sorts)) { $this->opa_sorts = array(); }
- 			foreach($va_sortable_elements as $vn_element_id => $va_sortable_element) {
- 				$this->opa_sorts[$this->ops_tablename.'.'.$va_sortable_element['element_code']] = $va_sortable_element['display_label'];
- 			}
+ 			// if (!is_array($this->opa_sorts)) { $this->opa_sorts = array(); }
+ 			// foreach($va_sortable_elements as $vn_element_id => $va_sortable_element) {
+ 			// 	$this->opa_sorts[$this->ops_tablename.'.'.$va_sortable_element['element_code']] = $va_sortable_element['display_label'];
+ 			// }
  			
  			if ($pa_options['appendToSearch']) {
  				$vs_append_to_search .= " AND (".$pa_options['appendToSearch'].")";
  			}
-			//
+			
 			// Execute the search
 			//
 			if($vs_search && ($vs_search != "")){ /* any request? */
