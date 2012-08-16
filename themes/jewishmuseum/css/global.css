@@ -737,57 +737,6 @@ textarea {
 .row:after {
   clear: both;
 }
-#s .grid-item .img {
-  display: block;
-  width: 140px;
-  height: 140px;
-  float: left;
-}
-#s .grid-item .text {
-  margin-left: 160px;
-}
-#s .grid-item .text h2 a,
-#s .grid-item .text h3 a,
-#s .grid-item .text h4 a {
-  font-size: 13px;
-  line-height: 18px;
-  color: #333333;
-  font-weight: bold;
-  text-decoration: none;
-}
-#s .grid-item .text h2 a a,
-#s .grid-item .text h3 a a,
-#s .grid-item .text h4 a a {
-  color: #333333;
-}
-#s .grid-item .text h2 a a:hover,
-#s .grid-item .text h3 a a:hover,
-#s .grid-item .text h4 a a:hover {
-  color: #009bd9;
-}
-#s .grid-item .text h2 a:hover,
-#s .grid-item .text h3 a:hover,
-#s .grid-item .text h4 a:hover {
-  color: #009bd9;
-}
-#s .grid-item .text .more {
-  padding-top: 18px;
-}
-#s .grid-item .text .more a {
-  font-size: 13px;
-  line-height: 18px;
-  color: #333333;
-  font-weight: bold;
-}
-#s .grid-item .text .more a a {
-  color: #333333;
-}
-#s .grid-item .text .more a a:hover {
-  color: #009bd9;
-}
-#s .grid-item .text .more a:hover {
-  color: #009bd9;
-}
 #z .hier-tree {
   z-index: 999;
 }
@@ -2824,68 +2773,68 @@ b.headline {
 #resultBox #browse-map {
   margin-bottom: 18px;
 }
-#resultBox .mapBaloon {
+.mapBalloon {
   zoom: 1;
 }
-#resultBox .mapBaloon:before,
-#resultBox .mapBaloon:after {
+.mapBalloon:before,
+.mapBalloon:after {
   display: table;
   content: "";
   zoom: 1;
   *display: inline;
 }
-#resultBox .mapBaloon:after {
+.mapBalloon:after {
   clear: both;
 }
-#resultBox .mapBaloon .img {
+.mapBalloon .img {
   display: block;
   width: 140px;
   height: 140px;
   float: left;
 }
-#resultBox .mapBaloon .text {
+.mapBalloon .text {
   margin-left: 160px;
 }
-#resultBox .mapBaloon .text h2 a,
-#resultBox .mapBaloon .text h3 a,
-#resultBox .mapBaloon .text h4 a {
+.mapBalloon .text h2 a,
+.mapBalloon .text h3 a,
+.mapBalloon .text h4 a {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
   font-weight: bold;
   text-decoration: none;
 }
-#resultBox .mapBaloon .text h2 a a,
-#resultBox .mapBaloon .text h3 a a,
-#resultBox .mapBaloon .text h4 a a {
+.mapBalloon .text h2 a a,
+.mapBalloon .text h3 a a,
+.mapBalloon .text h4 a a {
   color: #333333;
 }
-#resultBox .mapBaloon .text h2 a a:hover,
-#resultBox .mapBaloon .text h3 a a:hover,
-#resultBox .mapBaloon .text h4 a a:hover {
+.mapBalloon .text h2 a a:hover,
+.mapBalloon .text h3 a a:hover,
+.mapBalloon .text h4 a a:hover {
   color: #009bd9;
 }
-#resultBox .mapBaloon .text h2 a:hover,
-#resultBox .mapBaloon .text h3 a:hover,
-#resultBox .mapBaloon .text h4 a:hover {
+.mapBalloon .text h2 a:hover,
+.mapBalloon .text h3 a:hover,
+.mapBalloon .text h4 a:hover {
   color: #009bd9;
 }
-#resultBox .mapBaloon .text .more {
+.mapBalloon .text .more {
   padding-top: 18px;
 }
-#resultBox .mapBaloon .text .more a {
+.mapBalloon .text .more a {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
   font-weight: bold;
 }
-#resultBox .mapBaloon .text .more a a {
+.mapBalloon .text .more a a {
   color: #333333;
 }
-#resultBox .mapBaloon .text .more a a:hover {
+.mapBalloon .text .more a a:hover {
   color: #009bd9;
 }
-#resultBox .mapBaloon .text .more a:hover {
+.mapBalloon .text .more a:hover {
   color: #009bd9;
 }
 #browseControls ul li {
