@@ -92,7 +92,10 @@ videos = ->
 		id = t.attr('id')
 		if t.is('.ratio-resize[data-ratio]')
 			resizeRatio t, wrap
-		flowplayer id, swfLocation
+		$f id, swfLocation,
+			clip:
+				url: t.attr('href')
+				autoPlay: false
 	$(window).on 'resize', ->
 		$('.ratio-resize').filter('[data-ratio]').each ->
 			resizeRatio $(this), wrap

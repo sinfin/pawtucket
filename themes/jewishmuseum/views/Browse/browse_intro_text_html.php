@@ -16,7 +16,7 @@
 
 	<br />
 	<h2><b>Prohlížení hierarchie sbírek</b></h2>
-	<div>K záznamům je možné také přistupovat prostřednictvím <?php print caNavLink($this->request, _t("hierarchie sbírek ŽMP"), "", "Hierarchy", "Show", "Index"); ?>.</div>
+	<div>K záznamům je možné také přistupovat prostřednictvím <?php print caNavLink($this->request, _t("hierarchie sbírek ŽMP"), "", "Splash", "About", "Index"); ?>.</div>
 
 	<br />
 	<h2><b>Přístup k&nbsp;datům</b></h2>

@@ -113,7 +113,12 @@
       if (t.is('.ratio-resize[data-ratio]')) {
         resizeRatio(t, wrap);
       }
-      return flowplayer(id, swfLocation);
+      return $f(id, swfLocation, {
+        clip: {
+          url: t.attr('href'),
+          autoPlay: false
+        }
+      });
     });
     return $(window).on('resize', function() {
       return $('.ratio-resize').filter('[data-ratio]').each(function() {
