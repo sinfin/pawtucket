@@ -926,6 +926,9 @@ textarea {
   height: 14px;
   background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -13px -115px no-repeat;
 }
+body.displaySet .ico-print {
+  background-position: -35px -115px;
+}
 .ico-fullscreen {
   display: block;
   display: block;
