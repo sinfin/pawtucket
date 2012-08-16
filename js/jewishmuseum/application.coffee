@@ -101,8 +101,6 @@ cstypo = ->
 		$('p, li, div').add('.footer-left a').cstypo()
 
 $ ->
-	$(window).on 'load', ->
-		$(window).trigger('resize')
 	window.equalHeight($('.equal-height, .grid > ul'))
 	fixSidebar()
 	cstypo()

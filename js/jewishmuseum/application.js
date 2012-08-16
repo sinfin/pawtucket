@@ -128,9 +128,6 @@
   };
 
   $(function() {
-    $(window).on('load', function() {
-      return $(window).trigger('resize');
-    });
     window.equalHeight($('.equal-height, .grid > ul'));
     fixSidebar();
     cstypo();
