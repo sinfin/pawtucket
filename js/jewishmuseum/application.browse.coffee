@@ -46,7 +46,7 @@ initPagination = ->
 			url = url + parseInt(v)
 		rb.addClass('loading').load url, ->
 			rb.removeClass('loading')
-			rb.find('#resultBox').unwrap()
+			# rb.find('#resultBox').unwrap()
 			window.equalHeight($('.grid > ul', '#resultBox'))
 		return false
 

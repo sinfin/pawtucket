@@ -67,7 +67,6 @@
 	} else {
 		print $this->render('Browse/browse_intro_text_html.php');
 	}
-	if (!$this->request->isAjax()) {
 ?>
 	</div><!-- end resultbox --></div><!-- end browse -->
 
@@ -77,6 +76,9 @@
 	
 	</div>
 </div>
+<?php
+	if (!$this->request->isAjax()) {
+?>
 <script type="text/javascript">
 	var caUIBrowsePanel = caUI.initBrowsePanel({ 
 		facetUrl: '<?php print caNavUrl($this->request, $this->request->getModulePath(), $this->request->getController(), 'getFacet'); ?>',

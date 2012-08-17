@@ -75,7 +75,6 @@
       }
       rb.addClass('loading').load(url, function() {
         rb.removeClass('loading');
-        rb.find('#resultBox').unwrap();
         return window.equalHeight($('.grid > ul', '#resultBox'));
       });
       return false;
