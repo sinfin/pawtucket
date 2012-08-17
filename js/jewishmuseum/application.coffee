@@ -84,6 +84,9 @@ videos = ->
 	resizeRatio = (el, wrap) ->
 		r = parseFloat(el.data('ratio'))
 		el.css
+			width: 'auto'
+			height: 'auto'
+		el.css
 			display: 'block'
 			width: wrap.width()
 			height: wrap.width()/r
@@ -96,7 +99,7 @@ videos = ->
 			clip:
 				url: t.attr('href')
 				autoPlay: false
-	$(window).on 'resize', ->
+	$(window).on 'load resize', ->
 		$('.ratio-resize').filter('[data-ratio]').each ->
 			resizeRatio $(this), wrap
 

@@ -100,6 +100,10 @@
     resizeRatio = function(el, wrap) {
       var r;
       r = parseFloat(el.data('ratio'));
+      el.css({
+        width: 'auto',
+        height: 'auto'
+      });
       return el.css({
         display: 'block',
         width: wrap.width(),
@@ -120,7 +124,7 @@
         }
       });
     });
-    return $(window).on('resize', function() {
+    return $(window).on('load resize', function() {
       return $('.ratio-resize').filter('[data-ratio]').each(function() {
         return resizeRatio($(this), wrap);
       });
