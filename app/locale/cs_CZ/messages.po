@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-17 07:20-0800\n"
-"PO-Revision-Date: 2012-08-17 16:01+0100\n"
+"PO-Revision-Date: 2012-08-17 17:08+0100\n"
 "Last-Translator: Petr Marek <contact@petrmarek.eu>\n"
 "Language-Team:  <info@collectiveaccess.org>\n"
 "MIME-Version: 1.0\n"
@@ -1229,6 +1229,15 @@ msgstr "přírůstky"
 
 msgid "thumbnails"
 msgstr "náhledy"
+
+msgid "thumbnail"
+msgstr "náhled"
+
+msgid "periodization"
+msgstr "datace"
+
+msgid "Periodization"
+msgstr "Datace"
 
 msgid "full"
 msgstr "detaily"
@@ -7980,7 +7989,6 @@ msgstr "Výsledky řadit podle"
 msgid "Map"
 msgstr "Mapa"
 
-#, fuzzy
 msgid "Thumbnails"
 msgstr "Náhledy"
 
