@@ -45,7 +45,7 @@ $vs_media_tag = $qr_data->getMediaTag('ca_object_representations.media', 'thumbn
 	</div>
 	<div class="text">
 		<?php
-			$title = caNavLink($this->request, $qr_data->get("ca_objects.preferred_labels"), 'fullscreen-target', 'Detail', 'Object', 'Show', array('object_id' => $id));
+			$title = caNavLink($this->request, $qr_data->get("ca_objects.preferred_labels"), 'fullscreen-target', 'Detail', 'Object', 'Show', array('object_id' => $object_id));
 			if ($year) {
 				$year = caNavLink($this->request, $year['text'], '', '', 'Browse', 'clearAndAddCriteria', array('facet' => 'periodization_facet', 'id' => $year['search']));
 			}
