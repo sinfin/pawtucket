@@ -8,6 +8,8 @@
 			print caNavLink($this->request, 'fungujici "podsbirka"', "", "Collections", "Hierarchy", "Show", array('collection_id' => 5));
 			print '<br />';
 			print caNavLink($this->request, 'bez potomku', "", "Collections", "Hierarchy", "Show", array('collection_id' => 171));
+			print '<br />';
+			print caNavLink($this->request, 'zide v ostrave', "", "Collections", "Hierarchy", "Show", array('collection_id' => 77));
 		?>
 		<br /><br /><br /><br />
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sapien libero, consectetur vitae placerat 

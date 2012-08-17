@@ -8,15 +8,19 @@ function filterTree($tree, $id) {
 			return $t;
 		} else {
 			if (count($t['children']) > 0) {
-				return filterTree($t['children'], $id);
-			} else {
-				return false;
+				$filtered = filterTree($t['children'], $id);
+				if ($filtered) return $filtered;
 			}
 		}
 	}
 }
 function filterRelevant($tree, $id) {
-	return filterTree($tree, $id);
+	$relevant = filterTree($tree, $id);
+	if (count($relevant['children']) == 0) {
+		return false;
+	} else {
+		return $relevant;
+	}
 }
 function toHierarchy($collection, $id) {
 	// Trees mapped
