@@ -174,7 +174,13 @@ bindTooltips = ->
 		bodyHandler: ->
 			return $(this).siblings('.description').html()
 	
+ieFix = ->
+	if $.browser.msie and $.browser.version < 9 and $.browser.version > 7
+		$('.scroll-lazyload', '#detail-left').css
+			maxWidth: 'auto'
+
 $ ->
+	ieFix()
 	moveRibbons()
 	window.imageWrap = $('#tab-images')
 	if window.imageWrap.length is 1

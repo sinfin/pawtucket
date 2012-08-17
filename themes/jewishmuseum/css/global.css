@@ -1199,6 +1199,7 @@ b.headline {
 }
 .item-nav {
   position: relative;
+  z-index: 3;
   height: 21px;
   padding: 5px 0;
   zoom: 1;
@@ -2186,6 +2187,8 @@ b.headline {
 #detail #detail-full {
   clear: both;
   border-top: 1px solid #e6e6e6;
+  position: relative;
+  z-index: 1;
 }
 #detail #detail-full b.heading {
   display: block;
@@ -2257,7 +2260,6 @@ b.headline {
 #detail #tab-images > ul li img {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
   height: auto;
 }
 #detail #tab-images > ul li .big,
@@ -3216,10 +3218,15 @@ body.fullscreen #main .content #detail > .item-nav {
   margin: 0 auto;
   min-width: 380px;
   max-width: 1100px;
+}
+body.fullscreen #main .content #detail #detail-left,
+body.fullscreen #main .content #detail #detail-full {
   position: relative;
   z-index: 1;
 }
-body.fullscreen #main .content #detail .item-nav {
+body.fullscreen #main .content #detail .item-nav,
+body.fullscreen #main .content #detail > .item-nav {
+  position: relative;
   z-index: 99;
 }
 body.fullscreen #main .content #detail #detail-full .item-4 {
@@ -3231,6 +3238,12 @@ body.fullscreen #main .content #detail #detail-left .title {
 }
 body.fullscreen #main .content #detail #detail-left .title .logo-small {
   display: block;
+}
+body.fullscreen #main .content #detail #detail-left .title,
+body.fullscreen #main .content #detail #detail-left .tabs,
+body.fullscreen #main .content #detail #detail-left .tab-content {
+  position: relative;
+  z-index: 1;
 }
 body.fullscreen #main .content #detail #detail-right {
   right: -260px;
@@ -3554,4 +3567,12 @@ body.displaySet div {
   #home-featured ul li .text {
     margin-left: 480px;
   }
+}
+html.ie7 #detail #tab-images > ul li img,
+html.non-ie #detail #tab-images > ul li img {
+  max-width: 100%;
+}
+html.ie8 #detail #tab-images > ul li img {
+  max-width: auto;
+  width: 90%;
 }
