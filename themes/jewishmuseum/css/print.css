@@ -34,13 +34,18 @@ body.displaySet div {
 }
 #header #header-box,
 #main-menu,
-#footer .footer-left {
+#footer .footer-left,
+.item-nav .item-nav-left,
+.item-share,
+#detail-left .tabs,
+#detail-left-pagination {
   display: none;
 }
 .sidebar,
 .content {
   border-top: 0;
 }
-.ui-dialog {
+.ui-dialog,
+.ui-widget-overlay {
   display: none !important;
 }

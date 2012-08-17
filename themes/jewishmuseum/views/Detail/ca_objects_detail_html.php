@@ -39,10 +39,19 @@
 	$idno_siblings = $t_object->getIdnoSiblings(array('checkAccess' => $va_access_values));
 
 	$set = new ca_sets();
+	$oe_code = $this->request->config->get('featured_set_name');
 	$online_exhibitions = $set->getSetsForItem($t_object->tableNum(), $t_object->getPrimaryKey(), array('checkAccess' => $va_access_values));
-	$online_exhibitions = caExtractValuesByUserLocale($online_exhibitions);	
+	$online_exhibitions = caExtractValuesByUserLocale($online_exhibitions);
+	if (count($online_exhibitions) > 0) {
+		foreach ($online_exhibitions as $key => $value) {
+			if ($value['set_code'] == $oe_code) unset($online_exhibitions[$key]);
+		}
+	}
 ?>
 	<div id="detail">
+		<?php
+		if (count($online_exhibitions) > 0) {
+		?>
 		<div id="detail-online-exhibitions">
 			<ul>
 				<?php
@@ -53,6 +62,9 @@
 				?>
 			</ul>
 		</div>
+		<?php
+		}
+		?>
 		<div id="detail-right"><div class="inner">
 			<span class="fullscreen-arrow ico-left"></span>
 		<?php

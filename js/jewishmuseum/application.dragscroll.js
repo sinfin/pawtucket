@@ -39,9 +39,9 @@
       var t;
       t = $(this);
       if (fullscreen) {
-        t = t.find('.big img');
+        t = t.find('.big .scroll-lazyload');
       } else {
-        t = t.find('.small img');
+        t = t.find('.small .scroll-lazyload');
       }
       return loadImgDirect(t);
     });
@@ -54,11 +54,11 @@
     items = window.imageWrap.find('li');
     count = items.length;
     fullscreenLinks = $('.fullscreen-target');
-    window.images = items.find('img').filter(':visible');
+    window.images = items.find('.scroll-lazyload').filter(':visible');
     options = [];
     generateOffsets = function() {
       window.offsets = [];
-      items.find('img').filter(':visible').height('auto').each(function() {
+      items.find('.scroll-lazyload').filter(':visible').height('auto').each(function() {
         var h, ratio, t;
         t = $(this);
         ratio = t.data('ratio');
@@ -182,10 +182,10 @@
       si.add(dr).removeAttr('style');
       if (ft.hasClass('in')) {
         window.location.hash = '#fullscreen';
-        window.images = items.find('.big img');
+        window.images = items.find('.big .scroll-lazyload');
       } else {
         window.location.hash = '';
-        window.images = items.find('.small img');
+        window.images = items.find('.small .scroll-lazyload');
       }
       $(window).trigger('resize scroll');
       window.readerSelect.trigger('change');

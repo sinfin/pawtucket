@@ -23,9 +23,9 @@ loadImg = (els) ->
 	els.each ->
 		t = $(this)
 		if fullscreen
-			t = t.find('.big img')
+			t = t.find('.big .scroll-lazyload')
 		else
-			t = t.find('.small img')
+			t = t.find('.small .scroll-lazyload')
 		loadImgDirect t
 
 window.loadImg = loadImg
@@ -34,12 +34,12 @@ createPagination = ->
 	items = window.imageWrap.find('li')
 	count = items.length
 	fullscreenLinks = $('.fullscreen-target')
-	window.images = items.find('img').filter(':visible')
+	window.images = items.find('.scroll-lazyload').filter(':visible')
 	options = []
 	
 	generateOffsets = ->
 		window.offsets = []
-		items.find('img').filter(':visible').height('auto').each ->
+		items.find('.scroll-lazyload').filter(':visible').height('auto').each ->
 			t = $(this)
 			ratio = t.data 'ratio'
 			if ratio
@@ -133,10 +133,10 @@ createPagination = ->
 		si.add(dr).removeAttr('style') # reset all js css
 		if ft.hasClass('in')
 			window.location.hash = '#fullscreen'
-			window.images = items.find('.big img')
+			window.images = items.find('.big .scroll-lazyload')
 		else
 			window.location.hash = ''
-			window.images = items.find('.small img')
+			window.images = items.find('.small .scroll-lazyload')
 		$(window).trigger 'resize scroll' # lazyload, window offsets
 		window.readerSelect.trigger('change')
 		loadImg window.images.slice(0, 1)

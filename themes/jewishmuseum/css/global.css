@@ -741,7 +741,7 @@ textarea {
   display: block;
   width: 7px;
   height: 9px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -47px no-repeat;
 }
 .arrow.next {
   background-position: -10px -47px;
@@ -751,21 +751,21 @@ textarea {
   display: block;
   width: 7px;
   height: 9px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -47px no-repeat;
 }
 .arrow-right {
   display: block;
   display: block;
   width: 7px;
   height: 9px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -10px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -10px -47px no-repeat;
 }
 .arrow-down {
   display: block;
   display: block;
   width: 9px;
   height: 7px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -43px -59px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -43px -59px no-repeat;
 }
 .arrow-down.active,
 .arrow-down:hover {
@@ -776,7 +776,7 @@ textarea {
   display: block;
   width: 9px;
   height: 7px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -54px -59px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -54px -59px no-repeat;
 }
 .arrow-up.active,
 .arrow-up:hover {
@@ -861,70 +861,70 @@ textarea {
   display: block;
   width: 16px;
   height: 14px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -77px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -77px no-repeat;
 }
 .ico-folder {
   display: block;
   display: block;
   width: 16px;
   height: 14px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -20px -77px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -20px -77px no-repeat;
 }
 .ico-folder-open {
   display: block;
   display: block;
   width: 16px;
   height: 14px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -40px -77px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -40px -77px no-repeat;
 }
 .ico-minus {
   display: block;
   display: block;
   width: 10px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -37px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -37px -47px no-repeat;
 }
 .ico-plus {
   display: block;
   display: block;
   width: 10px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -24px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -24px -47px no-repeat;
 }
 .ico-close {
   display: block;
   display: block;
   width: 10px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -50px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -50px -47px no-repeat;
 }
 .ico-left {
   display: block;
   display: block;
   width: 7px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -47px no-repeat;
 }
 .ico-right {
   display: block;
   display: block;
   width: 7px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -10px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -10px -47px no-repeat;
 }
 .ico-triangle {
   display: block;
   display: block;
   width: 8px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -95px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -95px no-repeat;
 }
 .ico-print {
   display: block;
   display: block;
   width: 16px;
   height: 14px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -13px -115px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -13px -115px no-repeat;
 }
 body.displaySet .ico-print {
   background-position: -35px -115px;
@@ -934,7 +934,7 @@ body.displaySet .ico-print {
   display: block;
   width: 16px;
   height: 16px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -30px -95px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -30px -95px no-repeat;
 }
 .in .ico-fullscreen {
   background-position: -50px -95px;
@@ -1270,7 +1270,7 @@ b.headline {
   display: block;
   width: 8px;
   height: 8px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -115px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -115px no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -4px;
@@ -1610,7 +1610,7 @@ b.headline {
   display: block;
   width: 16px;
   height: 16px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -59px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -59px no-repeat;
 }
 #navigation .browse #search .submit input {
   display: block;
@@ -1873,7 +1873,7 @@ b.headline {
   display: block;
   width: 11px;
   height: 11px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -13px 0 no-repeat;
+  background: url('../graphics/jewishmuseum.png') -13px 0 no-repeat;
   float: left;
   margin-right: 10px;
   position: relative;
@@ -2063,7 +2063,7 @@ b.headline {
   display: block;
   width: 32px;
   height: 32px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -14px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -14px no-repeat;
   margin-bottom: 10px;
 }
 #footer .footer-share .ico.rss {
@@ -2279,11 +2279,11 @@ b.headline {
   left: auto;
   right: 30px;
   bottom: 20px;
-  background: url(../graphics/vodoznak-en.png) 0 0 no-repeat;
-}
-#detail #tab-images > ul li .big .watermark.cs_CZ,
-#detail #tab-images > ul li .small .watermark.cs_CZ {
-  background-image: url(../graphics/vodoznak-cz.png);
+  /*background: url(../graphics/vodoznak-en.png) 0 0 no-repeat;
+						&.cs_CZ {
+							background-image: url(../graphics/vodoznak-cz.png);
+						}*/
+
 }
 #detail #tab-images > ul li .big {
   display: none;
@@ -2574,21 +2574,21 @@ b.headline {
   display: block;
   width: 10px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -24px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -24px -47px no-repeat;
 }
 #hierarchy-full ul li.open > .icons > .ico-sign {
   display: block;
   display: block;
   width: 10px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -37px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -37px -47px no-repeat;
 }
 #hierarchy-full ul li.open > .icons > .ico-folder {
   display: block;
   display: block;
   width: 16px;
   height: 14px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -40px -77px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -40px -77px no-repeat;
 }
 #hierarchy-full ul li.open .sub {
   padding-top: 15px;
@@ -2598,7 +2598,7 @@ b.headline {
   display: block;
   width: 10px;
   height: 10px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) -24px -47px no-repeat;
+  background: url('../graphics/jewishmuseum.png') -24px -47px no-repeat;
 }
 #hierarchy-full ul li.open.closed > .icons > .ico-folder {
   background-position: -20px -77px;
@@ -2761,7 +2761,7 @@ b.headline {
   display: block;
   width: 16px;
   height: 16px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -59px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -59px no-repeat;
 }
 #resultBox {
   padding-top: 20px;
@@ -3312,7 +3312,7 @@ body.displaySet #header #online-exhibition-search .submit {
   display: block;
   width: 16px;
   height: 16px;
-  background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) 0 -59px no-repeat;
+  background: url('../graphics/jewishmuseum.png') 0 -59px no-repeat;
 }
 body.displaySet #header #online-exhibition-search .submit input {
   display: block;

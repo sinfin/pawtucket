@@ -1,3 +1,4 @@
+@spritePath: '../graphics/jewishmuseum.png';
 /////////////////////////////////////
 // RESET
 /////////////////////////////////////
@@ -239,7 +240,7 @@ textarea {
 .sprite(@x: 0, @y: 0, @width, @height) {
   display: block;
   .size(@width, @height);
-	background: url(http://collections.jewishmuseum.cz/themes/jewishmuseum/graphics/jewishmuseum.png) @x @y no-repeat;
+	background: url('@{spritePath}') @x @y no-repeat;
 }
 .topleft(@top: 0, @left: 0) {
   position: absolute;

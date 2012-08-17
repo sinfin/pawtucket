@@ -1859,7 +1859,7 @@ $ca_relationship_lookup_parse_cache = array();
 	}
 	# ------------------------------------------------------------------------------------------------
 	function detailImg($img) {
-		$img = str_replace('lazyload', '', lazyLoadImg($img));
+		$img = str_replace('lazyload', 'scroll-lazyload', lazyLoadImg($img));
 		return ratioImg($img);
 	}
 	# ------------------------------------------------------------------------------------------------
