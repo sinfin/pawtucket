@@ -2110,6 +2110,10 @@ b.headline {
 #detail #detail-left:after {
   clear: both;
 }
+#detail #detail-left .tab-content {
+  float: left;
+  width: 100%;
+}
 #detail #detail-right {
   position: absolute;
   top: 0;
