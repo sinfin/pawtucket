@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-17 07:20-0800\n"
-"PO-Revision-Date: 2012-08-16 14:14+0100\n"
+"PO-Revision-Date: 2012-08-17 14:43+0100\n"
 "Last-Translator: Petr Marek <contact@petrmarek.eu>\n"
 "Language-Team:  <info@collectiveaccess.org>\n"
 "MIME-Version: 1.0\n"
@@ -7836,8 +7836,11 @@ msgstr "Abychom Vás mohli kontaktovat, napište nám své jméno, e-mailovou ad
 msgid "If you have images of what you wish to contribute, please upload them here"
 msgstr "Pokud máte k dispozici digitální fotografie či skeny materiálů, které chcete sdílet, nahrajte je zde"
 
-msgid "Only %1 allowed."
-msgstr "Povoleno pouze: %1"
+msgid "Only %1 allowed. Total filesize is limited to %2 megabytes."
+msgstr "Povoleno pouze: %1. Maximální velikost všech souborů je dohromady omezena na %2 mb."
+
+msgid "Total filesize is limited to %1 megabytes."
+msgstr "Maximální velikost všech souborů je dohromady omezena na %1 megabajtů."
 
 msgid "submit"
 msgstr "odeslat"

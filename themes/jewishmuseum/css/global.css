@@ -3464,13 +3464,14 @@ body.displaySet div {
   width: 600px;
   border: 1px solid #ccc;
 }
-.form .info {
-  padding-top: 10px;
-}
 .form .captcha,
 .form p,
 .form .info {
   margin-bottom: 18px;
+}
+.form #file-fields input {
+  display: block;
+  margin-bottom: 10px;
 }
 #caMediaPanel {
   display: none;

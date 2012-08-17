@@ -160,9 +160,10 @@
  			$this->render('About/Index.php');
 		}
  		# ------------------------------------------------------
- 		function Contribute() {
+ 		function Contribute($values = array()) {
  			require_once(__CA_LIB_DIR__.'/vendor/recaptchalib.php');
  			$public_key = '6LeyQ9USAAAAAAZwGLypI3cOgXnVtk9JWbQr8t2e';
+ 			$this->view->setVar('values', $values);
  			$this->render('Contribute/Index.php');
 		}
  		# -------------------------------------------------------
@@ -171,7 +172,6 @@
  			$private_key = '6LeyQ9USAAAAADnDBtEsxwgjuTQ9JHSVubG0Z4xM';
  			$what = strip_tags($this->request->getParameter("what", pString));
  			$contact = strip_tags($this->request->getParameter("contact", pString));
- 			$file = (!empty($_FILES['images']['name'])) ? $_FILES['images'] : false;
  			$recaptcha_challenge_field = strip_tags($this->request->getParameter("recaptcha_challenge_field", pString));
  			$recaptcha_response_field = strip_tags($this->request->getParameter("recaptcha_response_field", pString));
  			$resp = recaptcha_check_answer ($private_key,
@@ -179,6 +179,7 @@
  			                                $recaptcha_challenge_field,
  			                                $recaptcha_response_field);
  			$error = 0;
+			$size_limit = 10; 			
  			if (empty($what)) { $error++; $this->notification->addNotification(_t("You didn't fill the description field right.")); }
  			if (empty($contact)) { $error++; $this->notification->addNotification(_t("You didn't fill the contact field right.")); }
  			if (!$resp->is_valid) { $error++; $this->notification->addNotification(_t("You didn't answer the captcha right.")); }
@@ -210,18 +211,27 @@
 				$strHeader .= $strMessage."\n\n";
 
 				//*** Attachment ***//
-				if($file) {
-					$strFilesName = $file["name"];
-					$allowed_extensions = array('zip','rar','7z','gz');
-					$ext = explode('.', $strFilesName);
-					$ext = strtolower(end($ext));
-					if (!in_array($ext, $allowed_extensions)) { $error++; $this->notification->addNotification(_t("Only %1 allowed.", ".zip, .rar, .gz and .7z")); }
-					$strContent = chunk_split(base64_encode(file_get_contents($file["tmp_name"])));
-					$strHeader .= "--".$strSid."\n";
-					$strHeader .= "Content-Type: application/octet-stream; name=\"".$strFilesName."\"\n";
-					$strHeader .= "Content-Transfer-Encoding: base64\n";
-					$strHeader .= "Content-Disposition: attachment; filename=\"".$strFilesName."\"\n\n";
-					$strHeader .= $strContent."\n\n";
+				if(count($_FILES) > 0) {
+					$total_size = 0;
+					foreach ($_FILES as $file) {
+						$total_size += $file['size'];
+						if ($file['error'] == 2) $total_size += 2*$size_limit*1024*1024;
+					}
+					if ($total_size > $size_limit*1024*1024) {
+						$error++; $this->notification->addNotification(_t("Total filesize is limited to %1 megabytes.", $size_limit));
+					} else {
+						foreach ($_FILES as $file) {
+							if (!empty($file["name"])) {
+								$strFilesName = $file["name"];
+								$strContent = chunk_split(base64_encode(file_get_contents($file["tmp_name"])));
+								$strHeader .= "--".$strSid."\n";
+								$strHeader .= "Content-Type: application/octet-stream; name=\"".$strFilesName."\"\n";
+								$strHeader .= "Content-Transfer-Encoding: base64\n";
+								$strHeader .= "Content-Disposition: attachment; filename=\"".$strFilesName."\"\n\n";
+								$strHeader .= $strContent."\n\n";
+							}
+						}
+					}
 				}
 				if ($error == 0) {
 					$flgSend = mail($strTo,$strSubject,null,$strHeader);
@@ -231,12 +241,20 @@
 				if (!$flgSend) { $error++; $this->notification->addNotification(_t("There was an error trying to submit. Please try again later.")); }
 
 				if ($error > 0) {
- 					$this::Contribute();
+					$values = array(
+						'what' => $what,
+						'contact' => $contact
+					);
+ 					$this::Contribute($values);
 				} else {
 	 				$this->render('Contribute/Submit.php');
 				}
  			} else {
- 				$this::Contribute();
+				$values = array(
+					'what' => $what,
+					'contact' => $contact
+				);
+ 				$this::Contribute($values);
  			}
 		}
  		# -------------------------------------------------------

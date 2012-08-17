@@ -1,3 +1,8 @@
+<?php
+	$values = $this->getVar('values');
+	$what = (isset($values['what'])) ? $values['what'] : '';
+	$contact = (isset($values['contact'])) ? $values['contact'] : '';
+?>
 <h1><?php print _t('Contribute to the collections'); ?></h1>
 <div class="contribution">
 	<form method="post" enctype="multipart/form-data" action="<?php print caNavUrl($this->request, 'Splash', 'Submit', array()); ?>" name="contribution" class="form">
@@ -5,16 +10,16 @@
 		<input type="hidden" name="MAX_FILE_SIZE" value="<?php print 10*1024*1024; ?>" />
 		<div>
 			<b><?php print _t("Describe in detail what you are interested in contributing to the Museum"); ?></b>
-			<textarea name="what" rows="8" cols="73"></textarea>
+			<textarea name="what" rows="8" cols="73"><?php print $what; ?></textarea>
 		</div>
 		<div>
 			<b><?php print _t("Please fill in your name and email address so that we can get back to you."); ?></b>
-			<textarea name="contact" rows="8" cols="73"></textarea>
+			<textarea name="contact" rows="8" cols="73"><?php print $contact; ?></textarea>
 		</div>
-		<div>
+		<div id="file-fields">
 			<b><?php print _t("If you have images of what you wish to contribute, please upload them here"); ?></b>
-			<input type="file" name="images" id="file-field" />
-			<div class="info"><?php print _t("Only %1 allowed.", ".zip, .rar, .gz and .7z"); ?></div>
+			<input type="file" name="image1" data-id="1" class="new" />
+			<div class="info"><?php print _t("Total filesize is limited to %1 megabytes.", "10"); ?></div>
 		</div>
 		<div class="captcha">
 			<?php
@@ -27,11 +32,20 @@
 		</div>
 		<script type="text/javascript">
 			$(function() {
-				$('#file-field').on('change', function(){
-					var ext = $(this).val().split('.').pop().toLowerCase();
-					if($.inArray(ext, ['zip','rar','7z','gz']) == -1) {
-					    alert("<?php print _t("Only %1 allowed.", ".zip, .rar, .gz and .7z"); ?>");
-					}
+				window.inputID = 1;
+				$('#file-fields').on('change', '.new', function(){
+					var t = $(this);
+					var id = parseInt(t.data('id')) + 1;
+					if (id == window.inputID) return false;
+					window.inputID = id;
+					var input = $('<input />').attr({
+						'type': 'file',
+						'name': 'image'+id,
+						'data-id': id,
+						'class': 'new'
+					});
+					t.removeClass('new');
+					t.siblings('.info').before(input);
 				});
 			});
 		</script>
