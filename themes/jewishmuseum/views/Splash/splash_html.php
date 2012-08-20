@@ -67,7 +67,7 @@
 <div id="main-home">
 	<div class="sidebar">
 		<b class="headline"><?php print _t('Recently catalogued'); ?></b>
-		<?php print caNavLink($this->request, _t('more'), "", "", "Browse", "clearCriteria", ""); ?>
+		<?php print caNavLink($this->request, _t('more'), "", "", "Search", "RecentlyAdded", ""); ?>
 	</div>
 	<div class="content">
 		<div class="grid">

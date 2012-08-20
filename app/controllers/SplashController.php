@@ -183,10 +183,15 @@
  			if (empty($what)) { $error++; $this->notification->addNotification(_t("You didn't fill the description field right.")); }
  			if (empty($contact)) { $error++; $this->notification->addNotification(_t("You didn't fill the contact field right.")); }
  			if (!$resp->is_valid) { $error++; $this->notification->addNotification(_t("You didn't answer the captcha right.")); }
+			$email = $this->request->config->get('contribution_email_address');
+			if (empty($email)) {
+				$strTo = 'fotoarchiv@jewishmuseum.cz';
+			} else {
+				$strTo = $email;
+			}
  			if ($error == 0) {
  				$attachment = false;
 
-				$strTo = 'jmp.testing@gmail.com';
 				$strSubject = 'Doplňte naše sbírky';
 				$strMessage = "Odeslán formulář.\n\n";
 				$strMessage .= "Kontakt:\n";
