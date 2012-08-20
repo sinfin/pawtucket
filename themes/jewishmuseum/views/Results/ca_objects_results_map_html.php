@@ -34,7 +34,7 @@ $va_access_values 	= $this->getVar('access_values');
 if($vo_result && $this->request->config->get('ca_objects_map_attribute')){
 	$o_map = new GeographicMap(900, 500, 'map');
 
-	$va_map_stats = $o_map->mapFrom($vo_result, $this->request->config->get('ca_objects_map_attribute'), array("contentView" => "Results/ca_objects_results_map_balloon_html.php", 'request' => $this->request, 'checkAccess' => $va_access_values));
+	$va_map_stats = $o_map->mapFrom($vo_result, $this->request->config->get('ca_objects_map_attribute'), array("ajaxContentUrl" => caNavUrl($this->request, $this->request->getModulePath(), $this->request->getController(), 'getMapItemInfo'), 'request' => $this->request, 'checkAccess' => $va_access_values));
 	// map_stats is an array with two keys: 'points' = number of unique markers; 'items' = number of results hits than were plotted at least once on the map
 	
 	if ($va_map_stats['points'] > 0) {

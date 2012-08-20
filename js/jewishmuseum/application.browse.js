@@ -54,6 +54,9 @@
   };
 
   initPagination = function() {
+    $(window).on('load', function() {
+      return window.equalHeight($('.grid > ul', '#resultBox'));
+    });
     return $('#main').on('click', '.pagination .pagination-link', function(e) {
       var rb, t, url, v;
       e.preventDefault();

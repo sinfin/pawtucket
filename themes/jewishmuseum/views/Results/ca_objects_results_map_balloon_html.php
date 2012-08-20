@@ -27,33 +27,20 @@
  * ----------------------------------------------------------------------
  */
  
-$qr_data 						= $this->getVar('data');		// this is a search result row
+$va_ids 						= $this->getVar('ids');		// this is a search result row
 $va_access_values 		= $this->getVar('access_values');
+$this->setVar('noLi', true);
 
-$object_id = $qr_data->get("ca_objects.object_id");
-
-$year = dateYear($qr_data->get('ca_objects.periodization'));
-$vs_media_tag = $qr_data->getMediaTag('ca_object_representations.media', 'thumbnail', array('checkAccess' => $va_access_values));
+foreach ($va_ids as $object_id) {
 ?>
-<div class="mapBalloon">
-	<div class="img">
+	<div class="mapBalloon">
 		<?php
-			if ($vs_media_tag) {
-				print caNavLink($this->request, $vs_media_tag, '', 'Detail', 'Object', 'Show', array('object_id' => $object_id));
-			}
+			$t_object = new ca_objects($object_id);
+			$this->setVar('object', $t_object);
+			
+			print $this->render('Results/_ca_objects_result_item.php');
 		?>
-	</div>
-	<div class="text">
-		<?php
-			$title = caNavLink($this->request, $qr_data->get("ca_objects.preferred_labels"), 'fullscreen-target', 'Detail', 'Object', 'Show', array('object_id' => $object_id));
-			if ($year) {
-				$year = caNavLink($this->request, $year['text'], '', '', 'Browse', 'clearAndAddCriteria', array('facet' => 'periodization_facet', 'id' => $year['search']));
-			}
-			print '<h2>'.$title.'</h2>';
-			print '<div class="date">'.$year.'</div>';
-			print '<div class="more">';
-				print caNavLink($this->request, _t('detail'), 'fullscreen-target', 'Detail', 'Object', 'Show', array('object_id' => $object_id));
-			print '</div>';
-		?>
-	</div>
-</div><!-- end mapBallon -->
+	</div><!-- end mapBallon -->
+<?php
+}
+?>

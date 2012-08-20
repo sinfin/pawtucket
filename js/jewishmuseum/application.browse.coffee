@@ -33,6 +33,8 @@ window.initSlider = (slider, items) ->
 		items.not(sh).hide 0
 
 initPagination = ->
+	$(window).on 'load', ->
+		window.equalHeight($('.grid > ul', '#resultBox'))
 	$('#main').on 'click', '.pagination .pagination-link', (e) ->
 		e.preventDefault()
 		t = $(this)
