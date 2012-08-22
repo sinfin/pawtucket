@@ -1,6 +1,9 @@
-themes/default
-themes/iphone
-themes/queensmemory
+themes/*
+!themes/default
+!themes/jewishmuseum
+.Trash-1000
+.Trash-1000/
+.Trash-1000/*
 app/tmp
 app/tmp/*
 media
