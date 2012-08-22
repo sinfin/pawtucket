@@ -1012,10 +1012,12 @@ div a:hover {
 a {
   color: black;
 }
-h1 {
+h1,
+strong.h1 {
   font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
   font-size: 33px;
   line-height: 39px;
+  font-weight: normal;
 }
 strong.type {
   display: block;
@@ -1040,6 +1042,7 @@ b.headline {
   font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
   font-size: 33px;
   line-height: 39px;
+  font-weight: normal;
   font-weight: normal;
 }
 .notificationMessage {
@@ -1125,7 +1128,8 @@ b.headline {
 .content .notificationMessage a:hover {
   color: #009bd9;
 }
-.content h1 {
+.content h1,
+.content strong.h1 {
   display: block;
   margin: 0;
   padding: 20px 0;
@@ -1836,6 +1840,7 @@ b.headline {
   font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
   font-size: 33px;
   line-height: 39px;
+  font-weight: normal;
   margin-bottom: 18px;
 }
 #home-featured ul li .text h2 a {
@@ -2196,6 +2201,7 @@ b.headline {
   font-size: 33px;
   line-height: 39px;
   font-weight: normal;
+  font-weight: normal;
   padding: 20px 0;
 }
 #detail #tab-video .video .name {
@@ -2511,6 +2517,7 @@ b.headline {
   font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
   font-size: 33px;
   line-height: 39px;
+  font-weight: normal;
   font-size: 24px;
   line-height: 30px;
 }
@@ -3470,33 +3477,48 @@ body.displaySet div {
   -moz-opacity: 0.3;
   opacity: 0.3;
 }
-.form {
+form.form p,
+form.form {
   width: 620px;
 }
-.form > div {
+form.form > div {
   margin-bottom: 10px;
 }
-.form b {
+form.form b {
   display: block;
   margin-bottom: 10px;
 }
-.form input[type="text"],
-.form input[type="password"],
-.form textarea {
+form.form input[type="text"],
+form.form input[type="password"],
+form.form textarea {
   display: block;
   margin-bottom: 18px;
   padding: 5px 10px;
   width: 600px;
   border: 1px solid #ccc;
 }
-.form .captcha,
-.form p,
-.form .info {
+form.form .captcha,
+form.form p,
+form.form .info {
   margin-bottom: 18px;
 }
-.form #file-fields input {
+form.form #file-fields input {
   display: block;
   margin-bottom: 10px;
+}
+#loginForm,
+#registerForm {
+  padding-bottom: 20px;
+}
+#resetPassword,
+#registerForm {
+  border-top: 1px solid #e6e6e6;
+}
+#resetPassword form.form > div {
+  margin-bottom: 0;
+}
+#loginForm > .bg {
+  padding-bottom: 20px;
 }
 #caMediaPanel {
   display: none;

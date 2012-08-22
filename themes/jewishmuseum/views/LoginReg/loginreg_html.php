@@ -2,7 +2,7 @@
 	global $g_ui_locale;
 ?>
 			<div id="loginForm">
-				<h1><?php print _t("Login"); ?></h1>
+				<strong class="h1"><?php print _t("Login"); ?></strong>
 <?php
 				if($this->getVar("loginMessage")){
 					print "<div class='formErrors'>".$this->getVar("loginMessage")."</div>";
@@ -11,37 +11,31 @@
 				<div class="bg">
 					<form action="<?php print caNavUrl($this->request, '', 'LoginReg', 'login', array()); ?>" method="post" name="login" class="form">
 						<div>
-							<b><?php print _t("Email address"); ?></b><br/>
+							<b><?php print _t("E-mail address"); ?></b>
 							<input type="text" name="username" />
 						</div>
 						<div>
-							<b><?php print _t("Password"); ?></b><br/>
+							<b><?php print _t("Password"); ?></b>
 							<input type="password" name="password" />
-							<a href="#" name="login" class="button" onclick="document.forms.login.submit(); return false;"><?php print _t("Login"); ?></a>
 						</div>
-						
-						
+						<a href="#" name="login" class="ribbon-link" onclick="document.forms.login.submit(); return false;"><?php print _t("Login"); ?></a>
 					</form>					
 				</div><!-- end bg -->
-				<div style="<?php print ($this->getVar("resetFormOpen")) ? "display:none;" : ""; ?>"><a href="#"  onclick='jQuery("#resetPasswordLink").slideDown(1); $("#resetPasswordLink").slideUp(1); jQuery("#resetPassword").slideDown(250); return false;' id="resetPasswordLink"><?php print _t("Forgot your password?"); ?></a></div>
+				<div class="slide-link" style="<?php print ($this->getVar("resetFormOpen")) ? "display:none;" : ""; ?>"><a href="#"  onclick='jQuery("#resetPasswordLink").slideDown(1); $("#resetPasswordLink").slideUp(1); jQuery("#resetPassword").slideDown(250); jQuery("#loginForm").addClass("slided"); return false;' id="resetPasswordLink"><?php print _t("Forgot your password?"); ?></a></div>
 				<div id="resetPassword" style="<?php print ($this->getVar("resetFormOpen")) ? "" : "display:none;"; ?>">
-					<h1><?php print _t("Reset your password"); ?></h1>
+					<strong class="h1"><?php print _t("Reset your password"); ?></strong>
 					<div class="bg">
-						<p>
-<?php
-						print _t("To reset your password enter the e-mail address you used to register below. A message will be sent to the address with instructions on how to reset your password.");
-?>
-						</p>
 				
 						<form action="<?php print caNavUrl($this->request, '', 'LoginReg', 'resetSend'); ?>" name="reset_password" method="post" class="form">
+							<p><?php print _t("To reset your password enter the e-mail address you used to register below. A message will be sent to the address with instructions on how to reset your password."); ?></p>
 	<?php
 							if($this->getVar("reset_email_error")){
 								print "<div class='formErrors' style='text-align: left;'>".$this->getVar("reset_email_error")."</div>";
 							}
 	
 	?>
-							<div><b><?php print _t("Your e-mail address"); ?></b><br/>
-								<input type="text" name="reset_email" value="" /><a href="#" class="button" onclick="document.forms.reset_password.submit(); return false;"><?php print _t("Go"); ?></a>
+							<div><b><?php print _t("E-mail address");; ?></b>
+								<input type="text" name="reset_email" value="" /><a href="#" class="ribbon-link" onclick="document.forms.reset_password.submit(); return false;"><?php print _t("Reset"); ?></a>
 							</div>
 							<input type="hidden" name="action" value="send">
 						</form>
@@ -50,14 +44,10 @@
 				
 			</div><!-- end loginForm -->
 			<div id="registerForm">
-				<h1><?php print _t("Register"); ?></h1>
+				<strong class="h1"><?php print _t("Register"); ?></strong>
 				<div class="bg">
 					<form action="<?php print caNavUrl($this->request, '', 'LoginReg', 'register', array()); ?>" method="post" name="registration" class="form">
-					<p>
-<?php
-						print _t("As a member, you can rank, tag and comment on photos and videos. You can create your own photo albums and view them as slide shows.");
-?>
-					</p>
+						<p><?php print _t("As a member, you can rank, tag and comment on objects."); ?></p>
 <?php
 						$va_errors = $this->getVar("reg_errors");
 						
@@ -85,7 +75,7 @@
 						$vn_num2 = rand(1,10);
 						$vn_sum = $vn_num1 + $vn_num2;
 ?>
-						<div><b><?php print _t("Security Question (to prevent SPAMbots)"); ?></b><br/>
+						<div><b><?php print _t("Security Question (to prevent SPAMbots)"); ?></b>
 							<span id="securityText"><?php print $vn_num1; ?> + <?php print $vn_num2; ?> = </span><input name="security" value="" id="security" type="text" size="3" />
 						</div>
 <?php
@@ -94,8 +84,8 @@
 						}
 						print $this->getVar("password");
 ?>
-						<div><b><?php print _t('Re-Type password'); ?></b><br/><input type="password" name="password2" size="60" />
-						<a href="#" name="register" class="button" onclick="document.forms.registration.submit(); return false;"><?php print _t("Register"); ?></a></div>
+						<div><b><?php print _t('Re-Type password'); ?></b><input type="password" name="password2" size="60" />
+						<a href="#" name="register" class="ribbon-link" onclick="document.forms.registration.submit(); return false;"><?php print _t("Register"); ?></a></div>
 			
 									
 						<input type="hidden" name="sum" value="<?php print $vn_sum; ?>">

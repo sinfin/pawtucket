@@ -42,10 +42,10 @@
  			if(!is_object($t_user)){
  				$t_user = new ca_users();
  			}
- 			$this->view->setVar("fname", $t_user->htmlFormElement("fname","<div><b>"._t("First name")."</b><br/>^ELEMENT</div>"));
- 			$this->view->setVar("lname", $t_user->htmlFormElement("lname","<div><b>"._t("Last name")."</b><br/>^ELEMENT</div>"));
- 			$this->view->setVar("email", $t_user->htmlFormElement("email","<div><b>"._t("Email address")."</b><br/>^ELEMENT</div>"));
- 			$this->view->setVar("password", $t_user->htmlFormElement("password","<div><b>"._t("Password")."</b><br/>^ELEMENT</div>", array('value' => '')));
+ 			$this->view->setVar("fname", $t_user->htmlFormElement("fname","<div><b>"._t("First name")."</b>^ELEMENT</div>"));
+ 			$this->view->setVar("lname", $t_user->htmlFormElement("lname","<div><b>"._t("Last name")."</b>^ELEMENT</div>"));
+ 			$this->view->setVar("email", $t_user->htmlFormElement("email","<div><b>"._t("Email address")."</b>^ELEMENT</div>"));
+ 			$this->view->setVar("password", $t_user->htmlFormElement("password","<div><b>"._t("Password")."</b>^ELEMENT</div>", array('value' => '')));
  			
  			$va_profile_prefs = $t_user->getValidPreferences('profile');
  			if (is_array($va_profile_prefs) && sizeof($va_profile_prefs)) {

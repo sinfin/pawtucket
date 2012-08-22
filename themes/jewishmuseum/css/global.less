@@ -39,6 +39,8 @@
 /////////////////////////////////////
 // Custom variables & classes
 /////////////////////////////////////
+@form_width: 620px;
+
 .clear {
 	clear: both;
 	height: 0;
@@ -316,6 +318,7 @@
 	.headLight() {
 		font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
 		.fsize(33px, 39px);
+		font-weight: normal;
 	}
 }
 .border-top {
@@ -458,7 +461,7 @@ p, div {
 a {
 	color: black;
 }
-h1 {
+h1, strong.h1 {
 	#f > .headLight;
 }
 strong.type {
@@ -530,7 +533,7 @@ b.headline {
 		padding-top: @s;
 		color: @blue;
 	}
-	h1 {
+	h1, strong.h1 {
 		display: block;
 		margin: 0;
 		padding: @s 0;
@@ -2017,9 +2020,10 @@ body.displaySet {
 	.opacity(30);
 }
 
-.form {
-	@width: 620px;
-	width: @width;
+form.form {
+	p, & {
+		width: @form_width;
+	}
 	> div {
 		margin-bottom: 10px;
 	}
@@ -2031,7 +2035,7 @@ body.displaySet {
 		display: block;
 		margin-bottom: @baseline;
 		padding: 5px 10px;
-		width: @width - 20;
+		width: @form_width - 20;
 		border: 1px solid #ccc;
 	}
 	.captcha, p, .info {
@@ -2042,6 +2046,27 @@ body.displaySet {
 			display: block;
 			margin-bottom: 10px;
 		}
+	}
+}
+#loginForm,
+#registerForm {
+	padding-bottom: 20px;
+}
+#resetPassword,
+#registerForm {
+	.border-top;
+}
+#resetPassword {
+	form.form > div {
+		margin-bottom: 0;
+	}
+}
+#loginForm {
+	> .bg {
+		padding-bottom: 20px;
+	}
+	.slide-link {
+
 	}
 }
 #caMediaPanel {
