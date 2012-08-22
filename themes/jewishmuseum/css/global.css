@@ -2974,6 +2974,14 @@ b.headline {
   font-weight: bold;
   color: black;
 }
+.browse-result tr .title h2 a,
+.browse-result tr .link h2 a {
+  text-decoration: none;
+}
+.browse-result tr .title h2 a:hover,
+.browse-result tr .link h2 a:hover {
+  color: #009bd9;
+}
 .browse-result tr .type,
 .browse-result tr .idno {
   white-space: nowrap;

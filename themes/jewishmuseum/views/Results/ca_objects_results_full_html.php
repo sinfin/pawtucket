@@ -51,6 +51,7 @@ if($vo_result) {
 			foreach($va_labels as $vs_label){
 				$vs_caption .= $vs_label;
 			}
+			$vs_caption = caNavLink($this->request, $vs_caption, '', 'Detail', 'Object', 'Show', array('object_id' => $t_object->get('object_id')));
 			
 			$year = dateYear($t_object->get('periodization'));
 			if ($year) $year = caNavLink($this->request, $year['text'], '', '', 'Browse', 'clearAndAddCriteria', array('facet' => 'periodization_facet', 'id' => $year['search']));
