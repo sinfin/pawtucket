@@ -6,8 +6,11 @@
 protectEmails = ->
 	$('.em').filter('[data-em]').each ->
 		t = $(this)
+		x = t.text()
 		e = t.data('em').replace '/', '@'
-		t.attr('href', 'mailto:'+e).not('.custom-text').text e
+		t.prop 'href', "mailto:#{ e }"
+		x = e unless t.hasClass 'custom-text'
+		t.text x
 
 window.equalHeight = (container)	->
 	container.each(->

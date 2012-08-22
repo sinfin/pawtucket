@@ -4,10 +4,15 @@
 
   protectEmails = function() {
     return $('.em').filter('[data-em]').each(function() {
-      var e, t;
+      var e, t, x;
       t = $(this);
+      x = t.text();
       e = t.data('em').replace('/', '@');
-      return t.attr('href', 'mailto:' + e).not('.custom-text').text(e);
+      t.prop('href', "mailto:" + e);
+      if (!t.hasClass('custom-text')) {
+        x = e;
+      }
+      return t.text(x);
     });
   };
 
