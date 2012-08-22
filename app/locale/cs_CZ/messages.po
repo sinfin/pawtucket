@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-17 07:20-0800\n"
-"PO-Revision-Date: 2012-08-22 13:43+0100\n"
+"PO-Revision-Date: 2012-08-22 14:33+0100\n"
 "Last-Translator: Petr Marek <contact@petrmarek.eu>\n"
 "Language-Team:  <info@collectiveaccess.org>\n"
 "MIME-Version: 1.0\n"
@@ -5778,6 +5778,9 @@ msgstr "smazáno"
 
 msgid "Password"
 msgstr "Heslo"
+
+msgid "Re-type password"
+msgstr "Heslo znovu"
 
 msgid "The login password for this user. Passwords must be at least 4 characters and should ideally contain a combination of letters and numbers. Passwords are case-sensitive."
 msgstr "Přihlašovací heslo tohoto uživatele. Hesla musí mít alespoň 4 znaky a měly by obsahovat kombinaci písmena a čísel. Hesla rozlišují malá a velká písmena."

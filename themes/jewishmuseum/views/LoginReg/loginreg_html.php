@@ -43,6 +43,8 @@
 				</div>
 				
 			</div><!-- end loginForm -->
+<?php
+/* dont allow registration yet
 			<div id="registerForm">
 				<strong class="h1"><?php print _t("Register"); ?></strong>
 				<div class="bg">
@@ -51,44 +53,26 @@
 <?php
 						$va_errors = $this->getVar("reg_errors");
 						
-						if($va_errors["fname"]){
-							print "<div class='formErrors' style='text-align: left;'>".$va_errors["fname"]."</div>";
-						}
 						print $this->getVar("fname");
-						if($va_errors["lname"]){
-							print "<div class='formErrors' style='text-align: left;'>".$va_errors["lname"]."</div>";
-						}
 						print $this->getVar("field_of_research");
-						if($va_errors["field_of_research"]){
-							print "<div class='formErrors' style='text-align: left;'>".$va_errors["field_of_research"]."</div>";
-						}
 						print $this->getVar("lname");
-						if($va_errors["email"]){
-							print "<div class='formErrors' style='text-align: left;'>".$va_errors["email"]."</div>";
-						}
 						print $this->getVar("email");
-			
-						if($va_errors["security"]){
-							print "<div class='formErrors' style='text-align: left;'>".$va_errors["security"]."</div>";
-						}
-						$vn_num1 = rand(1,10);
-						$vn_num2 = rand(1,10);
-						$vn_sum = $vn_num1 + $vn_num2;
-?>
-						<div><b><?php print _t("Security Question (to prevent SPAMbots)"); ?></b>
-							<span id="securityText"><?php print $vn_num1; ?> + <?php print $vn_num2; ?> = </span><input name="security" value="" id="security" type="text" size="3" />
-						</div>
-<?php
-						if($va_errors["password"]){
-							print "<div class='formErrors' style='text-align: left;'>".$va_errors["password"]."</div>";
-						}
 						print $this->getVar("password");
 ?>
-						<div><b><?php print _t('Re-Type password'); ?></b><input type="password" name="password2" size="60" />
-						<a href="#" name="register" class="ribbon-link" onclick="document.forms.registration.submit(); return false;"><?php print _t("Register"); ?></a></div>
+						<div><b><?php print _t('Re-type password'); ?></b><input type="password" name="password2" size="60" />
+						<div class="captcha">
+							<?php
+								$public_key = $this->request->config->get('recaptcha_public_key');
+								if (empty($public_key)) $public_key = '6LeyQ9USAAAAAAZwGLypI3cOgXnVtk9JWbQr8t2e';
+								echo recaptcha_get_html($public_key);
+							?>
+						</div>
 			
+						<a href="#" name="register" class="ribbon-link" onclick="document.forms.registration.submit(); return false;"><?php print _t("Register"); ?></a></div>
 									
 						<input type="hidden" name="sum" value="<?php print $vn_sum; ?>">
 					</form>					
 				</div><!-- end bg -->
 			</div><!-- end registerForm -->
+*/
+?>

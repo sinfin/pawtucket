@@ -28,6 +28,7 @@
  
  	require_once(__CA_LIB_DIR__."/core/Error.php");
 	require_once(__CA_MODELS_DIR__."/ca_users.php");
+	require_once(__CA_LIB_DIR__.'/vendor/recaptchalib.php');
  
  	class LoginRegController extends ActionController {
  		# -------------------------------------------------------
@@ -44,7 +45,7 @@
  			}
  			$this->view->setVar("fname", $t_user->htmlFormElement("fname","<div><b>"._t("First name")."</b>^ELEMENT</div>"));
  			$this->view->setVar("lname", $t_user->htmlFormElement("lname","<div><b>"._t("Last name")."</b>^ELEMENT</div>"));
- 			$this->view->setVar("email", $t_user->htmlFormElement("email","<div><b>"._t("Email address")."</b>^ELEMENT</div>"));
+ 			$this->view->setVar("email", $t_user->htmlFormElement("email","<div><b>"._t("E-mail address")."</b>^ELEMENT</div>"));
  			$this->view->setVar("password", $t_user->htmlFormElement("password","<div><b>"._t("Password")."</b>^ELEMENT</div>", array('value' => '')));
  			
  			$va_profile_prefs = $t_user->getValidPreferences('profile');
@@ -66,7 +67,7 @@
 			# --- pass form elements for reg form
 			$this->view->setVar("fname", $t_user->htmlFormElement("fname","<div><b>"._t("First name")."</b><br/>^ELEMENT</div>"));
  			$this->view->setVar("lname", $t_user->htmlFormElement("lname","<div><b>"._t("Last name")."</b><br/>^ELEMENT</div>"));
- 			$this->view->setVar("email", $t_user->htmlFormElement("email","<div><b>"._t("Email address")."</b><br/>^ELEMENT</div>"));
+ 			$this->view->setVar("email", $t_user->htmlFormElement("email","<div><b>"._t("E-mail address")."</b><br/>^ELEMENT</div>"));
  			$this->view->setVar("password", $t_user->htmlFormElement("password","<div><b>"._t("Password")."</b><br/>^ELEMENT</div>"));
  			
 			if (!$this->request->doAuthentication(array('dont_redirect' => true, 'user_name' => $this->request->getParameter('username', pString), 'password' => $this->request->getParameter('password', pString)))) {
@@ -152,7 +153,8 @@
 			$ps_lname = strip_tags($this->request->getParameter("lname", pString));
 			$ps_password = $this->request->getParameter("password", pString);
 			$ps_password2 = $this->request->getParameter("password2", pString);
-			$ps_security = $this->request->getParameter("security", pString);
+			$recaptcha_challenge_field = strip_tags($this->request->getParameter("recaptcha_challenge_field", pString));
+			$recaptcha_response_field = strip_tags($this->request->getParameter("recaptcha_response_field", pString));
 			
 			$va_errors = array();
 			
@@ -180,11 +182,17 @@
 					$t_user->set("password", $ps_password);
 				}
 			}
-			if ((!$ps_security)) {
-				$va_errors["security"] = _t("Please answer the security question.");
+			if ((!$recaptcha_response_field)) {
+				$va_errors["security"] = _t("Please answer the captcha.");
 			}else{
-				if($ps_security != $_REQUEST["sum"]){
-					$va_errors["security"] = _t("Your answer was incorrect, please try again");
+				$private_key = $this->request->config->get('recaptcha_private_key');
+				if (empty($private_key)) $private_key = '6LeyQ9USAAAAADnDBtEsxwgjuTQ9JHSVubG0Z4xM';
+				$resp = recaptcha_check_answer($private_key,
+				                               $_SERVER["REMOTE_ADDR"],
+				                               $recaptcha_challenge_field,
+				                               $recaptcha_response_field);
+				if(!$resp->is_valid){
+					$va_errors["security"] = _t("You didn't answer the captcha right.");
 				}
 			}
 			
@@ -325,7 +333,8 @@
 					}
 				}
 			}else{
-				$this->view->setVar('reg_errors', $va_errors);
+				$this->notification->addNotification(implode('<br />', $va_errors));
+				$this->view->setVar('reg_errors', array());
 			}
 			
 			$this->form($t_user);

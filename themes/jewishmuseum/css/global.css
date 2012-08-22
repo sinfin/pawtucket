@@ -856,6 +856,10 @@ textarea {
   margin-top: -4.5px;
   right: 10px;
 }
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
 .ico-file {
   display: block;
   display: block;
@@ -2300,75 +2304,6 @@ b.headline {
 #detail #tab-images > ul li .big {
   display: none;
 }
-#detail #tab-comments h2 {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-#detail #tab-comments h2 a {
-  color: #666666;
-}
-#detail #tab-comments h2 a:hover {
-  color: #009bd9;
-}
-#detail #tab-comments #ranking {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-  display: block;
-  margin-bottom: 18px;
-}
-#detail #tab-comments #ranking a {
-  color: #666666;
-}
-#detail #tab-comments #ranking a:hover {
-  color: #009bd9;
-}
-#detail #tab-comments #ranking img {
-  padding-top: 5px;
-  margin: 0;
-  display: block;
-}
-#detail #tab-comments .tags {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-  display: block;
-  margin-bottom: 5px;
-}
-#detail #tab-comments .tags a {
-  color: #666666;
-}
-#detail #tab-comments .tags a:hover {
-  color: #009bd9;
-}
-#detail #tab-comments #tags {
-  margin-bottom: 18px;
-}
-#detail #tab-comments input[type="text"],
-#detail #tab-comments textarea {
-  width: 550px;
-}
-#detail #tab-comments .comment {
-  margin-bottom: 18px;
-}
-#detail #tab-comments .comment .text {
-  margin-bottom: 5px;
-}
-#detail #tab-comments .comment .byLine {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-  font-weight: normal;
-}
-#detail #tab-comments .comment .byLine a {
-  color: #666666;
-}
-#detail #tab-comments .comment .byLine a:hover {
-  color: #009bd9;
-}
 #detail #tab-audio .name {
   display: block;
   margin-bottom: 18px;
@@ -3492,10 +3427,15 @@ form.form input[type="text"],
 form.form input[type="password"],
 form.form textarea {
   display: block;
-  margin-bottom: 18px;
   padding: 5px 10px;
   width: 600px;
   border: 1px solid #ccc;
+}
+form.form .formLabel,
+form.form input[type="text"],
+form.form input[type="password"],
+form.form textarea {
+  margin-bottom: 18px;
 }
 form.form .captcha,
 form.form p,
@@ -3505,6 +3445,16 @@ form.form .info {
 form.form #file-fields input {
   display: block;
   margin-bottom: 10px;
+}
+#tab-comments form.form p,
+#tab-comments form.form {
+  width: auto;
+  max-width: 620px;
+}
+#tab-comments form.form input[type="text"],
+#tab-comments form.form input[type="password"],
+#tab-comments form.form textarea {
+  width: 90%;
 }
 #loginForm,
 #registerForm {

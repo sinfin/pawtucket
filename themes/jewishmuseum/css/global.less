@@ -408,7 +408,10 @@
 		}
 	}
 }
-
+.form-label {
+	display: block;
+	margin-bottom: 10px;
+}
 .ico-file { .sprite(0, -77px, 16px, 14px) }
 .ico-folder { .sprite(-20px, -77px, 16px, 14px) }
 .ico-folder-open { .sprite(-40px, -77px, 16px, 14px) }
@@ -1275,44 +1278,6 @@ b.headline {
 			}
 		}
 	}
-	#tab-comments {
-		h2 {
-			#f .small;
-			font-weight: bold;
-			margin-bottom: 5px;
-		}
-		#ranking {
-			#f .small;
-			display: block;
-			margin-bottom: @baseline;
-			img {
-				padding-top: 5px;
-				margin: 0;
-				display: block;
-			}
-		}
-		.tags {
-			#f .small;
-			display: block;
-			margin-bottom: 5px;
-		}
-		#tags {
-			margin-bottom: @baseline;
-		}
-		input[type="text"], textarea {
-			width: 550px;
-		}
-		.comment {
-			margin-bottom: @baseline;
-			.text {
-				margin-bottom: 5px;
-			}
-			.byLine {
-				#f .small;
-				font-weight: normal;
-			}
-		}
-	}
 	#tab-audio {
 		.name {
 			display: block;
@@ -2028,15 +1993,17 @@ form.form {
 		margin-bottom: 10px;
 	}
 	b {
-		display: block;
-		margin-bottom: 10px;
+		.form-label;
 	}
 	input[type="text"], input[type="password"], textarea {
 		display: block;
-		margin-bottom: @baseline;
 		padding: 5px 10px;
 		width: @form_width - 20;
 		border: 1px solid #ccc;
+	}
+	.formLabel,
+	input[type="text"], input[type="password"], textarea {
+		margin-bottom: @baseline;
 	}
 	.captcha, p, .info {
 		margin-bottom: @baseline;
@@ -2045,6 +2012,17 @@ form.form {
 		input {
 			display: block;
 			margin-bottom: 10px;
+		}
+	}
+}
+#tab-comments {
+	form.form {
+		p, & {
+			width: auto;
+			max-width: @form_width;
+		}
+		input[type="text"], input[type="password"], textarea {
+			width: 90%;
 		}
 	}
 }

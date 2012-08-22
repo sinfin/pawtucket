@@ -6,7 +6,7 @@ if (!$this->request->config->get('dont_allow_registration_and_login')) {
 <?php
 			if($this->getVar("ranking")){
 ?>
-				<h2 id="ranking"><?php print _t("Average User Ranking"); ?> <img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/user_ranking_<?php print $this->getVar("ranking"); ?>.gif" width="104" height="15" border="0"></h2>
+				<b class="form-label"><?php print _t("Average User Ranking"); ?> <img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/user_ranking_<?php print $this->getVar("ranking"); ?>.gif" width="104" height="15" border="0"></b>
 <?php
 			}
 			$va_tags = $this->getVar("tags_array");
@@ -49,8 +49,8 @@ if (!$this->request->config->get('dont_allow_registration_and_login')) {
 			}
 		if($this->request->isLoggedIn()){
 ?>
-			<h2><?php print _t("Add your rank, tags and comment"); ?></h2>
 			<form method="post" action="<?php print caNavUrl($this->request, 'Detail', 'Object', 'saveCommentRanking', array('object_id' => $vn_object_id)); ?>" name="comment" class="form">
+				<b><?php print _t("Add your rank, tags and comment"); ?></b>
 				<div class="formLabel">Rank
 					<select name="rank">
 						<option value="">-</option>
@@ -62,14 +62,14 @@ if (!$this->request->config->get('dont_allow_registration_and_login')) {
 					</select>
 				</div>
 				<div>
-					<b><?php print _t("Tags (separated by commas)"); ?></b><br />
+					<b><?php print _t("Tags (separated by commas)"); ?></b>
 					<input type="text" name="tags" size="100" />
 				</div>
 				<div>
-					<b><?php print _t("Comment"); ?></b><br />
+					<b><?php print _t("Comment"); ?></b>
 					<textarea name="comment" rows="8" cols="73"></textarea>
 				</div>
-				<a href="#" name="commentSubmit" class="button" onclick="document.forms.comment.submit(); return false;"><?php print _t("Save"); ?></a>
+				<a href="#" name="commentSubmit" class="ribbon-link" onclick="document.forms.comment.submit(); return false;"><?php print _t("Save"); ?></a>
 			</form>
 <?php
 		}else{

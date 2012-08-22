@@ -23,8 +23,9 @@
 		</div>
 		<div class="captcha">
 			<?php
-			  $public_key = '6LeyQ9USAAAAAAZwGLypI3cOgXnVtk9JWbQr8t2e';
-			  echo recaptcha_get_html($public_key);
+				$public_key = $this->request->config->get('recaptcha_public_key');
+				if (empty($public_key)) $public_key = '6LeyQ9USAAAAAAZwGLypI3cOgXnVtk9JWbQr8t2e';
+				echo recaptcha_get_html($public_key);
 			?>
 		</div>
 		<div>

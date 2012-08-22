@@ -169,7 +169,8 @@
  		# -------------------------------------------------------
  		function Submit() {
  			require_once(__CA_LIB_DIR__.'/vendor/recaptchalib.php');
- 			$private_key = '6LeyQ9USAAAAADnDBtEsxwgjuTQ9JHSVubG0Z4xM';
+ 			$private_key = $this->request->config->get('recaptcha_private_key');
+ 			if (empty($private_key)) $private_key = '6LeyQ9USAAAAADnDBtEsxwgjuTQ9JHSVubG0Z4xM';
  			$what = strip_tags($this->request->getParameter("what", pString));
  			$contact = strip_tags($this->request->getParameter("contact", pString));
  			$recaptcha_challenge_field = strip_tags($this->request->getParameter("recaptcha_challenge_field", pString));
