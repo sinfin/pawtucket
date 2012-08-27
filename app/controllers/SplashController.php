@@ -146,7 +146,7 @@
 			foreach(array_keys($va_recently_added_items) as $vn_object_id){
 				$t_items[$vn_object_id] = new ca_objects($vn_object_id);
 			}
-			$this->view->setVar('recently_added_objects', $t_items)
+			$this->view->setVar('recently_added_objects', $t_items);
  			$this->render('Splash/splash_html.php');
  		}
  		# -------------------------------------------------------
