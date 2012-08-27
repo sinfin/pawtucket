@@ -88,13 +88,11 @@
  			parent::__construct($po_request, $po_response, $pa_view_paths);
 				
 			$this->opo_browse = new ObjectBrowse($this->opo_result_context->getSearchExpression(), 'pawtucket2');
- 				
  		}
  		# -------------------------------------------------------
  		function Index() {
 			// Remove any browse criteria previously set
 			$this->opo_browse->removeAllCriteria();
-			
  			parent::Index(true);
  			JavascriptLoadManager::register('home');
  			
@@ -106,6 +104,8 @@
  			}else{
  				$va_access_values = caGetUserAccessValues($this->request);
  			}
+ 			
+ 			$va_default_versions = array('thumbnail', 'icon', 'small', 'preview', 'medium', 'preview', 'widepreview');
  				
  			# --- featured items set - set name assigned in app.conf
 			$t_featured->load(array('set_code' => $this->request->config->get('featured_set_name')));
@@ -146,9 +146,7 @@
 			foreach(array_keys($va_recently_added_items) as $vn_object_id){
 				$t_items[$vn_object_id] = new ca_objects($vn_object_id);
 			}
-			$this->view->setVar('recently_added_objects', $t_items);
- 			
-
+			$this->view->setVar('recently_added_objects', $t_items)
  			$this->render('Splash/splash_html.php');
  		}
  		# -------------------------------------------------------
