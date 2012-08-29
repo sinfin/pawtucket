@@ -31,7 +31,7 @@
 	$va_set_descriptions = $this->getVar('set_descriptions');
 	$images = $this->getVar('images');
 ?>
-<h1><?php print _t("On-line collections"); ?></h1>
+<h1><?php print _t("On-line exhibitions"); ?></h1>
 <div id="galleryLanding">
 <!-- 	<div class="textContent">
 		<?php
