@@ -20,9 +20,10 @@
 				}
 			}
 			# --- parent hierarchy info
-			if($t_object->get('parent_id')){
-				print "<div class='item-parent-hierarchy'><b>"._t("Part Of")."</b>: ".caNavLink($this->request, $t_object->get("ca_objects.parent.preferred_labels.name"), '', 'Detail', 'Object', 'Show', array('object_id' => $t_object->get('parent_id')))."</div>";
-			}
+			// FIXME: only if parent is accessible
+			// if($t_object->get('parent_id')){
+			// 	print "<div class='item-parent-hierarchy'><b>"._t("Part Of")."</b>: ".caNavLink($this->request, $t_object->get("ca_objects.parent.preferred_labels.name"), '', 'Detail', 'Object', 'Show', array('object_id' => $t_object->get('parent_id')))."</div>";
+			// }
 			# --- attributes
 			$va_attributes = $this->request->config->get('ca_objects_detail_display_attributes');
 			if(is_array($va_attributes) && (sizeof($va_attributes) > 0)){
