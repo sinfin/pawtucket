@@ -13,7 +13,7 @@
 		$localeWm = $localeWm[0];
 		$themeDir = $this->request->getThemeUrlPath();
 		$filename = ($localeWm == 'cs_CZ') ? 'vodoznak-cz.png' : 'vodoznak-en.png';
-		$watermark = '<div class="watermark"><img src="'.$themeDir.'/graphics/'.$filename.'" alt="JMP Watermark" /></div>';
+		$watermark = '<div class="watermark"><img src="'.$themeDir.'/graphics/'.$filename.'" alt="'._t('JMP Watermark').'" /></div>';
 	} else {
 		$watermark = '';
 	}

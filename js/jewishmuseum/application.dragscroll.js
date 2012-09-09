@@ -29,7 +29,11 @@
   };
 
   loadImgDirect = function(img) {
-    return img.not('.loaded').addClass('loaded').attr('src', img.data('original'));
+    var orig;
+    orig = img.data('original');
+    if (typeof orig !== 'undefined') {
+      return img.not('.loaded').addClass('loaded').attr('src', orig);
+    }
   };
 
   loadImg = function(els) {

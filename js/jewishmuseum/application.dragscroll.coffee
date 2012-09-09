@@ -16,7 +16,9 @@ toggleHash = (el) ->
 			t.attr 'href', "#{ t.attr('href') }#fullscreen"
 
 loadImgDirect = (img) ->
-		img.not('.loaded').addClass('loaded').attr 'src', img.data 'original'
+	orig = img.data 'original'
+	unless typeof orig is 'undefined'
+		img.not('.loaded').addClass('loaded').attr 'src', orig
 
 loadImg = (els) ->
 	fullscreen = $('body').hasClass('fullscreen')
