@@ -55,6 +55,7 @@ function sizeClass($size, $sizes) {
 	if (isset($sizes[$size])) return $sizes[$size];
 	return 'small';
 }
+
 ?>
 <div id="gallerySetDetail">
 <?php
