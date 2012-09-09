@@ -1311,7 +1311,9 @@ LEFT JOIN ca_object_representations AS cor ON coxor.representation_id = cor.repr
 					$va_row['ca_attribute_'.$vs_element_code] = $t_item->getAttributesForDisplay($vs_element_code);
 				}
 				
-				$va_row['set_item_label'] = $t_item->getLabelForDisplay(false);
+				// turn cache off
+				// $va_row['set_item_label'] = $t_item->getLabelForDisplay(false);
+				$va_row['set_item_label'] = $t_item->getLabelForDisplay(true);
 			}
 		
 			$va_items[$qr_res->get('item_id')][($qr_res->get('rel_locale_id') ? $qr_res->get('rel_locale_id') : 0)] = $va_row;

@@ -129,7 +129,7 @@ function sizeClass($size, $sizes) {
 						$item .= caNavLink($this->request, $year['text'], '', '', 'Browse', 'clearAndAddCriteria', array('facet' => 'periodization_facet', 'id' => $year['search']));
 					}
 				$item .= '</h2>';
-				if ($va_item['caption'] !== '[BLANK]') $item .= '<p>'.$va_item['caption'].'</p>';
+				if ($va_item['set_item_label'] !== '[BLANK]') $item .= '<p>'.$va_item['set_item_label'].'</p>';
 				$item .= '<div class="more">'.caNavLink($this->request, _t('detail'), '', 'Detail', 'Object', 'Show', array('object_id' =>  $object_id)).'</div>';
 			$item .= '</div>';
 		$item .= '</li>';
