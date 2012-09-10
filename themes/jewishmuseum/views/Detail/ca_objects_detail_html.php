@@ -120,6 +120,9 @@
 				?>
 			</div>
 		</div>		
+		<script type="text/javascript">
+			document.title = '<?php print $vs_title." | "._t($this->request->config->get("html_page_title")); ?>';
+		</script>
 <?php
 
 	include('_item_nav_html.php');
