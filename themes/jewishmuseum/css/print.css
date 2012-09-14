@@ -10,6 +10,17 @@ body.displaySet p,
 body.displaySet div {
   color: black;
 }
+body.displaySet #gallerySetDetail #top .text .related-collections,
+body.displaySet #header #online-exhibition-search {
+  display: none;
+}
+body.displaySet #gallerySetDetail {
+  width: 1050px;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem {
+  clear: both;
+  width: 100%;
+}
 #main .sidebar,
 #main-home .sidebar {
   display: none !important;

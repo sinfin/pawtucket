@@ -2394,10 +2394,12 @@ b.headline {
 #gallerySetDetail #setItemsGrid ul li.visible {
   display: block;
 }
-#gallerySetDetail #setItemsGrid ul li.mediumlarge {
+#gallerySetDetail #setItemsGrid ul li.mediumlarge,
+#gallerySetDetail #setItemsGrid ul li.mediumlarge .textContent {
   width: 400px;
 }
-#gallerySetDetail #setItemsGrid ul li.large {
+#gallerySetDetail #setItemsGrid ul li.large,
+#gallerySetDetail #setItemsGrid ul li.large .textContent {
   width: 600px;
 }
 #gallerySetDetail #setItemsGrid ul li .img {

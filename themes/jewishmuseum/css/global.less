@@ -1334,10 +1334,14 @@ b.headline {
 				// margin: 0 @s @s 0;
 				padding: 0 @s @s 0;
 				&.mediumlarge {
-					width: 8*@g;
+					&, .textContent {
+						width: 8*@g;
+					}
 				}
 				&.large {
-					width: 12*@g;
+					&, .textContent {
+						width: 12*@g;
+					}
 				}
 				/////////////
 				// END GRID 

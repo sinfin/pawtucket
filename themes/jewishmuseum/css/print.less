@@ -1,3 +1,16 @@
+.clearfix() {
+  zoom: 1;
+	&:before,
+  &:after {
+    display: table;
+    content: "";
+    zoom: 1;
+    *display: inline;
+	}
+	&:after {
+    clear: both;
+	}
+}
 #gallerySetDetail #setItemsGrid ul li {
 	position: static !important;
 }
@@ -6,6 +19,17 @@ body.displaySet {
 	color: black;
 	h1, p, div {
 		color: black;
+	}
+	#gallerySetDetail #top .text .related-collections,
+	#header #online-exhibition-search {
+		display: none;
+	}
+	#gallerySetDetail {
+		width: 1050px;
+	}
+	#gallerySetDetail #setItemsGrid ul li.textItem {
+		clear: both;
+		width: 100%;
 	}
 }
 #main, #main-home {
