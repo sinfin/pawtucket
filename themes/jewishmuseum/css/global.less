@@ -966,6 +966,9 @@ b.headline {
 				// background-color: pink;
 				a {
 					display: block;
+					height: 100%;
+					text-align: left;
+					overflow: hidden;
 					.horizontal {
 						width: auto;
 						height: 100%;
@@ -2087,16 +2090,12 @@ form.form {
 
 // media queries
 // home featured
-#home-featured ul li .img img {
-	max-width: 100%;
-	height: auto !important;
-}
-#home-featured ul li { @w: 300px; .img { width: @w } .text { margin-left: @w + 20 }	}
+#home-featured ul li { @w: 300px; .img { width: @w; height: @w; } .text { margin-left: @w + 20 }	}
 @media screen and (min-width:1240px) {
-	#home-featured ul li { @w: 380px; .img { width: @w } .text { margin-left: @w + 20 }	}
+	#home-featured ul li { @w: 380px; .img { width: @w; height: @w; } .text { margin-left: @w + 20 }	}
 }
 @media screen and (min-width:1390px) {
-	#home-featured ul li { @w: 460px; .img { width: @w } .text { margin-left: @w + 20 }	}
+	#home-featured ul li { @w: 460px; .img { width: @w; height: @w; } .text { margin-left: @w + 20 }	}
 }
 
 // ie specific

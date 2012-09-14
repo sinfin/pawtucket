@@ -1828,6 +1828,9 @@ b.headline {
 }
 #home-featured ul li .img a {
   display: block;
+  height: 100%;
+  text-align: left;
+  overflow: hidden;
 }
 #home-featured ul li .img a .horizontal {
   width: auto;
@@ -3522,12 +3525,9 @@ form.form #file-fields input {
     display: block;
   }
 }
-#home-featured ul li .img img {
-  max-width: 100%;
-  height: auto !important;
-}
 #home-featured ul li .img {
   width: 300px;
+  height: 300px;
 }
 #home-featured ul li .text {
   margin-left: 320px;
@@ -3535,6 +3535,7 @@ form.form #file-fields input {
 @media screen and (min-width: 1240px) {
   #home-featured ul li .img {
     width: 380px;
+    height: 380px;
   }
   #home-featured ul li .text {
     margin-left: 400px;
@@ -3543,6 +3544,7 @@ form.form #file-fields input {
 @media screen and (min-width: 1390px) {
   #home-featured ul li .img {
     width: 460px;
+    height: 460px;
   }
   #home-featured ul li .text {
     margin-left: 480px;
