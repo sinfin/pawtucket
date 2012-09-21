@@ -10,8 +10,7 @@ body.displaySet p,
 body.displaySet div {
   color: black;
 }
-body.displaySet #gallerySetDetail #top .text .related-collections,
-body.displaySet #header #online-exhibition-search {
+body.displaySet #header #online-exhibition-search#gallerySetDetail .related-collections {
   display: none;
 }
 body.displaySet #gallerySetDetail {
@@ -20,6 +19,9 @@ body.displaySet #gallerySetDetail {
 body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem {
   clear: both;
   width: 100%;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.small {
+  padding-right: 80px;
 }
 #main .sidebar,
 #main-home .sidebar {
