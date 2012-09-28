@@ -6,7 +6,21 @@
     var c;
     c = $('#browseControls');
     if (c.length === 1) {
-      return $('.browse', '#navigation').addClass('active').append(c);
+      $('.browse', '#navigation').addClass('active').append(c);
+      if (typeof c.data('facets-url') !== 'undefined') {
+        if (typeof c.data('controller') !== 'undefined') {
+          if (c.data('controller') === 'Search') {
+            return $.ajax({
+              url: c.data('facets-url'),
+              success: function(data) {
+                var d;
+                d = $(data);
+                return c.find('#refineBrowse').html(d.find('#refineBrowse'));
+              }
+            });
+          }
+        }
+      }
     }
   };
 

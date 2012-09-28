@@ -2,6 +2,14 @@ moveControls = ->
 	c = $('#browseControls')
 	if c.length is 1
 		$('.browse', '#navigation').addClass('active').append c
+		unless typeof c.data('facets-url') is 'undefined'
+			unless typeof c.data('controller') is 'undefined'
+				if c.data('controller') is 'Search'
+					$.ajax
+						url: c.data('facets-url')
+						success: (data) ->
+							d = $(data)
+							c.find('#refineBrowse').html d.find('#refineBrowse')
 	
 displayOptions = -> 
 	$('#main .content').on 'click', '#display-options a', (e) ->

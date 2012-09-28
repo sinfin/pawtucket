@@ -3,8 +3,11 @@
 	$va_facet_info = $this->getVar('facet_info');
 	$va_criteria = $this->getVar('criteria');
 	$fi = $va_facet_info;
+	$url = caNavUrl($this->request, '', 'Search', 'Facets');
+	$controller = $this->request->getController();
+	$is_search = $controller == 'Search';
 ?>
-<div id="browseControls">
+<div id="browseControls" data-facets-url="<?php print $url; ?>" data-controller="<?php print $controller; ?>">
 	<div id="refineBrowse">
 	<?php
 		print "<ul>";
@@ -21,7 +24,11 @@
 			foreach($va_criteria as $vs_facet_name => $va_row_ids) {
 				print "<li><span class='facetLink'>".ucfirst(_t($fi[$vs_facet_name]['label_plural']))."</span>";
 				foreach($va_row_ids as $vn_row_id => $vs_label) {
-					print '<span class="item">'.caNavLink($this->request, '', 'ico-close', '', 'Browse', 'removeCriteria', array('facet' => $vs_facet_name, 'id' => $vn_row_id)).$vs_label.'</span>';
+					if ($is_search) {
+						print '<span class="item">'.caNavLink($this->request, '', 'ico-close', '', 'Search', 'removeCriteria', array('facet' => $vs_facet_name, 'id' => $vn_row_id)).$vs_label.'</span>';
+					} else {
+						print '<span class="item">'.caNavLink($this->request, '', 'ico-close', '', 'Browse', 'removeCriteria', array('facet' => $vs_facet_name, 'id' => $vn_row_id)).$vs_label.'</span>';
+					}
 				}
 				print "</li>";
 			}						
