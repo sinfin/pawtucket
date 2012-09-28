@@ -349,7 +349,7 @@
  		}
  		# -------------------------------------------------------
 		public function RecentlyAdded() {
-			// 	$va_access_values = caGetUserAccessValues($this->request);
+			// $va_access_values = caGetUserAccessValues($this->request);
 			// if (!($vs_view = $this->opo_result_context->getCurrentView())) { 
 			// 	$vs_view = $this->ops_view_default ? $this->ops_view_default : array_shift(array_keys($this->opa_views)); 
 			// 	$this->opo_result_context->setCurrentView($vs_view);
@@ -357,9 +357,14 @@
 			// $t_object = new ca_objects();
 			// $va_items = $t_object->getRecentlyAddedItems(1000);
 			// $vo_result = $t_object->makeSearchResult("ca_objects", array_keys($va_items));
-			// $this->ops_tablename = 'ca_objects';
-			// $this->opo_result_context = new ResultContext($po_request, $this->ops_tablename, $this->ops_find_type);
-			// $this->opo_browse = new ObjectBrowse($this->opo_result_context->getParameter('browse_id'), 'pawtucket2');	
+			// $ops_tablename = 'ca_objects';
+			// $opo_browse = new ObjectBrowse($this->opo_result_context->getParameter('browse_id'), 'pawtucket2');	
+ 		// 	$opo_result_context = new ResultContext($this->request, $ops_tablename, 'basic_search');
+ 			
+ 		// 	$opo_result_context->setSearchExpression('');
+			// $opo_result_context->setResultList($vo_result);
+			// $opo_result_context->setAsLastFind();
+			// $opo_result_context->saveContext();
 			// print '<pre>'; var_dump($this->ops_find_type); print '</pre>';
 			$this::Index();
 			// $this->view->setVar('result', $va_result);
