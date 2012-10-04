@@ -2282,6 +2282,7 @@ b.headline {
   *zoom: 1;
   margin: 0 auto;
   position: relative;
+  max-width: 100%;
 }
 #detail #tab-images > ul li .big img,
 #detail #tab-images > ul li .small img {

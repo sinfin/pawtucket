@@ -23,10 +23,12 @@
 			if($t_object->get('parent_id')){
 				$pid = $t_object->get('parent_id');
 				$obj = new ca_objects($pid);
-				$va_access_values = caGetUserAccessValues($this->request);
-				$acc = $obj->get('access');
-				if (in_array($acc, $va_access_values)) {
-					print "<div class='item-parent-hierarchy'><b class='heading'>"._t("Part Of")."</b>: ".caNavLink($this->request, $t_object->get("ca_objects.parent.preferred_labels.name"), '', 'Detail', 'Object', 'Show', array('object_id' => $pid)."</div>";
+				if ($obj) {
+					$va_access_values = caGetUserAccessValues($this->request);
+					$acc = $obj->get('access');
+					if (in_array($acc, $va_access_values)) {
+						print "<div class='item-parent-hierarchy'><b class='heading'>"._t("Part Of")."</b>: ".caNavLink($this->request, $t_object->get("ca_objects.parent.preferred_labels.name"), '', 'Detail', 'Object', 'Show', array('object_id' => $pid))."</div>";
+					}
 				}
 			}
 			# --- attributes
