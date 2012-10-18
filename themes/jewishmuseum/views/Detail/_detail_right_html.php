@@ -149,10 +149,15 @@
 			}
 			# --- map
 			$attr = $this->request->config->get('ca_objects_map_attribute');
+			if(sizeof($va_places) == 1) {
+				$zoom = 8;
+			} else {
+				$zoom = null;
+			}
 			if($attr && $t_object->get($attr)){
 				$o_map = new GeographicMap(200, 150, 'map');
 				$o_map->mapFrom($t_object, $attr);
-				print "<div class='item-map'>".$o_map->render('HTML')."</div>";
+				print "<div class='item-map'>".$o_map->render('HTML', array('zoomLevel' => $zoom))."</div>";
 			}			
 			# --- output related object images as links
 			// $va_related_objects = $t_object->get("ca_objects", array("returnAsArray" => 1, 'checkAccess' => $va_access_values));

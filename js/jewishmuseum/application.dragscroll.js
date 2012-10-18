@@ -18,7 +18,7 @@
         t.removeClass('fullscreen-target-hashed');
         h = t.attr('href');
         if (h.indexOf('#') > 0) {
-          h = h.substring(h.indexOf('#'));
+          h = h.substring(0, h.indexOf('#'));
           return t.attr('href', h);
         }
       } else {

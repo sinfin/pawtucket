@@ -9,7 +9,7 @@ toggleHash = (el) ->
 			t.removeClass('fullscreen-target-hashed')
 			h = t.attr('href')
 			if h.indexOf('#') > 0
-				h = h.substring h.indexOf('#')
+				h = h.substring 0, h.indexOf('#')
 				t.attr 'href', h
 		else
 			t.addClass('fullscreen-target-hashed')
