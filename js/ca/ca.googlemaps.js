@@ -51,7 +51,12 @@ var caUI = caUI || {};
 			var markerLatLng = marker.getPosition();
 			
 			if(marker.ajaxContentUrl.length > 0) {
-				jQuery.ajax(marker.ajaxContentUrl, { success: function(data, textStatus, jqXHR) { that.infoWindow.setContent(data); }})
+				jQuery.ajax(marker.ajaxContentUrl, {
+					data: {
+						label: marker.getTitle()
+					},
+					success: function(data, textStatus, jqXHR) { that.infoWindow.setContent(data); }
+				})
 			} else {
 				that.infoWindow.setContent(marker.content);
 			}

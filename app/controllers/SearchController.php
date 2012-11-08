@@ -497,6 +497,7 @@
  			
  			$this->view->setVar('ids', $pa_object_ids);
  			$this->view->setVar('access_values', $va_access_values);
+ 			$this->view->setVar('label', $this->request->getParameter('label', pString));
  			
  		 	$this->render("Results/ca_objects_results_map_balloon_html.php");
  		 }

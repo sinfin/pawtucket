@@ -29,8 +29,13 @@
  
 $va_ids 						= $this->getVar('ids');		// this is a search result row
 $va_access_values 		= $this->getVar('access_values');
+$va_label					= $this->getVar('label');
 $this->setVar('noLi', true);
 
+if (strlen($va_label) > 1) {
+	print '<h2 class="mapBalloon-place-label">'.$va_label.'</h2>';
+}
+print '<div class="mapBalloons">';
 foreach ($va_ids as $object_id) {
 ?>
 	<div class="mapBalloon">
@@ -40,7 +45,8 @@ foreach ($va_ids as $object_id) {
 			
 			print $this->render('Results/_ca_objects_result_item.php');
 		?>
-	</div><!-- end mapBallon -->
+	</div>
 <?php
 }
+print '</div>';
 ?>
