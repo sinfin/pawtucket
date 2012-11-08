@@ -49,8 +49,8 @@
 	}
 ?>
 	<script type="text/javascript">
-		if (!window.titleChanged) {
-			window.titleChanged = true
+		if (typeof window.titleChanged == 'undefined') {
+			window.titleChanged = true;
 			document.title = '<?php print $vs_title." | "._t($this->request->config->get("html_page_title")); ?>';
 		}
 	</script>
