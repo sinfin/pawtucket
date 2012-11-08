@@ -2033,6 +2033,14 @@ $ca_relationship_lookup_parse_cache = array();
 		return $pagination;
 	}
 	# ------------------------------------------------------------------------------------------------
+	function extractObjectId($object) {
+		return $object['object_id'];
+	}
+	# ------------------------------------------------------------------------------------------------
+	function extractObjectIds($array) {
+		return array_map(extractObjectId, $array);
+	}
+	# ------------------------------------------------------------------------------------------------
 	function hieararchyTree($tree, $request) {
 		if (sizeof($tree) == 0) return '';
 		$html = '<div id="hier-tree" class="togglable">';

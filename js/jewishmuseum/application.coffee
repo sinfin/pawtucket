@@ -15,9 +15,12 @@ protectEmails = ->
 window.equalHeight = (container)	->
 	container.each(->
 		thisCont = $(this)
-		thisCont.imagesLoaded(-> 
+		if thisCont.hasClass('no-imagesloaded')
 			window.equalHeightDo thisCont.children()
-		)	
+		else
+			thisCont.imagesLoaded(-> 
+				window.equalHeightDo thisCont.children()
+			)	
 	)
 
 window.equalHeightDo = (children) -> 
@@ -126,7 +129,8 @@ bindPrint = ->
 		printPage $(this).data('notification')
 
 $ ->
-	window.equalHeight($('.equal-height, .grid > ul'))
+	window.equalHeight $('.equal-height, .grid > ul')
+	console.log $('.equal-height, .grid > ul')
 	fixSidebar()
 	cstypo()
 	notifications()

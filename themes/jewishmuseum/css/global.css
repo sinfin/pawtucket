@@ -1922,6 +1922,23 @@ b.headline {
   width: 300px;
   margin: 0 20px 20px 0;
 }
+.grid ul li.with-ico {
+  position: relative;
+}
+.grid ul li.with-ico .ico-close {
+  position: absolute;
+  top: 5px;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  display: none;
+}
+.grid ul li.with-ico:hover .ico-close {
+  display: block;
+}
+.grid ul li.with-ico .text {
+  padding-right: 15px;
+}
 .grid ul li .img {
   display: block;
   width: 140px;
@@ -2745,6 +2762,23 @@ b.headline {
 .mapBalloon:after {
   clear: both;
 }
+.mapBalloon.with-ico {
+  position: relative;
+}
+.mapBalloon.with-ico .ico-close {
+  position: absolute;
+  top: 5px;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  display: none;
+}
+.mapBalloon.with-ico:hover .ico-close {
+  display: block;
+}
+.mapBalloon.with-ico .text {
+  padding-right: 15px;
+}
 .mapBalloon .img {
   display: block;
   width: 140px;
@@ -2809,6 +2843,10 @@ b.headline {
 }
 .mapBalloon-place-label a:hover {
   color: #009bd9;
+}
+#setItemEditor #rightCol {
+  width: 500px;
+  margin-bottom: 36px;
 }
 #browseControls ul li {
   display: block;
@@ -3438,6 +3476,9 @@ form.form {
 }
 form.form > div {
   margin-bottom: 10px;
+}
+form.form .hide {
+  display: none;
 }
 form.form b {
   display: block;

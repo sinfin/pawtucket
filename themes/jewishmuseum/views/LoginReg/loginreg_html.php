@@ -43,13 +43,11 @@
 				</div>
 				
 			</div><!-- end loginForm -->
-<?php
-/* dont allow registration yet
 			<div id="registerForm">
 				<strong class="h1"><?php print _t("Register"); ?></strong>
 				<div class="bg">
 					<form action="<?php print caNavUrl($this->request, '', 'LoginReg', 'register', array()); ?>" method="post" name="registration" class="form">
-						<p><?php print _t("As a member, you can rank, tag and comment on objects."); ?></p>
+						<p><?php print _t("As a member, you can comment on objects."); ?></p>
 <?php
 						$va_errors = $this->getVar("reg_errors");
 						
@@ -74,5 +72,3 @@
 					</form>					
 				</div><!-- end bg -->
 			</div><!-- end registerForm -->
-*/
-?>

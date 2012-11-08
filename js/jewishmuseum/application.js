@@ -20,9 +20,13 @@
     return container.each(function() {
       var thisCont;
       thisCont = $(this);
-      return thisCont.imagesLoaded(function() {
+      if (thisCont.hasClass('no-imagesloaded')) {
         return window.equalHeightDo(thisCont.children());
-      });
+      } else {
+        return thisCont.imagesLoaded(function() {
+          return window.equalHeightDo(thisCont.children());
+        });
+      }
     });
   };
 
@@ -165,6 +169,7 @@
 
   $(function() {
     window.equalHeight($('.equal-height, .grid > ul'));
+    console.log($('.equal-height, .grid > ul'));
     fixSidebar();
     cstypo();
     notifications();
