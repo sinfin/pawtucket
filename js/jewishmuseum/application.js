@@ -138,7 +138,7 @@
 
   cstypo = function() {
     if ($('html').hasClass('lang-cs')) {
-      return $('p, li, div').add('.footer-left a').cstypo();
+      return $('p, li, div, .footer-left a').cstypo();
     }
   };
 

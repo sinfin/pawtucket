@@ -108,7 +108,7 @@ videos = ->
 
 cstypo = ->
 	if $('html').hasClass('lang-cs')
-		$('p, li, div').add('.footer-left a').cstypo()
+		$('p, li, div, .footer-left a').cstypo()
 
 cancelLazyload = ->
 	$('.lazyload').trigger('appear')

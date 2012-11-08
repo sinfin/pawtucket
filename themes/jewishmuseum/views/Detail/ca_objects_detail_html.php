@@ -49,7 +49,10 @@
 	}
 ?>
 	<script type="text/javascript">
-		document.title = '<?php print $vs_title." | "._t($this->request->config->get("html_page_title")); ?>';
+		if (!window.titleChanged) {
+			window.titleChanged = true
+			document.title = '<?php print $vs_title." | "._t($this->request->config->get("html_page_title")); ?>';
+		}
 	</script>
 	<div id="detail">
 		<?php
