@@ -9,16 +9,15 @@
 <div id="footer"><div class="inner">
 	<ul class="footer-left">
 		<li><?php print caNavLink($this->request, _t("Contribute to the collections"), "ribbon-link", "", "Splash", "Contribute"); ?></li>
-		<li><a href="fotoarchiv/jewishmuseum.cz" class="em custom-text ribbon-link" data-em="fotoarchiv/jewishmuseum.cz"><?php print _t('If you wish to obtain digital copies of JMP images, contact us at %1', 'fotoarchiv@jewishmuseum.cz'); ?></a></li>
-	</ul>
-	<ul class="footer-links">
-		<!-- <li><a href="#">Lorem ipsum dolor</a></li>
-		<li><a href="#">Sit amet consectetur</a></li>
-		<li><a href="#">Adipiscing elit</a></li>
-		<li><a href="#">Nullam nec lacus</a></li>
-		<li><a href="#">At mauris</a></li>
-		<li class="copyright"><?php print "&copy; " . date('Y') . ' ' ._t('Židovské muzeum v Praze'); ?></li> -->
-		<li class="copyright"><?php print "&copy; " . date('Y') . ' ' ._t('Židovské muzeum v Praze'); ?></li>
+		<li class="contact"><?php print _t('If you wish to obtain digital copies of JMP images,<br />contact us at %1', '<a href="fotoarchiv/jewishmuseum.cz" class="em" data-em="fotoarchiv/jewishmuseum.cz">fotoarchiv/jewishmuseum.cz</a>'); ?></li>
+		<li class="copyright">
+			<?php
+			print "&copy; " . date('Y') . ' ' ._t('Židovské muzeum v Praze');
+			$title = 'Conference on Jewish Material Claims Against Germany - Claims Conference';
+			$img = '<img src="'.$this->request->getThemeUrlPath(true).'/graphics/claims-conference.png" alt="'.$title.'" />';
+			print '<a class="claims-con" href="http://www.claimscon.org/" target="_blank" title="'.$title.'">'.$img.'</a>';
+			?>
+		</li>
 	</ul>
 	<!-- 
 	<div class="footer-newsletter">

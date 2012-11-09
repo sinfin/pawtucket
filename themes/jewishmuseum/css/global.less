@@ -1062,8 +1062,22 @@ b.headline {
 		float: left;
 		li {
 			display: block;
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 			margin-left: 34px;
+			&.contact {
+				&, a {
+					#f .small;
+				}
+			}
+			&.copyright {
+				#f .small;
+				position: relative;
+				.claims-con {
+					.size(237px, 55px);
+					display: block;
+					.bottomleft(0, 100%);
+				}
+			}
 		}
 	}
 	.footer-links {

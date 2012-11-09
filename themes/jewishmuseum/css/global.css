@@ -2006,8 +2006,45 @@ b.headline {
 }
 #footer .footer-left li {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-left: 34px;
+}
+#footer .footer-left li.contact,
+#footer .footer-left li.contact a {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+}
+#footer .footer-left li.contact a,
+#footer .footer-left li.contact a a {
+  color: #666666;
+}
+#footer .footer-left li.contact a:hover,
+#footer .footer-left li.contact a a:hover {
+  color: #009bd9;
+}
+#footer .footer-left li.copyright {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  position: relative;
+}
+#footer .footer-left li.copyright a {
+  color: #666666;
+}
+#footer .footer-left li.copyright a:hover {
+  color: #009bd9;
+}
+#footer .footer-left li.copyright .claims-con {
+  display: block;
+  width: 237px;
+  height: 55px;
+  display: block;
+  position: absolute;
+  top: auto;
+  left: 100%;
+  right: auto;
+  bottom: 0;
 }
 #footer .footer-links {
   width: 300px;
