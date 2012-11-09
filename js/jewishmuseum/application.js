@@ -169,7 +169,6 @@
 
   $(function() {
     window.equalHeight($('.equal-height, .grid > ul'));
-    console.log($('.equal-height, .grid > ul'));
     fixSidebar();
     cstypo();
     notifications();
