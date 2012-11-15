@@ -425,9 +425,9 @@
  				}
  				if($ps_comment || $ps_tags || $ps_media1){
  					if($this->request->config->get("dont_moderate_comments")){
- 						$this->notification->addNotification(_t("Thank you for contributing."), "message");
+ 						$this->notification->addNotification(_t("Thank you for commenting."), "message");
  					}else{
- 						$this->notification->addNotification(_t("Thank you for contributing.  Your comments will be posted on this page after review by site staff."), "message");
+ 						$this->notification->addNotification(_t("Thank you for commenting."), "message");
  					}
  					# --- check if email notification should be sent to admin
  					if(!$this->request->config->get("dont_email_notification_for_new_comments")){

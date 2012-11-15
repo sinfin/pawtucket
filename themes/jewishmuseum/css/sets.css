@@ -1,6 +1,7 @@
 #setItemEditor {
 	background: #FFFFFF;
 }
+/*
 #setItemEditor #rightCol{
 	clear:right;
 	float:right;
@@ -13,7 +14,6 @@
 	padding-top:10px;
 	color:#828282;
 }
-
 #setItemEditor #leftCol{
 	width:620px;
 }
@@ -83,7 +83,7 @@
 #setItems .setItemCaption a{
 	text-decoration:none;
 	color:#000000;
-}
+*/}
 
 #helpTips ul{
 	margin: 0px 0px 0px 5px;

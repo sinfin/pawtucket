@@ -223,7 +223,7 @@
 					}
 				} else {
 					// already valid login with this user name
-					$va_errors["email"] = _t("A user has already registered with this email address");
+					$va_errors["email"] = _t("A user has already registered with this email address.");
 				}
 			}
 			
@@ -315,7 +315,7 @@
 			
 					if($this->request->isLoggedIn()){
 						# --- login successful so redirect to search page
-						$this->notification->addNotification(_t('Thank you for registering!  You are now logged in.'), __NOTIFICATION_TYPE_INFO__);
+						$this->notification->addNotification(_t('Thank you for registering! You are now logged in.'), __NOTIFICATION_TYPE_INFO__);
 						$vo_session = $this->request->getSession();
 						$vs_last_page = $vo_session->getVar('site_last_page');
 						$vo_session->setVar('site_last_page', "");

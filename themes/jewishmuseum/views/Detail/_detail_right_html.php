@@ -216,12 +216,16 @@
 			}
 ?>
 			<?php
-				# --- Share
-				if($this->request->config->get('show_add_this')){
-			?>
-				<div class="item-share">
-					<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4baa59d57fc36521"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0;"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4baa59d57fc36521"></script>
-				</div>
-			<?php
-				} // endif $this->request->config->get('show_add_this')
-			?>
+			# --- Add to lightbox
+			if ((!$this->request->config->get('dont_allow_registration_and_login')) && (!$this->request->config->get('disable_my_collections')) && $this->request->isLoggedIn()) {
+					print '<div class="item-add">'.caNavLink($this->request, _t("Add to my collection"), '', '', 'Sets', 'addItem', array('object_id' => $t_object->get('object_id'))).'</div>';
+			}
+			# --- Share
+			if($this->request->config->get('show_add_this')){
+		?>
+			<div class="item-share">
+				<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4baa59d57fc36521"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0;"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4baa59d57fc36521"></script>
+			</div>
+		<?php
+			} // endif $this->request->config->get('show_add_this')
+		?>

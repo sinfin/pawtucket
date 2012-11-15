@@ -135,6 +135,21 @@
 		}
 	}
 	.grid-item() {
+		&.with-ico {
+			position: relative;
+			.ico-close {
+				.topright(5px, 0);
+				display: none;
+			}
+			&:hover {
+				.ico-close {
+					display: block;
+				}
+			}
+			.text {
+				padding-right: 15px;
+			}
+		}
 		.img {
 			.sq(140px);
 			float: left;
@@ -1440,6 +1455,12 @@ b.headline {
 	#f .bold;
 	margin-bottom: @baseline;
 }
+#setItemEditor {
+	#rightCol {
+		width: 500px;
+		margin-bottom: 2*@baseline;
+	}
+}
 #browseControls {
 	ul {
 		li {
@@ -2046,6 +2067,9 @@ form.form {
 	}
 	> div {
 		margin-bottom: 10px;
+	}
+	.hide {
+		display: none;
 	}
 	b {
 		.form-label;

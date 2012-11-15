@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-17 07:20-0800\n"
-"PO-Revision-Date: 2012-11-09 18:23+0100\n"
+"PO-Revision-Date: 2012-11-15 10:58+0100\n"
 "Last-Translator: Petr Marek <contact@petrmarek.eu>\n"
 "Language-Team:  <info@collectiveaccess.org>\n"
 "MIME-Version: 1.0\n"
@@ -7836,6 +7836,24 @@ msgstr "Nenalezeny žádné výsledky."
 msgid "On-line collections"
 msgstr "On-line sbírky"
 
+msgid "By commenting you will send a message to the Jewish Museum in Prague."
+msgstr "Přidáním komentáře k předmětu pošlete zprávu Židovskému muzeu v Praze."
+
+msgid "Thank you for commenting."
+msgstr "Děkujeme za komentář."
+
+msgid "Login/register to comment on this object."
+msgstr "Přihlašte/registrujte se abyste mohli komentovat tento předmět."
+
+msgid "As a member, you can comment on objects."
+msgstr "Po registraci budete moci komentovat objekty."
+
+msgid "A user has already registered with this email address."
+msgstr "Tato e-mailová adresa je již zabraná."
+
+msgid "Send"
+msgstr "Odeslat"
+
 msgid "Preparing document, loading images. This may take a while..."
 msgstr "Dokument se připravuje pro tisk, načítají se obrázky. Může to chvíli trvat..."
 
@@ -7868,6 +7886,9 @@ msgstr "odeslat"
 
 msgid "Submit"
 msgstr "Odeslat"
+
+msgid "Thank you for completing your registration at http://collections.jewishmuseum.cz. You can log in using your e-mail address."
+msgstr "Děkujeme Vám, že jste se registrovali v on-line katalogu sbírek Židovského muzeum v Praze na http://collections.jewishmuseum.cz. Přihlásit se můžete pomocí Vaší e-mailové adresy."
 
 msgid "More on-line exhibitions"
 msgstr "Další on-line výstavy"
@@ -7904,6 +7925,12 @@ msgstr "zpět na výsledek"
 
 msgid "people"
 msgstr "lidé"
+
+msgid "Verification message"
+msgstr "Potvrzení o registraci"
+
+msgid "You didn't answer the captcha right."
+msgstr "Špatně opsaný captcha kód."
 
 msgid "Register"
 msgstr "Registrace"
@@ -7958,6 +7985,9 @@ msgstr "On-line výstava"
 
 msgid "About collections"
 msgstr "O sbírkách"
+
+msgid "Thank you for registering! You are now logged in."
+msgstr "Děkujeme za registraci! Byli jste automaticky přihlášeni."
 
 msgid "back to the results"
 msgstr "zpět na výsledky"
