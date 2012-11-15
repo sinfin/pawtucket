@@ -814,6 +814,10 @@ textarea {
 .ribbon a:hover {
   color: #009bd9;
 }
+.intro-description {
+  font-style: italic;
+  margin-bottom: 27px;
+}
 .ribbon-link {
   display: inline-block;
   *display: inline;
@@ -1023,6 +1027,12 @@ strong.h1 {
   line-height: 39px;
   font-weight: normal;
 }
+h1 > small,
+strong.h1 > small {
+  font-size: 20px;
+  line-height: 39px;
+  color: #666666;
+}
 strong.type {
   display: block;
   font-size: 15px;
@@ -1048,6 +1058,11 @@ b.headline {
   line-height: 39px;
   font-weight: normal;
   font-weight: normal;
+}
+b.headline > small {
+  font-size: 20px;
+  line-height: 39px;
+  color: #666666;
 }
 .notificationMessage {
   margin-bottom: 18px;
@@ -1850,6 +1865,11 @@ b.headline {
   font-weight: normal;
   margin-bottom: 18px;
 }
+#home-featured ul li .text h2 > small {
+  font-size: 20px;
+  line-height: 39px;
+  color: #666666;
+}
 #home-featured ul li .text h2 a {
   color: black;
   text-decoration: none;
@@ -1989,6 +2009,114 @@ b.headline {
 }
 .grid ul li .text .more a:hover {
   color: #009bd9;
+}
+#my-collections-editor {
+  margin-left: 34px;
+  padding-top: 20px;
+}
+#my-collections-editor a,
+#my-collections-editor .facetLink {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#my-collections-editor a a,
+#my-collections-editor .facetLink a {
+  color: #333333;
+}
+#my-collections-editor a a:hover,
+#my-collections-editor .facetLink a:hover {
+  color: #009bd9;
+}
+#my-collections-editor.current a,
+#my-collections-editor a:hover {
+  color: #009bd9;
+}
+.content #my-collections-editor {
+  display: none;
+}
+#my-collections-editor .margined {
+  margin-bottom: 18px;
+}
+#my-collections-editor .heading {
+  display: block;
+  margin-bottom: 5px;
+}
+#my-collections-editor ul {
+  margin-bottom: 18px;
+}
+#my-collections-editor ul li {
+  display: block;
+  margin-bottom: 5px;
+}
+#my-collections-editor a.current {
+  color: #009bd9;
+}
+#my-collections-editor .hide {
+  display: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  margin-bottom: 18px;
+  border: 1px solid #e6e6e6;
+  border-width: 1px 0;
+}
+#my-collections-editor .hide.in {
+  display: block;
+}
+#my-collections-editor .hide .ribbon-link {
+  color: white;
+}
+#my-collections-editor form p,
+#my-collections-editor form {
+  width: 264px;
+}
+#my-collections-editor form > div {
+  margin-bottom: 10px;
+}
+#my-collections-editor form .hide {
+  display: none;
+}
+#my-collections-editor form b {
+  display: block;
+  margin-bottom: 10px;
+}
+#my-collections-editor form input[type="text"],
+#my-collections-editor form input[type="password"],
+#my-collections-editor form textarea {
+  display: block;
+  padding: 5px 10px;
+  width: 244px;
+  border: 1px solid #ccc;
+}
+#my-collections-editor form .formLabel,
+#my-collections-editor form input[type="text"],
+#my-collections-editor form input[type="password"],
+#my-collections-editor form textarea {
+  margin-bottom: 18px;
+}
+#my-collections-editor form .captcha,
+#my-collections-editor form p,
+#my-collections-editor form .info {
+  margin-bottom: 18px;
+}
+#my-collections-editor form #file-fields input {
+  display: block;
+  margin-bottom: 10px;
+}
+#my-collections-editor form .formLabel {
+  margin-bottom: 2px;
+}
+#my-collections-editor form input[type="text"],
+#my-collections-editor form textarea,
+#my-collections-editor form select {
+  margin-bottom: 8px;
+}
+#my-collections-editor form .submit-div {
+  padding-top: 5px;
+  text-align: right;
+  margin-bottom: 0;
 }
 #push {
   clear: both;
@@ -2264,6 +2392,11 @@ b.headline {
   font-weight: normal;
   font-weight: normal;
   padding: 20px 0;
+}
+#detail #detail-full b.heading > small {
+  font-size: 20px;
+  line-height: 39px;
+  color: #666666;
 }
 #detail #tab-video .video .name {
   display: none;
@@ -3550,6 +3683,12 @@ body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem a {
   font-weight: normal;
   font-size: 24px;
   line-height: 30px;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem div > small,
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem a > small {
+  font-size: 20px;
+  line-height: 39px;
+  color: #666666;
 }
 body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem a {
   color: white;

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-17 07:20-0800\n"
-"PO-Revision-Date: 2012-11-15 10:58+0100\n"
+"PO-Revision-Date: 2012-11-15 12:28+0100\n"
 "Last-Translator: Petr Marek <contact@petrmarek.eu>\n"
 "Language-Team:  <info@collectiveaccess.org>\n"
 "MIME-Version: 1.0\n"
@@ -183,10 +183,6 @@ msgstr "Poslední Rychlé hledání"
 
 msgid "Tours"
 msgstr "Prohlídky"
-
-#, fuzzy
-msgid "Create"
-msgstr "Vytvořeno"
 
 #, fuzzy
 msgid "Tour stops"
@@ -1191,8 +1187,32 @@ msgstr ""
 msgid "type"
 msgstr "typ"
 
+msgid "Edit current collection"
+msgstr "Upravit aktuální sbírku"
+
+msgid "Create new collection"
+msgstr "Vytvořit novou sbírku"
+
+msgid "Your collections"
+msgstr "Vaše sbírky"
+
+msgid "Choose a collection to begin editing."
+msgstr "Vyberte sbírku a začněte upravovat."
+
+msgid "Create"
+msgstr "Vytvořit"
+
+msgid "Display Option"
+msgstr "Zobrazení"
+
+msgid "There are no items in this collection."
+msgstr "V této sbírce nejsou žádné objekty."
+
 msgid "collection"
 msgstr "sbírka"
+
+msgid "My collections"
+msgstr "Moje sbírky"
 
 msgid "collections"
 msgstr "sbírky"
@@ -7836,6 +7856,21 @@ msgstr "Nenalezeny žádné výsledky."
 msgid "On-line collections"
 msgstr "On-line sbírky"
 
+msgid "You must enter a name for your collection"
+msgstr "Musíte zadat název své sbírky"
+
+msgid "Remove item from set"
+msgstr "Odebrat objekt ze sady"
+
+msgid "%1 collection"
+msgstr " sbírka"
+
+msgid "Private"
+msgstr "Soukromá"
+
+msgid "Public"
+msgstr "Veřejná"
+
 msgid "By commenting you will send a message to the Jewish Museum in Prague."
 msgstr "Přidáním komentáře k předmětu pošlete zprávu Židovskému muzeu v Praze."
 
@@ -8684,9 +8719,6 @@ msgstr "Náhledy"
 
 #~ msgid "Standard"
 #~ msgstr "Standardní"
-
-#~ msgid "Public"
-#~ msgstr "Veřejné"
 
 #~ msgid "Item label display mode"
 #~ msgstr "Styl zobrazení názvu položky"

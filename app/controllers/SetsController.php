@@ -90,8 +90,11 @@
  		function Index() {
  			if (!$this->request->isLoggedIn()) { $this->response->setRedirect(caNavUrl($this->request, '', 'LoginReg', 'form')); return; }
  			if (!$t_set = $this->_getSet()) { $t_set = new ca_sets(); }
- 			
- 			JavascriptLoadManager::register('sortableUI');
+
+ 			$description_code = $this->request->config->get('set_description_element_code');
+ 			if (strlen($description_code) < 1) $description_code = 'description';
+
+ 			JavascriptLoadManager::register('sets');
  			
  			# --- get all sets for user
  			$va_sets = caExtractValuesByUserLocale($t_set->getSets(array('table' => 'ca_objects', 'user_id' => $this->request->getUserID())));
@@ -135,7 +138,7 @@
  			$this->view->setVar('t_new_set', $t_new_set);
  			$this->view->setVar('set_list', $va_sets);
  			$this->view->setVar('set_name', $t_set->getLabelForDisplay());
- 			$this->view->setVar('set_description', $t_set->get("ca_sets.set_intro"));
+ 			$this->view->setVar('set_description', $t_set->get($description_code));
  			$this->view->setVar('set_access', $t_set->get("ca_sets.access"));
  			
  			if($this->request->config->get("dont_enforce_access_settings")){
@@ -151,7 +154,9 @@
  			$vn_transaction_id = $t_trans->getPrimaryKey();
  			
  			$t_comm = new ca_commerce_communications();
- 			$this->view->setVar('messages', $t_comm->getMessages($this->request->getUserID(), array('transaction_id' => $vn_transaction_id)));
+ 			$m = $t_comm->getMessages($this->request->getUserID(), array('transaction_id' => $vn_transaction_id));
+ 			$this->notification->addNotification($m);
+ 			$this->view->setVar('messages', $m);
  			
  			# --- use a different view if client services is enabled
  			if($this->request->config->get("enable_client_services")){
@@ -240,6 +245,9 @@
  			if (!$this->request->isLoggedIn()) { $this->response->setRedirect(caNavUrl($this->request, '', 'LoginReg', 'form')); return; }
  			global $g_ui_locale_id; // current locale_id for user
  			
+ 			$description_code = $this->request->config->get('set_description_element_code');
+ 			if (strlen($description_code) < 1) $description_code = 'description';
+
  			$va_errors_edit_set = array();
  			
  			$o_purifier = new HTMLPurifier();
@@ -248,26 +256,26 @@
  			$pn_set_id = $this->request->getParameter('set_id', pInteger);
  			$ps_name = $o_purifier->purify($this->request->getParameter('name', pString));
  			if(!$ps_name){
- 				$va_errors_edit_set["name"] = _t("You must enter a name for your lightbox");
+ 				$va_errors_edit_set["name"] = _t("You must enter a name for your collection");
  			}
- 			$vs_desc =  $o_purifier->purify($this->request->getParameter('description', pString));
 
+ 			$vs_desc =  $o_purifier->purify($this->request->getParameter('description', pString));
  			if(sizeof($va_errors_edit_set) == 0){ 		
 				if ($t_set->load($pn_set_id) && $t_set->haveAccessToSet($this->request->getUserID(), __CA_SET_EDIT_ACCESS__)) { 
 					$t_set->setMode(ACCESS_WRITE);
+					print '<pre>'; var_dump($this->request->getParameter('access', pInteger)); print '</pre>';
 					$t_set->set('access', $this->request->getParameter('access', pInteger));
 					
 					// edit/add description
 					$t_set->replaceAttribute(
 						array(
 							'locale_id' => $g_ui_locale_id,
-							'set_description' => $vs_desc
+							"{$description_code}" => $vs_desc
 						),
-						'set_description'
+						"{$description_code}"
 					);
-					
 					$t_set->update();
-					
+
 					if (sizeof($va_labels = caExtractValuesByUserLocale($t_set->getLabels(array($g_ui_locale_id), __CA_LABEL_TYPE_PREFERRED__)))) {
 						// edit label	
 						foreach($va_labels as $vn_set_id => $va_label) {
@@ -290,6 +298,9 @@
  			if (!$this->request->isLoggedIn()) { $this->response->setRedirect(caNavUrl($this->request, '', 'LoginReg', 'form')); return; }
  			global $g_ui_locale_id; // current locale_id for user
  			
+ 			$description_code = $this->request->config->get('set_description_element_code');
+ 			if (strlen($description_code) < 1) $description_code = 'description';
+
  			$va_errors_new_set = array();
  			
  			$o_purifier = new HTMLPurifier();
