@@ -81,6 +81,59 @@
 	.clearfix;
 }
 #s {
+	.dark-more-link() {
+		.bottomright(100%, @s / 2);
+		#f .small;
+		padding: 4px 10px 2px;
+		background: #4d4d4d;
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
+	.home-dark() {
+		.clearfix;
+		position: relative;
+		clear: both;
+		ul {
+			.clearfix;
+			padding: 0 0.5 * @s;
+			li {
+				float: left;
+				width: 5*@gridCol + 4*@gridGutter;
+				margin-right: @s;
+				.img {
+					float: left;
+					.size(140px, 93px);
+					overflow: hidden;
+					// background-color: pink;
+				}
+				.text {
+					margin-left: 140px + @s;
+					h3 {
+						font-weight: normal;
+						a {
+							#f > .headBold;
+							color: @orange;
+							text-decoration: none;
+						}
+					}
+					.description {
+						margin: @baseline / 2 0;
+					}
+					a {
+						#f > .bold;
+					}
+					.description, a {
+						color: white;
+					}
+				}
+			}
+			&.count-1, &.count-2 {
+				padding-left: @sidebarWidth + @s / 2;
+			}
+		}
+	}
 	.grid-item() {
 		.img {
 			.sq(140px);
@@ -855,9 +908,7 @@ b.headline {
 	}
 }
 #home-dark {
-	.clearfix;
-	position: relative;
-	clear: both;
+	#s .home-dark;
 	#home-dark-inner {
 		.clearfix;
 		clear: both;
@@ -876,14 +927,7 @@ b.headline {
 		}
 	}
 	.home-dark-more-link {
-		.bottomright(100%, @s / 2);
-		#f .small;
-		padding: 4px 10px 2px;
-		background: #4d4d4d;
-		color: white;
-		&:hover {
-			color: white;
-		}
+		#s .dark-more-link;
 	}
 	#home-dark-left, #home-dark-right {
 		.sq(10px);
@@ -909,44 +953,6 @@ b.headline {
 		.ico {
 			border-left: 8px solid @blue; 
 			border-right: 0; 
-		}
-	}
-	ul {
-		.clearfix;
-		padding: 0 0.5 * @s;
-		li {
-			float: left;
-			width: 5*@gridCol + 4*@gridGutter;
-			margin-right: @s;
-			.img {
-				float: left;
-				.size(140px, 93px);
-				overflow: hidden;
-				// background-color: pink;
-			}
-			.text {
-				margin-left: 140px + @s;
-				h3 {
-					font-weight: normal;
-					a {
-						#f > .headBold;
-						color: @orange;
-						text-decoration: none;
-					}
-				}
-				.description {
-					margin: @baseline / 2 0;
-				}
-				a {
-					#f > .bold;
-				}
-				.description, a {
-					color: white;
-				}
-			}
-		}
-		&.count-1, &.count-2 {
-			padding-left: @sidebarWidth + @s / 2;
 		}
 	}
 }
@@ -1306,106 +1312,6 @@ b.headline {
 #galleryLanding {
 	.textContent {
 		margin-bottom: 30px;
-	}
-}
-#gallerySetDetail {
-	@white: #acacac;
-	#top {
-		border: 1px solid @blue;
-		border-width: 1px 0;
-		margin-bottom: 50px;
-		#s .setDetailTop;
-		.text {
-			p:last-child {
-				margin-bottom: 0;
-			}
-			.related-collections {
-				padding-top: @baseline;
-				li {
-					margin-bottom: @baseline;
-				}
-			}
-		}
-	}
-	#setItemsGrid {
-		ul {
-			@g: 50px;
-			@s: 40px;
-			width: 1140 + @s;
-			position: relative;
-			&.working {
-				.opacity(0.4);
-			}
-			li {
-				display: none;
-				&.visible {
-					display: block;
-				}
-				/////////////
-				// GRID
-				/////////////
-				float: left;
-				width: 5*@g;
-				// margin: 0 @s @s 0;
-				padding: 0 @s @s 0;
-				&.mediumlarge {
-					&, .textContent {
-						width: 8*@g;
-					}
-				}
-				&.large {
-					&, .textContent {
-						width: 12*@g;
-					}
-				}
-				/////////////
-				// END GRID 
-				/////////////
-				.img {
-					margin-bottom: 10px;
-					overflow-x: hidden;
-					img {
-						width: 100%;
-						height: auto;
-					}
-					a, img {
-						display: block;
-					}
-				}
-				.text {
-					.h2, a {
-						#f .small;
-						font-weight: bold;
-						color: white !important;
-						display: inline;
-						&:hover {
-							color: white;
-							text-decoration: none;
-						}
-					}
-					p {
-						#f .small;
-						color: @white;
-					}
-				}
-				h2, p {
-					margin-bottom: 0;
-				}
-				&.textItem {
-					div, a {
-						#f .headLight;
-						.fsize(24px, 30px);
-					}
-					a {
-						color: white;
-						text-decoration: underline;
-						&:hover {
-							text-decoration: none;
-						}
-					}
-				}
-			}
-		}
 	}
 }
 #hierarchy-full {
@@ -1884,13 +1790,14 @@ body.fullscreen {
 body.displaySet {
 	@black: #1c1c1c;
 	@gray: #b3b3b3;
+	@dsWidth: 1140px;
 	background: @black;
 	color: @gray;
 	.lazyload {
 		background-color: @grayLight;
 	}	
-	#header, #main {
-		width: 1140px;
+	#header, #gallerySetDetail {
+		width: @dsWidth;
 		margin: 0 auto;
 		float: none;
 	}
@@ -1958,6 +1865,7 @@ body.displaySet {
 		}
 	}
 	#main {
+		margin-bottom: @baseline;
 		.sidebar {
 			display: none;
 		}
@@ -1971,6 +1879,126 @@ body.displaySet {
 	}
 	p, div {
 		color: @gray;
+	}
+	#more-online-collections {
+		#s .home-dark;
+		padding-top: @baseline;
+		border-top: 1px solid @blue;
+		ul {
+			&.count-1, &.count-2, &.count-3 {
+				padding-left: 0;
+				margin: 0 auto;
+				width: @dsWidth;
+			}
+			li .text h3 a {
+				color: white;
+			}
+		}
+		.more-link {
+			#s .dark-more-link;
+			margin-bottom: 1px;
+		}
+	}
+	#gallerySetDetail {
+		@white: #acacac;
+		margin-bottom: 2*@baseline;
+		#top {
+			border: 1px solid @blue;
+			border-width: 1px 0;
+			margin-bottom: 50px;
+			#s .setDetailTop;
+			.text {
+				p:last-child {
+					margin-bottom: 0;
+				}
+				.related-collections {
+					padding-top: @baseline;
+					li {
+						margin-bottom: @baseline;
+					}
+				}
+			}
+		}
+		#setItemsGrid {
+			ul {
+				@g: 50px;
+				@s: 40px;
+				width: 1140 + @s;
+				position: relative;
+				&.working {
+					.opacity(0.4);
+				}
+				li {
+					display: none;
+					&.visible {
+						display: block;
+					}
+					/////////////
+					// GRID
+					/////////////
+					float: left;
+					width: 5*@g;
+					// margin: 0 @s @s 0;
+					padding: 0 @s @s 0;
+					&.mediumlarge {
+						&, .textContent {
+							width: 8*@g;
+						}
+					}
+					&.large {
+						&, .textContent {
+							width: 12*@g;
+						}
+					}
+					/////////////
+					// END GRID 
+					/////////////
+					.img {
+						margin-bottom: 10px;
+						overflow-x: hidden;
+						img {
+							width: 100%;
+							height: auto;
+						}
+						a, img {
+							display: block;
+						}
+					}
+					.text {
+						.h2, a {
+							#f .small;
+							font-weight: bold;
+							color: white !important;
+							display: inline;
+							&:hover {
+								color: white;
+								text-decoration: none;
+							}
+						}
+						p {
+							#f .small;
+							color: @white;
+						}
+					}
+					h2, p {
+						margin-bottom: 0;
+					}
+					&.textItem {
+						div, a {
+							#f .headLight;
+							.fsize(24px, 30px);
+						}
+						a {
+							color: white;
+							text-decoration: underline;
+							&:hover {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 #tooltip {

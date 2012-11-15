@@ -116,7 +116,12 @@
  			$va_set_first_items = array();
  			$va_set_first_items = $t_set->getFirstItemsFromSets(array_keys($va_sets), array("version" => "icon", "checkAccess" => $va_access_values));
  		
+ 			$set_ids = array_keys($va_sets);
+ 			$images = $t_set->getAttributeFromSets('exhibition_cover_small', $set_ids, array("checkAccess" => $va_access_values, "version" => "thumbnail"));
+ 			$va_set_descriptions = $t_set->getAttributeFromSets('description', $set_ids, array("checkAccess" => $va_access_values));
  			$this->view->setVar('sets', $va_sets);
+ 			$this->view->setVar('set_images', $images);
+ 			$this->view->setVar('set_descriptions', $va_set_descriptions);
  			$this->view->setVar('first_items_from_sets', $va_set_first_items);
  			
  			$this->view->setVar('set_title', $t_set->getLabelForDisplay());

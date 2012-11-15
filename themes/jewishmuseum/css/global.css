@@ -1670,6 +1670,69 @@ b.headline {
 #home-dark:after {
   clear: both;
 }
+#home-dark ul {
+  zoom: 1;
+  padding: 0 10px;
+}
+#home-dark ul:before,
+#home-dark ul:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+#home-dark ul:after {
+  clear: both;
+}
+#home-dark ul li {
+  float: left;
+  width: 380px;
+  margin-right: 20px;
+}
+#home-dark ul li .img {
+  float: left;
+  display: block;
+  width: 140px;
+  height: 93px;
+  overflow: hidden;
+}
+#home-dark ul li .text {
+  margin-left: 160px;
+}
+#home-dark ul li .text h3 {
+  font-weight: normal;
+}
+#home-dark ul li .text h3 a {
+  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  color: #ed7c0e;
+  text-decoration: none;
+}
+#home-dark ul li .text .description {
+  margin: 9px 0;
+}
+#home-dark ul li .text a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+#home-dark ul li .text a a {
+  color: #333333;
+}
+#home-dark ul li .text a a:hover {
+  color: #009bd9;
+}
+#home-dark ul li .text .description,
+#home-dark ul li .text a {
+  color: white;
+}
+#home-dark ul.count-1,
+#home-dark ul.count-2 {
+  padding-left: 320px;
+}
 #home-dark #home-dark-inner {
   zoom: 1;
   clear: both;
@@ -1749,69 +1812,6 @@ b.headline {
 #home-dark #home-dark-right .ico {
   border-left: 8px solid #009bd9;
   border-right: 0;
-}
-#home-dark ul {
-  zoom: 1;
-  padding: 0 10px;
-}
-#home-dark ul:before,
-#home-dark ul:after {
-  display: table;
-  content: "";
-  zoom: 1;
-  *display: inline;
-}
-#home-dark ul:after {
-  clear: both;
-}
-#home-dark ul li {
-  float: left;
-  width: 380px;
-  margin-right: 20px;
-}
-#home-dark ul li .img {
-  float: left;
-  display: block;
-  width: 140px;
-  height: 93px;
-  overflow: hidden;
-}
-#home-dark ul li .text {
-  margin-left: 160px;
-}
-#home-dark ul li .text h3 {
-  font-weight: normal;
-}
-#home-dark ul li .text h3 a {
-  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: 300;
-  color: #ed7c0e;
-  text-decoration: none;
-}
-#home-dark ul li .text .description {
-  margin: 9px 0;
-}
-#home-dark ul li .text a {
-  font-size: 13px;
-  line-height: 18px;
-  color: #333333;
-  font-weight: bold;
-}
-#home-dark ul li .text a a {
-  color: #333333;
-}
-#home-dark ul li .text a a:hover {
-  color: #009bd9;
-}
-#home-dark ul li .text .description,
-#home-dark ul li .text a {
-  color: white;
-}
-#home-dark ul.count-1,
-#home-dark ul.count-2 {
-  padding-left: 320px;
 }
 #home-featured {
   overflow: hidden;
@@ -2351,160 +2351,6 @@ b.headline {
 }
 #galleryLanding .textContent {
   margin-bottom: 30px;
-}
-#gallerySetDetail #top {
-  border: 1px solid #009bd9;
-  border-width: 1px 0;
-  margin-bottom: 50px;
-  zoom: 1;
-}
-#gallerySetDetail #top:before,
-#gallerySetDetail #top:after {
-  display: table;
-  content: "";
-  zoom: 1;
-  *display: inline;
-}
-#gallerySetDetail #top:after {
-  clear: both;
-}
-#gallerySetDetail #top .img {
-  float: left;
-  position: relative;
-  width: 500px;
-}
-#gallerySetDetail #top .img img {
-  width: 500px;
-  height: auto;
-  display: block;
-}
-#gallerySetDetail #top .img .ribbon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: auto;
-  bottom: auto;
-  padding-left: 13px;
-  right: auto;
-  margin: 0;
-}
-#gallerySetDetail #top .text {
-  margin-left: 550px;
-  padding: 30px 0;
-}
-#gallerySetDetail #top .text h1,
-#gallerySetDetail #top .text h2 {
-  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: 300;
-  padding: 0 0 20px;
-}
-#gallerySetDetail #top .text h1 a,
-#gallerySetDetail #top .text h2 a {
-  text-decoration: none;
-}
-#gallerySetDetail #top .text p:last-child {
-  margin-bottom: 0;
-}
-#gallerySetDetail #top .text .related-collections {
-  padding-top: 18px;
-}
-#gallerySetDetail #top .text .related-collections li {
-  margin-bottom: 18px;
-}
-#gallerySetDetail #setItemsGrid ul {
-  width: 1180px;
-  position: relative;
-}
-#gallerySetDetail #setItemsGrid ul.working {
-  filter: alpha(opacity=0.4);
-  -khtml-opacity: 0.004;
-  -moz-opacity: 0.004;
-  opacity: 0.004;
-}
-#gallerySetDetail #setItemsGrid ul li {
-  display: none;
-  float: left;
-  width: 250px;
-  padding: 0 40px 40px 0;
-}
-#gallerySetDetail #setItemsGrid ul li.visible {
-  display: block;
-}
-#gallerySetDetail #setItemsGrid ul li.mediumlarge,
-#gallerySetDetail #setItemsGrid ul li.mediumlarge .textContent {
-  width: 400px;
-}
-#gallerySetDetail #setItemsGrid ul li.large,
-#gallerySetDetail #setItemsGrid ul li.large .textContent {
-  width: 600px;
-}
-#gallerySetDetail #setItemsGrid ul li .img {
-  margin-bottom: 10px;
-  overflow-x: hidden;
-}
-#gallerySetDetail #setItemsGrid ul li .img img {
-  width: 100%;
-  height: auto;
-}
-#gallerySetDetail #setItemsGrid ul li .img a,
-#gallerySetDetail #setItemsGrid ul li .img img {
-  display: block;
-}
-#gallerySetDetail #setItemsGrid ul li .text .h2,
-#gallerySetDetail #setItemsGrid ul li .text a {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-  font-weight: bold;
-  color: white !important;
-  display: inline;
-}
-#gallerySetDetail #setItemsGrid ul li .text .h2 a,
-#gallerySetDetail #setItemsGrid ul li .text a a {
-  color: #666666;
-}
-#gallerySetDetail #setItemsGrid ul li .text .h2 a:hover,
-#gallerySetDetail #setItemsGrid ul li .text a a:hover {
-  color: #009bd9;
-}
-#gallerySetDetail #setItemsGrid ul li .text .h2:hover,
-#gallerySetDetail #setItemsGrid ul li .text a:hover {
-  color: white;
-  text-decoration: none;
-}
-#gallerySetDetail #setItemsGrid ul li .text p {
-  font-size: 11px;
-  line-height: 15px;
-  color: #666666;
-  color: #acacac;
-}
-#gallerySetDetail #setItemsGrid ul li .text p a {
-  color: #666666;
-}
-#gallerySetDetail #setItemsGrid ul li .text p a:hover {
-  color: #009bd9;
-}
-#gallerySetDetail #setItemsGrid ul li h2,
-#gallerySetDetail #setItemsGrid ul li p {
-  margin-bottom: 0;
-}
-#gallerySetDetail #setItemsGrid ul li.textItem div,
-#gallerySetDetail #setItemsGrid ul li.textItem a {
-  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
-  font-size: 33px;
-  line-height: 39px;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 30px;
-}
-#gallerySetDetail #setItemsGrid ul li.textItem a {
-  color: white;
-  text-decoration: underline;
-}
-#gallerySetDetail #setItemsGrid ul li.textItem a:hover {
-  text-decoration: none;
 }
 #hierarchy-full ul {
   background: url(../graphics/hierarchy/left.png) 0 0 repeat-y;
@@ -3275,7 +3121,7 @@ body.displaySet .lazyload {
   background-color: #666666;
 }
 body.displaySet #header,
-body.displaySet #main {
+body.displaySet #gallerySetDetail {
   width: 1140px;
   margin: 0 auto;
   float: none;
@@ -3387,6 +3233,9 @@ body.displaySet #header #header-box a {
 body.displaySet #header #header-box a:hover {
   color: white;
 }
+body.displaySet #main {
+  margin-bottom: 18px;
+}
 body.displaySet #main .sidebar {
   display: none;
 }
@@ -3400,6 +3249,276 @@ body.displaySet h1 {
 body.displaySet p,
 body.displaySet div {
   color: #b3b3b3;
+}
+body.displaySet #more-online-collections {
+  zoom: 1;
+  position: relative;
+  clear: both;
+  padding-top: 18px;
+  border-top: 1px solid #009bd9;
+}
+body.displaySet #more-online-collections:before,
+body.displaySet #more-online-collections:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+body.displaySet #more-online-collections:after {
+  clear: both;
+}
+body.displaySet #more-online-collections ul {
+  zoom: 1;
+  padding: 0 10px;
+}
+body.displaySet #more-online-collections ul:before,
+body.displaySet #more-online-collections ul:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+body.displaySet #more-online-collections ul:after {
+  clear: both;
+}
+body.displaySet #more-online-collections ul li {
+  float: left;
+  width: 380px;
+  margin-right: 20px;
+}
+body.displaySet #more-online-collections ul li .img {
+  float: left;
+  display: block;
+  width: 140px;
+  height: 93px;
+  overflow: hidden;
+}
+body.displaySet #more-online-collections ul li .text {
+  margin-left: 160px;
+}
+body.displaySet #more-online-collections ul li .text h3 {
+  font-weight: normal;
+}
+body.displaySet #more-online-collections ul li .text h3 a {
+  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  color: #ed7c0e;
+  text-decoration: none;
+}
+body.displaySet #more-online-collections ul li .text .description {
+  margin: 9px 0;
+}
+body.displaySet #more-online-collections ul li .text a {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+body.displaySet #more-online-collections ul li .text a a {
+  color: #333333;
+}
+body.displaySet #more-online-collections ul li .text a a:hover {
+  color: #009bd9;
+}
+body.displaySet #more-online-collections ul li .text .description,
+body.displaySet #more-online-collections ul li .text a {
+  color: white;
+}
+body.displaySet #more-online-collections ul.count-1,
+body.displaySet #more-online-collections ul.count-2 {
+  padding-left: 320px;
+}
+body.displaySet #more-online-collections ul.count-1,
+body.displaySet #more-online-collections ul.count-2,
+body.displaySet #more-online-collections ul.count-3 {
+  padding-left: 0;
+  margin: 0 auto;
+  width: 1140px;
+}
+body.displaySet #more-online-collections ul li .text h3 a {
+  color: white;
+}
+body.displaySet #more-online-collections .more-link {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 10px;
+  bottom: 100%;
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  padding: 4px 10px 2px;
+  background: #4d4d4d;
+  color: white;
+  margin-bottom: 1px;
+}
+body.displaySet #more-online-collections .more-link a {
+  color: #666666;
+}
+body.displaySet #more-online-collections .more-link a:hover {
+  color: #009bd9;
+}
+body.displaySet #more-online-collections .more-link:hover {
+  color: white;
+}
+body.displaySet #gallerySetDetail {
+  margin-bottom: 36px;
+}
+body.displaySet #gallerySetDetail #top {
+  border: 1px solid #009bd9;
+  border-width: 1px 0;
+  margin-bottom: 50px;
+  zoom: 1;
+}
+body.displaySet #gallerySetDetail #top:before,
+body.displaySet #gallerySetDetail #top:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+body.displaySet #gallerySetDetail #top:after {
+  clear: both;
+}
+body.displaySet #gallerySetDetail #top .img {
+  float: left;
+  position: relative;
+  width: 500px;
+}
+body.displaySet #gallerySetDetail #top .img img {
+  width: 500px;
+  height: auto;
+  display: block;
+}
+body.displaySet #gallerySetDetail #top .img .ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  padding-left: 13px;
+  right: auto;
+  margin: 0;
+}
+body.displaySet #gallerySetDetail #top .text {
+  margin-left: 550px;
+  padding: 30px 0;
+}
+body.displaySet #gallerySetDetail #top .text h1,
+body.displaySet #gallerySetDetail #top .text h2 {
+  font-family: "TitilliumText22LBold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  padding: 0 0 20px;
+}
+body.displaySet #gallerySetDetail #top .text h1 a,
+body.displaySet #gallerySetDetail #top .text h2 a {
+  text-decoration: none;
+}
+body.displaySet #gallerySetDetail #top .text p:last-child {
+  margin-bottom: 0;
+}
+body.displaySet #gallerySetDetail #top .text .related-collections {
+  padding-top: 18px;
+}
+body.displaySet #gallerySetDetail #top .text .related-collections li {
+  margin-bottom: 18px;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul {
+  width: 1180px;
+  position: relative;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul.working {
+  filter: alpha(opacity=0.4);
+  -khtml-opacity: 0.004;
+  -moz-opacity: 0.004;
+  opacity: 0.004;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li {
+  display: none;
+  float: left;
+  width: 250px;
+  padding: 0 40px 40px 0;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.visible {
+  display: block;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.mediumlarge,
+body.displaySet #gallerySetDetail #setItemsGrid ul li.mediumlarge .textContent {
+  width: 400px;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.large,
+body.displaySet #gallerySetDetail #setItemsGrid ul li.large .textContent {
+  width: 600px;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .img {
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .img img {
+  width: 100%;
+  height: auto;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .img a,
+body.displaySet #gallerySetDetail #setItemsGrid ul li .img img {
+  display: block;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text .h2,
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text a {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  font-weight: bold;
+  color: white !important;
+  display: inline;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text .h2 a,
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text a a {
+  color: #666666;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text .h2 a:hover,
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text a a:hover {
+  color: #009bd9;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text .h2:hover,
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text a:hover {
+  color: white;
+  text-decoration: none;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text p {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  color: #acacac;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text p a {
+  color: #666666;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li .text p a:hover {
+  color: #009bd9;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li h2,
+body.displaySet #gallerySetDetail #setItemsGrid ul li p {
+  margin-bottom: 0;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem div,
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem a {
+  font-family: "TitilliumText22LLight", Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  line-height: 39px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem a {
+  color: white;
+  text-decoration: underline;
+}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem a:hover {
+  text-decoration: none;
 }
 #tooltip {
   background: white;

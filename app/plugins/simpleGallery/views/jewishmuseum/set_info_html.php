@@ -32,8 +32,10 @@ $size_types 		= $this->getVar('size_types');
 $periodizations 		= $this->getVar('periodizations');
 $object_texts 		= $this->getVar('object_texts');
 $collections 		= $this->getVar('collections');
-
+$set_id = $t_set->get('set_id');
 $va_set_list 		= $this->getVar('sets');
+$va_set_images 		= $this->getVar('set_images');
+$va_set_descriptions 		= $this->getVar('set_descriptions');
 $va_first_items_from_sets 	= $this->getVar('first_items_from_sets');
 
 // print '<pre>'; var_dump($object_ids); print '</pre>';
@@ -154,21 +156,33 @@ function sizeClass($size, $sizes) {
 			<?php
 				}
 			?>
+</div><!-- end gallerySetDetail -->
 <?php
-	if(sizeof($va_set_list) > 1){
+	unset($va_set_list[$set_id]);
+	if(sizeof($va_set_list) > 0){
 ?>
-	<div id="allSets"><H3><?php print _t("More Galleries"); ?></H3>
-<?php
-	foreach($va_set_list as $vn_set_id => $va_set_info){
-		if($vn_set_id == $t_set->get("set_id")){ continue; }
-		print "<div class='setInfo'>";
-		$va_item = $va_first_items_from_sets[$vn_set_id][array_shift(array_keys($va_first_items_from_sets[$vn_set_id]))];
-		print "<div class='setImage'>".caNavLink($this->request, $va_item["representation_tag"], '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id))."</div><!-- end setImage -->";
-		print "<div class='setTitle'>".caNavLink($this->request, (strlen($va_set_info["name"]) > 120 ? substr($va_set_info["name"], 0, 120)."..." : $va_set_info["name"]), '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id))."</div>";
-		print "<div style='clear:left; height:1px;'><!-- empty --></div><!-- end clear --></div><!-- end setInfo -->";
+	<div id="more-online-collections">
+	<?php
+	print '<ul class="count-'.count($va_set_list).'">';
+	foreach ($va_set_list as $vn_set_id => $va_set_info) {
+		$img = (isset($va_set_images[$vn_set_id])) ? $va_set_images[$vn_set_id][0] : '';
+		$img = caNavLink($this->request, $img, '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id));
+		$desc = (isset($va_set_descriptions[$vn_set_id])) ? nl2br(shorten($va_set_descriptions[$vn_set_id][0], 130)) : '';
+		print '<li>';
+			print '<div class="img">'.$img.'</div>';
+			print '<div class="text">';
+				print '<h3>'.caNavLink($this->request, shorten($va_set_info["name"], 35), '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id)).'</h3>';
+				print '<div class="description">';
+					print $desc;
+				print '</div>';
+				print '<div class="more">'.caNavLink($this->request, _t('detail'), '', 'simpleGallery', 'Show', 'displaySet', array('set_id' => $vn_set_id)).'</div>';
+			print '</div>';
+		print '</li>';
 	}
-?>
-	</div><!-- end allSets -->
+	print '</ul>';
+	print caNavLink($this->request, _t('More on-line exhibitions'), 'more-link', 'simpleGallery', 'Show', 'Index');
+	?>
+	</div><!-- end more-online-collections -->
 <?php
 	}
 ?>
