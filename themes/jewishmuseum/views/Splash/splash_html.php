@@ -62,7 +62,7 @@
 	<span id="home-dark-left"><span class="ico"></span></span>
 	<span id="home-dark-right"><span class="ico"></span></span>
 	<span id="home-dark-more-link"></span>
-	<?php print caNavLink($this->request, _t('More on-line exhibitions'), 'home-dark-more-link', 'simpleGallery', 'Show', 'Index'); ?>
+	<?php print caNavLink($this->request, _t('All on-line exhibitions'), 'home-dark-more-link', 'simpleGallery', 'Show', 'Index'); ?>
 </div>
 <div id="main-home">
 	<div class="sidebar">

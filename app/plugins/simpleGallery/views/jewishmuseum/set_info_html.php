@@ -180,7 +180,7 @@ function sizeClass($size, $sizes) {
 		print '</li>';
 	}
 	print '</ul>';
-	print caNavLink($this->request, _t('More on-line exhibitions'), 'more-link', 'simpleGallery', 'Show', 'Index');
+	print caNavLink($this->request, _t('All on-line exhibitions'), 'more-link', 'simpleGallery', 'Show', 'Index');
 	?>
 	</div><!-- end more-online-collections -->
 <?php

@@ -7856,6 +7856,9 @@ msgstr "Nenalezeny žádné výsledky."
 msgid "On-line collections"
 msgstr "On-line sbírky"
 
+msgid "All on-line exhibitions"
+msgstr "Všechny on-line výstavy"
+
 msgid "You must enter a name for your collection"
 msgstr "Musíte zadat název své sbírky"
 
