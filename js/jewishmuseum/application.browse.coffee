@@ -64,9 +64,14 @@ bindFacetLinks = ->
 	$('body').on 'click', '.facetLink', (e) ->
 		e.preventDefault()
 		e.stopPropagation()
-		facet = $(this).data('facet')
+		t = $(this)
+		facet = t.data('facet')
+		unless typeof t.data('modify') is 'undefined' and t.data('modify') is 'true'
+			modifyMode = true
+		else
+			modifyMode = false
 		unless typeof facet is 'undefined'
-			caUIBrowsePanel.showBrowsePanel facet
+			caUIBrowsePanel.showBrowsePanel facet, modifyMode
 	
 $ ->
 	moveControls()

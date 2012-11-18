@@ -16,7 +16,8 @@
 			$va_available_facets = $this->getVar('available_facets');
 			if (count($va_available_facets) > 0) {
 				foreach($va_available_facets as $vs_facet_code => $va_facet_info) {
-					print "<li><a href='#{$vs_facet_code}' data-facet='{$vs_facet_code}' class='facetLink'>".ucfirst(_t($va_facet_info['label_plural']))."<span class=\"ico-triangle\"></span></a></li>";
+					$should_modify = isset($va_criteria[$vs_facet_code]) ? "false" : "true";
+					print "<li><a href='#{$vs_facet_code}' data-facet='{$vs_facet_code}' data-modify='{$should_modify}' class='facetLink'>".ucfirst(_t($va_facet_info['label_plural']))."<span class=\"ico-triangle\"></span></a></li>";
 				}
 			}
 		}

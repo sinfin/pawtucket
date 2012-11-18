@@ -101,12 +101,18 @@
 
   bindFacetLinks = function() {
     return $('body').on('click', '.facetLink', function(e) {
-      var facet;
+      var facet, modifyMode, t;
       e.preventDefault();
       e.stopPropagation();
-      facet = $(this).data('facet');
+      t = $(this);
+      facet = t.data('facet');
+      if (!(typeof t.data('modify') === 'undefined' && t.data('modify') === 'true')) {
+        modifyMode = true;
+      } else {
+        modifyMode = false;
+      }
       if (typeof facet !== 'undefined') {
-        return caUIBrowsePanel.showBrowsePanel(facet);
+        return caUIBrowsePanel.showBrowsePanel(facet, modifyMode);
       }
     });
   };
