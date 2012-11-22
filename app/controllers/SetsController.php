@@ -217,7 +217,6 @@
 						//
 						$t_object = new ca_objects($pn_object_id);
 						$vn_rep_id = $t_object->getPrimaryRepresentationID();	// get representation_id for primary
-						$label =  $t_object->
 						
 						$t_item = new ca_set_items($pn_item_id);
 						$t_item->addSelectedRepresentation($vn_rep_id);			// flag as selected in item vars
