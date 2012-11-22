@@ -7856,6 +7856,18 @@ msgstr "Nenalezeny žádné výsledky."
 msgid "On-line collections"
 msgstr "On-line sbírky"
 
+msgid "Item already in your collection. %1Click here to resume your search%2."
+msgstr "Objekt už je ve Vaší sbírce. %1Klikněte zde pro návrat%2."
+
+msgid "Successfully added item. %1Click here to resume your search%2."
+msgstr "Objekt přidán do sbírky. %1Klikněte zde pro návrat%2."
+
+msgid "Could not add item to your collection"
+msgstr "Nepodařilo se přidat objekt do Vaší sbírky"
+
+msgid "Add to my collection"
+msgstr "Přidat do mojí sbírky"
+
 msgid "All on-line exhibitions"
 msgstr "Všechny on-line výstavy"
 

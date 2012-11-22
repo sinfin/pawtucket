@@ -29,13 +29,11 @@
 	global $g_ui_locale;
 	
 	$t_set 				= $this->getVar('t_set');			// object for ca_sets record of set we're currently editing
-	$t_new_set 			= $this->getVar('t_set');			// object for ca_sets record of set we're currently editing
 	$vn_set_id 			= $t_set->getPrimaryKey();		// primary key of set we're currently editing
 	$va_items 			= $this->getVar('items');			// array of items in the set we're currently editing
 	
 	$va_sets 			= $this->getVar('set_list');		// list of existing sets this user has access to
 	$t_set_description 			= $this->getvar("set_description");
-
 
 	$va_errors 			= $this->getvar("errors");
 	$va_errors_edit_set = $this->getVar("errors_edit_set");
@@ -115,8 +113,6 @@
 			$types = $object->getTypeNamesForIDs($ids);
 			foreach($va_items as $vn_item_id => $va_item) {
 				$id = $va_item['object_id'];
-				$vs_title = "";
-				$va_title = array();
 				$title = caNavLink($this->request, shorten($va_item['name']), '', 'Detail', 'Object', 'Show', array('object_id' => $id));
 				if ($va_item['representation_tag_thumbnail']) {
 					$img = caNavLink($this->request, $va_item['representation_tag_thumbnail'], '', 'Detail', 'Object', 'Show', array('object_id' => $id));

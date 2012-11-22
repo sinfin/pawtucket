@@ -1201,6 +1201,8 @@ LEFT JOIN ca_object_representations AS cor ON coxor.representation_id = cor.repr
 		
 		
 		// get row labels
+		// $preferred_sql = ' AND rel_label.is_preferred = 1';
+		$preferred_sql = '';
 		$qr_res = $o_db->query("
 			SELECT 
 				casi.set_id, casi.item_id, casi.row_id, casi.rank,
@@ -1209,7 +1211,7 @@ LEFT JOIN ca_object_representations AS cor ON coxor.representation_id = cor.repr
 			INNER JOIN ".$t_rel_table->tableName()." AS rel ON rel.".$t_rel_table->primaryKey()." = casi.row_id
 			{$vs_label_join_sql}
 			WHERE
-				casi.set_id = ? {$vs_access_sql} {$vs_deleted_sql}
+				casi.set_id = ? {$preferred_sql} {$vs_access_sql} {$vs_deleted_sql}
 			ORDER BY 
 				casi.rank ASC
 			{$vs_limit_sql}
@@ -1219,7 +1221,6 @@ LEFT JOIN ca_object_representations AS cor ON coxor.representation_id = cor.repr
 		while($qr_res->nextRow()) {
 			$va_labels[$qr_res->get('row_id')][$qr_res->get('locale_id')] = $qr_res->getRow();
 		}
-		
 		$va_labels = caExtractValuesByUserLocale($va_labels);
 		
 		// get set items

@@ -146,7 +146,8 @@
  			}else{
  				$va_access_values = caGetUserAccessValues($this->request);
  			}
- 			$this->view->setVar('items', caExtractValuesByUserLocale($t_set->getItems(array('thumbnailVersions' => array('thumbnail', 'icon'), 'checkAccess' => $va_access_values, 'user_id' => $this->request->getUserID()))));
+ 			$items = caExtractValuesByUserLocale($t_set->getItems(array('thumbnailVersions' => array('thumbnail'), 'checkAccess' => $va_access_values, 'user_id' => $this->request->getUserID())));
+ 			$this->view->setVar('items', $items);
  			
  			
  			$t_trans = new ca_commerce_transactions();
@@ -216,18 +217,22 @@
 						//
 						$t_object = new ca_objects($pn_object_id);
 						$vn_rep_id = $t_object->getPrimaryRepresentationID();	// get representation_id for primary
+						$label =  $t_object->
 						
 						$t_item = new ca_set_items($pn_item_id);
 						$t_item->addSelectedRepresentation($vn_rep_id);			// flag as selected in item vars
 						$t_item->update();
 						
 						$va_errors = array();
-						$this->view->setVar('message', _t("Successfully added item. %1Click here to resume your search%2.", "<a href='".caNavUrl($this->request, "Detail", "Object", "Show", array("object_id" => $pn_object_id))."'>", "</a>"));
+						$n = _t("Successfully added item. %1Click here to resume your search%2.", "<a href='".caNavUrl($this->request, "Detail", "Object", "Show", array("object_id" => $pn_object_id))."'>", "</a>");
+						$this->notification->addNotification($n);
 					} else {
-						$va_errors[] = _t('Could not add item to lightbox');
+						$n = _t('Could not add item to your collection');
+						$this->notification->addNotification($n);
 					}
 				}else{
-					$this->view->setVar('message', _t("Item already in set. %1Click here to resume your search%2.", "<a href='".caNavUrl($this->request, "Detail", "Object", "Show", array("object_id" => $pn_object_id))."'>", "</a>"));
+					$n = _t("Item already in your collection. %1Click here to resume your search%2.", "<a href='".caNavUrl($this->request, "Detail", "Object", "Show", array("object_id" => $pn_object_id))."'>", "</a>");
+					$this->notification->addNotification($n);
 				}
 			}
  			
@@ -263,7 +268,6 @@
  			if(sizeof($va_errors_edit_set) == 0){ 		
 				if ($t_set->load($pn_set_id) && $t_set->haveAccessToSet($this->request->getUserID(), __CA_SET_EDIT_ACCESS__)) { 
 					$t_set->setMode(ACCESS_WRITE);
-					print '<pre>'; var_dump($this->request->getParameter('access', pInteger)); print '</pre>';
 					$t_set->set('access', $this->request->getParameter('access', pInteger));
 					
 					// edit/add description
