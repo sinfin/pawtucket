@@ -57,6 +57,7 @@
  		public function Show() {
  			JavascriptLoadManager::register('panel');
  			JavascriptLoadManager::register('docReader');
+ 			JavascriptLoadManager::register('tileViewer');
  			parent::Show();
  			
  			// redirect user if not logged in
