@@ -58,6 +58,8 @@
  			JavascriptLoadManager::register('panel');
  			JavascriptLoadManager::register('docReader');
  			JavascriptLoadManager::register('tileViewer');
+ 			JavascriptLoadManager::register('swfobject');
+ 			JavascriptLoadManager::register('');
  			parent::Show();
  			
  			// redirect user if not logged in

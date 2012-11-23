@@ -342,7 +342,7 @@
  			# Media representations to display (objects only)
  			if (method_exists($t_item, 'getRepresentations')) {
 				// Get all representations
-				$size = array('large', 'original', 'fullscreen');
+				$size = array('large', 'original', 'fullscreen', 'tilepic');
 				$representations = $t_item->getRepresentations($size, null, array('checkAccess' => $va_access_values));
 
 				$images = false;
