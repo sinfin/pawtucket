@@ -1201,8 +1201,7 @@ LEFT JOIN ca_object_representations AS cor ON coxor.representation_id = cor.repr
 		
 		
 		// get row labels
-		// $preferred_sql = ' AND rel_label.is_preferred = 1';
-		$preferred_sql = '';
+		$preferred_sql = ' AND rel_label.is_preferred = 1';
 		$qr_res = $o_db->query("
 			SELECT 
 				casi.set_id, casi.item_id, casi.row_id, casi.rank,
