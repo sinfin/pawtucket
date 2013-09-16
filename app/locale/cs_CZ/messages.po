@@ -121,6 +121,12 @@ msgstr "Úložiště"
 msgid "Storage location editor"
 msgstr "Editor úložišť"
 
+msgid "Browse for"
+msgstr "Prohlížet"
+
+msgid "browse for more"
+msgstr "prohlížet další"
+
 msgid "Object representations"
 msgstr "Reprezentace objektu"
 

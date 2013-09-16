@@ -1,70 +1,15 @@
-#gallerySetDetail #setItemsGrid ul li {
-  position: static !important;
-}
-body.displaySet {
-  background: white;
-  color: black;
-}
-body.displaySet h1,
-body.displaySet p,
-body.displaySet div {
-  color: black;
-}
-body.displaySet #header #online-exhibition-search#gallerySetDetail .related-collections {
-  display: none;
-}
-body.displaySet #gallerySetDetail {
-  width: 1050px;
-}
-body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem {
-  clear: both;
-  width: 100%;
-}
-body.displaySet #gallerySetDetail #setItemsGrid ul li.small {
-  padding-right: 80px;
-}
-#main .sidebar,
-#main-home .sidebar {
-  display: none !important;
-}
-#main .content,
-#main-home .content {
-  margin-left: 0 !important;
-}
-#home-dark {
-  border: 1px solid black;
-  border-width: 1px 0;
-  margin-bottom: 50px;
-}
-#home-dark ul li .text .description,
-#home-dark ul li .text a,
-#home-dark p,
-#home-dark a {
-  color: black;
-}
-#home-dark .home-dark-more-link {
-  display: none !important;
-}
-#header #header-box,
-#main-menu,
-#footer .footer-left,
-.item-nav .item-nav-left,
-.item-share,
-#detail-left .tabs,
-#detail-left-pagination {
-  display: none;
-}
-.sidebar,
-.content {
-  border-top: 0;
-}
-.ui-dialog,
-.ui-widget-overlay {
-  display: none !important;
-}
-#detail #tab-images > ul li .big .watermark,
-#detail #tab-images > ul li .small .watermark {
-  position: relative;
-  float: right;
-  bottom: 65px;
-}
+#gallerySetDetail #setItemsGrid ul li{position:static !important}
+body.displaySet{background:#fff;color:#000}body.displaySet h1,body.displaySet p,body.displaySet div{color:#000}
+body.displaySet #header #online-exhibition-search #gallerySetDetail .related-collections{display:none}
+body.displaySet #gallerySetDetail{width:1050px}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.textItem{clear:both;width:100%}
+body.displaySet #gallerySetDetail #setItemsGrid ul li.small{padding-right:80px}
+#main .sidebar,#main-home .sidebar{display:none !important}
+#main .content,#main-home .content{margin-left:0 !important}
+#home-dark{border:1px solid #000;border-width:1px 0;margin-bottom:50px}#home-dark ul li .text .description,#home-dark ul li .text a,#home-dark p,#home-dark a{color:#000}
+#home-dark .home-dark-more-link{display:none !important}
+#home-dark ul.count-1,#home-dark ul.count-2{padding-left:34px}
+#header #header-box,#main-menu,#footer .footer-left,.item-nav .item-nav-left,.item-share,#detail-left .tabs,#detail-left-pagination{display:none}
+.sidebar,.content{border-top:0}
+.ui-dialog,.ui-widget-overlay{display:none !important}
+#detail #tab-images>ul li .big .watermark,#detail #tab-images>ul li .small .watermark{position:relative;float:right;bottom:65px}

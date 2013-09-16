@@ -47,11 +47,12 @@
 			if ($value['set_code'] == $oe_code) unset($online_exhibitions[$key]);
 		}
 	}
+	$print_title = json_encode($vs_title." | "._t($this->request->config->get("html_page_title")));
 ?>
 	<script type="text/javascript">
 		if (typeof window.titleChanged == 'undefined') {
 			window.titleChanged = true;
-			document.title = '<?php print $vs_title." | "._t($this->request->config->get("html_page_title")); ?>';
+			document.title = <?php echo $print_title; ?>;
 		}
 	</script>
 	<div id="detail">
