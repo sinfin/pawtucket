@@ -1,4 +1,3 @@
-#gallerySetDetail #setItemsGrid ul li{position:static !important}
 body.displaySet{background:#fff;color:#000}body.displaySet h1,body.displaySet p,body.displaySet div{color:#000}
 body.displaySet #header #online-exhibition-search #gallerySetDetail .related-collections{display:none}
 body.displaySet #gallerySetDetail{width:1050px}
